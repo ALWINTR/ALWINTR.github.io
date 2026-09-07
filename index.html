@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALWINTR | Embedded Systems, Robotics & IoT Engineer</title>
+  <meta name="description" content="Portfolio of ALWINTR - Embedded Systems, Robotics, IoT Projects, and AI-assisted hardware engineering.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Glow & Grid -->
+  <div class="bg-grid"></div>
+  <div class="glow-sphere sphere-1"></div>
+  <div class="glow-sphere sphere-2"></div>
+  <div class="glow-sphere sphere-3"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-text">ALWIN<span class="highlight">.TR</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#projects"><i class="fa-solid fa-microchip"></i> Projects</a></li>
+        <li><a href="#ai-chats"><i class="fa-solid fa-comments"></i> AI Chats</a></li>
+        <li><a href="#skills"><i class="fa-solid fa-code"></i> Tech Stack</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="about">
+    <div class="hero-content">
+      <div class="badge-status">
+        <span class="pulse-dot"></span> Open to Collaboration & Engineering Challenges
+      </div>
+      <h1 class="hero-title">
+        Building the Future of <br>
+        <span class="gradient-text">Embedded Systems & Robotics</span>
+      </h1>
+      <p class="hero-description">
+        Developer specializing in <strong>ESP32 / ESP8266</strong>, <strong>Robotics Gait & Kinematics</strong>, 
+        <strong>IoT Systems (Blynk, REST Webservers)</strong>, and <strong>Automated Sensor Systems</strong>. 
+        Developed with cutting-edge AI pair-programming.
+      </p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fa-solid fa-rocket"></i> Explore Projects
+        </a>
+        <a href="#ai-chats" class="btn btn-secondary">
+          <i class="fa-solid fa-robot"></i> View AI Chat Archives
+        </a>
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fa-brands fa-github"></i> View Profile
+        </a>
+      </div>
+
+      <!-- Quick Stats -->
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-num" id="stat-repos">12+</span>
+          <span class="stat-label">GitHub Repositories</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">ESP32 & Arduino</span>
+          <span class="stat-label">Core Microcontrollers</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">IoT & Web</span>
+          <span class="stat-label">Blynk 2.0 & REST Telemetry</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">AI Pair-Programmed</span>
+          <span class="stat-label">Antigravity 2.0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Projects Section -->
+  <section class="section" id="projects">
+    <div class="section-header">
+      <h2 class="section-title"><i class="fa-solid fa-microchip"></i> Featured Hardware & IoT Projects</h2>
+      <p class="section-subtitle">A showcase of embedded robotics, sensor automations, and wireless controllers.</p>
+    </div>
+
+    <!-- Category Filters & Search -->
+    <div class="controls-wrapper">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Projects</button>
+        <button class="filter-btn" data-filter="robotics">Robotics & Bipeds</button>
+        <button class="filter-btn" data-filter="iot">IoT & Wireless</button>
+        <button class="filter-btn" data-filter="sensors">Sensors & Automation</button>
+        <button class="filter-btn" data-filter="security">Access & Security</button>
+      </div>
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="project-search" placeholder="Search projects, tags, hardware...">
+      </div>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="projects-grid" id="projects-grid">
+      <!-- Project 1: ESP32 Bipedal Walking Robot -->
+      <div class="project-card" data-category="robotics">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">ESP32</span>
+            <span class="badge badge-cat">Robotics</span>
+          </div>
+        </div>
+        <h3 class="card-title">ESP32 Bipedal Walking Robot</h3>
+        <p class="card-desc">
+          Two-legged bipedal walking robot featuring real-time hip/ankle joint angle telemetry, gait trajectory control, and live serial feedback.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-microchip"></i> ESP32</span>
+          <span><i class="fa-solid fa-gears"></i> Servos & IK</span>
+          <span><i class="fa-solid fa-terminal"></i> PowerShell Telemetry</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/esp32-bipedal-robot" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+          <a href="https://github.com/ALWINTR/esp32-bipedal-robot/blob/main/CHAT_HISTORY.md" target="_blank" rel="noopener" class="card-link secondary">
+            <i class="fa-solid fa-file-lines"></i> Chat Logs
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Blynk 2.0 180 Servo Controller -->
+      <div class="project-card" data-category="iot">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">ESP8266/ESP32</span>
+            <span class="badge badge-cat">IoT</span>
+          </div>
+        </div>
+        <h3 class="card-title">Blynk 2.0 180° Servo Controller</h3>
+        <p class="card-desc">
+          Cloud-connected PWM servo actuator controller with Blynk 2.0 mobile switch widgets, auto-reconnection logic, and brownout protection.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-cloud"></i> Blynk 2.0</span>
+          <span><i class="fa-solid fa-sliders"></i> PWM 180°</span>
+          <span><i class="fa-solid fa-bolt"></i> Dual ESP Support</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/blynk-servo-controller" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+          <a href="https://github.com/ALWINTR/blynk-servo-controller/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
+            <i class="fa-solid fa-book"></i> Setup Guide
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: ESP Webserver Servo -->
+      <div class="project-card" data-category="iot">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">ESP Web Server</span>
+            <span class="badge badge-cat">IoT</span>
+          </div>
+        </div>
+        <h3 class="card-title">ESP Webserver Servo Angle Controller</h3>
+        <p class="card-desc">
+          Zero-app browser-based interactive web interface with real-time range slider and REST API endpoints for seamless angle manipulation over local WiFi.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-globe"></i> Web UI</span>
+          <span><i class="fa-solid fa-network-wired"></i> REST API</span>
+          <span><i class="fa-solid fa-code"></i> C++ & HTML</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/esp-webserver-servo" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+          <a href="https://github.com/ALWINTR/esp-webserver-servo/blob/main/CHAT_HISTORY.md" target="_blank" rel="noopener" class="card-link secondary">
+            <i class="fa-solid fa-comments"></i> Chat Logs
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 4: Arduino Rain Sensor Servo -->
+      <div class="project-card" data-category="sensors">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-cloud-rain"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">Arduino Uno</span>
+            <span class="badge badge-cat">Automation</span>
+          </div>
+        </div>
+        <h3 class="card-title">Arduino Rain Sensor Auto Shutter</h3>
+        <p class="card-desc">
+          Automated weather detection system that triggers a high-torque servo mechanical cover or window shutter when raindrops are detected.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-droplet"></i> Rain Sensor</span>
+          <span><i class="fa-solid fa-gear"></i> Servo Shutter</span>
+          <span><i class="fa-solid fa-microchip"></i> Arduino Uno</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/rain-sensor-servo" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+          <a href="https://github.com/ALWINTR/rain-sensor-servo/blob/main/CHAT_HISTORY.md" target="_blank" rel="noopener" class="card-link secondary">
+            <i class="fa-solid fa-comments"></i> Chat Logs
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 5: SPYBOT Surveillance Robot -->
+      <div class="project-card" data-category="robotics">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">Robotics</span>
+            <span class="badge badge-cat">Surveillance</span>
+          </div>
+        </div>
+        <h3 class="card-title">SPYBOT Surveillance Robot</h3>
+        <p class="card-desc">
+          Long-range surveillance vehicle equipped with real-time wireless video stream, gas detection sensors, and metal detection for hazardous environment reconnaissance.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-video"></i> Real-Time Video</span>
+          <span><i class="fa-solid fa-triangle-exclamation"></i> Gas & Metal Detect</span>
+          <span><i class="fa-solid fa-car"></i> Tele-Op Rover</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/SPYBOT-WITH-METAL-AND-GAS-DETECTION" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 6: RFID Secure Access Control -->
+      <div class="project-card" data-category="security">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">PIC16F877A</span>
+            <span class="badge badge-cat">Security</span>
+          </div>
+        </div>
+        <h3 class="card-title">RFID Secure Access Control System</h3>
+        <p class="card-desc">
+          Embedded security system built on PIC16F877A featuring 16x2 LCD authentication prompts, RFID keycard validation, and automated servo door lock actuation.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-microchip"></i> PIC Microcontroller</span>
+          <span><i class="fa-solid fa-tv"></i> LCD 16x2</span>
+          <span><i class="fa-solid fa-lock"></i> Proteus Sim</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/RFID-Based-Secure-Access-Control-System-PIC16F877A-" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 7: Earthquake Monitoring System -->
+      <div class="project-card" data-category="sensors">
+        <div class="card-glow"></div>
+        <div class="card-header">
+          <div class="card-icon"><i class="fa-solid fa-wave-square"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-tech">Sensors</span>
+            <span class="badge badge-cat">Monitoring</span>
+          </div>
+        </div>
+        <h3 class="card-title">Earthquake Monitoring System</h3>
+        <p class="card-desc">
+          Seismic vibration detection system designed to alert and measure real-time ground acceleration and threshold anomalies.
+        </p>
+        <div class="card-tags">
+          <span><i class="fa-solid fa-bell"></i> Seismic Alert</span>
+          <span><i class="fa-solid fa-chart-line"></i> Vibration Sensing</span>
+          <span><i class="fa-solid fa-microchip"></i> Embedded Controller</span>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Earthquake_Monitoring_System" target="_blank" rel="noopener" class="card-link">
+            <i class="fa-brands fa-github"></i> Source Code
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Chat History Section -->
+  <section class="section section-alt" id="ai-chats">
+    <div class="section-header">
+      <h2 class="section-title"><i class="fa-solid fa-robot"></i> AI Pair-Programming Transcripts</h2>
+      <p class="section-subtitle">Full conversations, design decisions, and hardware debugging logs archived in real-time.</p>
+    </div>
+
+    <div class="chat-archive-card">
+      <div class="archive-header">
+        <div class="archive-title-group">
+          <i class="fa-solid fa-terminal archive-icon"></i>
+          <div>
+            <h3>Antigravity Chat Master Archive</h3>
+            <p>Direct Markdown transcripts with step-by-step code iterations and troubleshooting conversations.</p>
+          </div>
+        </div>
+        <a href="https://github.com/ALWINTR/antigravity-chat-history" target="_blank" rel="noopener" class="btn btn-primary">
+          <i class="fa-brands fa-github"></i> Open Central Archive
+        </a>
+      </div>
+
+      <div class="chat-sessions-list">
+        <div class="chat-session-item">
+          <div class="session-info">
+            <span class="session-tag">Robotics</span>
+            <h4>ESP32 Bipedal Walking Robot & Hip Angle Detection</h4>
+            <p>330+ messages analyzing inverse kinematics, joint calibration, and PowerShell serial telemetry.</p>
+          </div>
+          <a href="https://github.com/ALWINTR/esp32-bipedal-robot/blob/main/CHAT_HISTORY.md" target="_blank" class="session-link">Read Transcript <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="chat-session-item">
+          <div class="session-info">
+            <span class="session-tag">IoT</span>
+            <h4>Blynk 2.0 180° Servo Controller Setup</h4>
+            <p>Cloud datastream V0 setup, dual ESP8266/ESP32 pin mapping, and power brownout prevention.</p>
+          </div>
+          <a href="https://github.com/ALWINTR/blynk-servo-controller/blob/main/CHAT_HISTORY.md" target="_blank" class="session-link">Read Transcript <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="chat-session-item">
+          <div class="session-info">
+            <span class="session-tag">Web</span>
+            <h4>ESP Webserver Servo Range Slider Interface</h4>
+            <p>Building an interactive slider in HTML/JS served directly from ESP flash memory with REST endpoints.</p>
+          </div>
+          <a href="https://github.com/ALWINTR/esp-webserver-servo/blob/main/CHAT_HISTORY.md" target="_blank" class="session-link">Read Transcript <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="chat-session-item">
+          <div class="session-info">
+            <span class="session-tag">Automation</span>
+            <h4>Arduino Uno Rain Sensor & Servo Cover</h4>
+            <p>Analog rain sensor threshold detection and high-torque shutter mechanism control.</p>
+          </div>
+          <a href="https://github.com/ALWINTR/rain-sensor-servo/blob/main/CHAT_HISTORY.md" target="_blank" class="session-link">Read Transcript <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Tech Stack Section -->
+  <section class="section" id="skills">
+    <div class="section-header">
+      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Skills & Hardware Competencies</h2>
+      <p class="section-subtitle">Microcontrollers, communication protocols, simulation suites, and programming languages.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-microchip"></i> Microcontrollers & Boards</h3>
+        <div class="skill-pills">
+          <span>ESP32 DevKit</span>
+          <span>ESP8266 (NodeMCU / D1)</span>
+          <span>Arduino Uno / Nano</span>
+          <span>PIC16F877A</span>
+          <span>AVR / ATmega328P</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-network-wired"></i> IoT & Protocols</h3>
+        <div class="skill-pills">
+          <span>Blynk 2.0 IoT</span>
+          <span>HTTP / REST Web Servers</span>
+          <span>UART / Serial Telemetry</span>
+          <span>PWM Servo Modulation</span>
+          <span>I2C & SPI Bus</span>
+          <span>WiFi AP/STA Mode</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-code"></i> Software & Languages</h3>
+        <div class="skill-pills">
+          <span>Embedded C / C++</span>
+          <span>Arduino IDE</span>
+          <span>Python 3</span>
+          <span>PowerShell Scripting</span>
+          <span>HTML5 / CSS3 / JavaScript</span>
+          <span>Git & GitHub CLI</span>
+        </div>
+      </div>
+
+      <div class="skill-category">
+        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Hardware & Tools</h3>
+        <div class="skill-pills">
+          <span>Proteus Circuit Simulator</span>
+          <span>SG90 / MG995 / MG996R Servos</span>
+          <span>Rain / Soil / Gas Sensors</span>
+          <span>RFID 13.56MHz Readers</span>
+          <span>16x2 I2C/Parallel LCDs</span>
+          <span>Power & Brownout Safety</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <span class="logo-text">ALWIN<span class="highlight">.TR</span></span>
+        <p>Embedded Systems • Robotics • IoT Engineer</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://github.com/ALWINTR/antigravity-chat-history" target="_blank" rel="noopener"><i class="fa-solid fa-robot"></i> AI Transcripts</a>
+        <a href="#about"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 ALWINTR. Hosted with ❤️ on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
