@@ -4,35 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ALWINTR | Embedded Systems, Robotics & IoT Engineer</title>
-  <meta name="description" content="Portfolio of ALWINTR - Embedded Systems, Robotics, IoT Projects, and Microcontroller Engineering.">
+  <meta name="description" content="Interactive Animated Portfolio of ALWINTR - Embedded Systems, Robotics, IoT Projects, and Microcontroller Engineering.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Background Glow & Grid -->
-  <div class="bg-grid"></div>
+  <!-- Custom Cyber Cursor -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Interactive Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-overlay"></div>
+
+  <!-- Ambient Glowing Spheres -->
   <div class="glow-sphere sphere-1"></div>
   <div class="glow-sphere sphere-2"></div>
   <div class="glow-sphere sphere-3"></div>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
         <span class="logo-symbol">&lt;/&gt;</span>
         <span class="logo-text">ALWIN<span class="highlight">.TR</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
-        <li><a href="#projects"><i class="fa-solid fa-microchip"></i> Projects</a></li>
-        <li><a href="#skills"><i class="fa-solid fa-code"></i> Tech Stack</a></li>
+        <li><a href="#about" class="nav-item"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#projects" class="nav-item"><i class="fa-solid fa-microchip"></i> Projects</a></li>
+        <li><a href="#skills" class="nav-item"><i class="fa-solid fa-code"></i> Tech Stack</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github">
-          <i class="fa-brands fa-github"></i> GitHub Profile
+          <i class="fa-brands fa-github"></i> <span>GitHub</span>
         </a>
       </div>
     </div>
@@ -40,48 +47,81 @@
 
   <!-- Hero Section -->
   <header class="hero" id="about">
-    <div class="hero-content">
-      <div class="badge-status">
-        <span class="pulse-dot"></span> Open to Collaboration & Engineering Challenges
-      </div>
-      <h1 class="hero-title">
-        Embedded Systems, Robotics & <br>
-        <span class="gradient-text">IoT Hardware Engineering</span>
-      </h1>
-      <p class="hero-description">
-        Developer building high-performance embedded solutions with <strong>ESP32 / ESP8266</strong>, 
-        <strong>Robotics Gait & Kinematics</strong>, <strong>Sensor Automation (IR, Inductive, Ultrasonic)</strong>, 
-        and <strong>Wireless Cloud & Web Control (Blynk, REST APIs)</strong>.
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary">
-          <i class="fa-solid fa-rocket"></i> Explore Projects
-        </a>
-        <a href="#skills" class="btn btn-secondary">
-          <i class="fa-solid fa-layer-group"></i> Technical Skills
-        </a>
-        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-outline">
-          <i class="fa-brands fa-github"></i> View GitHub
-        </a>
+    <div class="hero-grid">
+      <div class="hero-content" data-reveal="fade-up">
+        <div class="badge-status">
+          <span class="pulse-dot"></span>
+          <span class="badge-text">Open to Collaboration & Engineering Challenges</span>
+        </div>
+        
+        <h1 class="hero-title">
+          Hi, I'm <span class="gradient-text glow-text">ALWIN</span><br>
+          <span class="typewriter-prefix">Specialized in </span>
+          <span class="typewriter-text" id="typewriter"></span><span class="cursor-blink">|</span>
+        </h1>
+        
+        <p class="hero-description">
+          Building high-performance robotics, IoT telemetry systems, and intelligent embedded hardware using 
+          <strong>ESP32</strong>, <strong>Arduino</strong>, <strong>PIC Microcontrollers</strong>, and <strong>Automated Sensor Networks</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary magnetic-btn">
+            <i class="fa-solid fa-rocket"></i> Explore Projects
+          </a>
+          <a href="#skills" class="btn btn-secondary magnetic-btn">
+            <i class="fa-solid fa-layer-group"></i> Technical Skills
+          </a>
+          <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-outline magnetic-btn">
+            <i class="fa-brands fa-github"></i> GitHub Profile
+          </a>
+        </div>
+
+        <!-- Animated Stats Counter Row -->
+        <div class="stats-row">
+          <div class="stat-card" data-tilt>
+            <span class="stat-num counter" data-target="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Public Repos</span>
+          </div>
+          <div class="stat-card" data-tilt>
+            <span class="stat-num">ESP32</span>
+            <span class="stat-label">& Arduino Dev</span>
+          </div>
+          <div class="stat-card" data-tilt>
+            <span class="stat-num">IoT</span>
+            <span class="stat-label">Blynk & REST Web</span>
+          </div>
+          <div class="stat-card" data-tilt>
+            <span class="stat-num counter" data-target="100">0</span><span class="stat-plus">%</span>
+            <span class="stat-label">Open Source</span>
+          </div>
+        </div>
       </div>
 
-      <!-- Quick Stats -->
-      <div class="stats-row">
-        <div class="stat-card">
-          <span class="stat-num" id="stat-repos">10+</span>
-          <span class="stat-label">Public Repositories</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">ESP32 & Arduino</span>
-          <span class="stat-label">Core Microcontrollers</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">IoT & Web</span>
-          <span class="stat-label">Blynk 2.0 & REST Controls</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-num">C / C++ & Python</span>
-          <span class="stat-label">Firmware & Scripting</span>
+      <!-- Interactive Live Terminal / Hardware Telemetry HUD -->
+      <div class="hero-hud" data-reveal="fade-left">
+        <div class="hud-window" data-tilt>
+          <div class="hud-header">
+            <div class="hud-dots">
+              <span class="hud-dot red"></span>
+              <span class="hud-dot yellow"></span>
+              <span class="hud-dot green"></span>
+            </div>
+            <div class="hud-title"><i class="fa-solid fa-terminal"></i> LIVE HARDWARE TELEMETRY</div>
+            <div class="hud-status"><span class="hud-live-indicator"></span> ONLINE</div>
+          </div>
+          <div class="hud-body" id="hud-console">
+            <div class="hud-line dim"><span class="hud-prompt">[SYSTEM]</span> Initializing Microcontroller Bus...</div>
+            <div class="hud-line success"><span class="hud-prompt">[ESP32]</span> WiFi AP/STA Mode Active (IP: 192.168.4.1)</div>
+            <div class="hud-line info"><span class="hud-prompt">[ROBOT]</span> Biped Gait Kinematics: 180° Synchronized</div>
+            <div class="hud-line warning"><span class="hud-prompt">[WASTE]</span> Inductive Sensor: Metal Detected -> Stepper Indexing</div>
+            <div class="hud-line primary"><span class="hud-prompt">[BLYNK]</span> Cloud Datastream V0 -> PWM Servo Ready</div>
+            <div class="hud-line success"><span class="hud-prompt">[RAIN]</span> Sensor Reading 1024 -> Shutter Armed</div>
+          </div>
+          <div class="hud-footer">
+            <button class="hud-btn" id="btn-ping"><i class="fa-solid fa-satellite-dish"></i> Ping Telemetry</button>
+            <button class="hud-btn" id="btn-clear"><i class="fa-solid fa-eraser"></i> Clear</button>
+          </div>
         </div>
       </div>
     </div>
@@ -89,19 +129,20 @@
 
   <!-- Projects Section -->
   <section class="section" id="projects">
-    <div class="section-header">
-      <h2 class="section-title"><i class="fa-solid fa-microchip"></i> Featured Hardware & Robotics Projects</h2>
-      <p class="section-subtitle">Embedded robotics, sensor automations, motor control systems, and wireless controllers.</p>
+    <div class="section-header" data-reveal="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-microchip"></i> PORTFOLIO</div>
+      <h2 class="section-title">Featured Hardware & Robotics Projects</h2>
+      <p class="section-subtitle">Explore interactive hardware implementations, motor controllers, and sensor automations.</p>
     </div>
 
     <!-- Category Filters & Search -->
-    <div class="controls-wrapper">
+    <div class="controls-wrapper" data-reveal="fade-up">
       <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All Projects</button>
-        <button class="filter-btn" data-filter="robotics">Robotics & Bipeds</button>
-        <button class="filter-btn" data-filter="automation">Automation & Sensors</button>
-        <button class="filter-btn" data-filter="iot">IoT & Wireless</button>
-        <button class="filter-btn" data-filter="security">Security & Access</button>
+        <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects</button>
+        <button class="filter-btn" data-filter="robotics"><i class="fa-solid fa-robot"></i> Robotics & Bipeds</button>
+        <button class="filter-btn" data-filter="automation"><i class="fa-solid fa-recycle"></i> Automation & Sensors</button>
+        <button class="filter-btn" data-filter="iot"><i class="fa-solid fa-wifi"></i> IoT & Wireless</button>
+        <button class="filter-btn" data-filter="security"><i class="fa-solid fa-shield-halved"></i> Security & Access</button>
       </div>
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass"></i>
@@ -109,11 +150,12 @@
       </div>
     </div>
 
-    <!-- Project Cards Grid -->
+    <!-- Project Cards Grid with 3D Tilt & Light Sweep -->
     <div class="projects-grid" id="projects-grid">
       <!-- Project 1: ESP32 Bipedal Walking Robot -->
-      <div class="project-card" data-category="robotics">
+      <div class="project-card" data-category="robotics" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
           <div class="card-badges">
@@ -123,7 +165,7 @@
         </div>
         <h3 class="card-title">ESP32 Bipedal Walking Robot</h3>
         <p class="card-desc">
-          Two-legged bipedal walking robot featuring real-time hip/ankle joint angle telemetry, gait trajectory control, and live serial feedback.
+          Two-legged walking robot featuring real-time hip and ankle joint angle telemetry, gait trajectory coordination, and live serial monitoring.
         </p>
         <div class="card-tags">
           <span><i class="fa-solid fa-microchip"></i> ESP32</span>
@@ -131,7 +173,7 @@
           <span><i class="fa-solid fa-terminal"></i> PowerShell Telemetry</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/esp32-bipedal-robot" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/esp32-bipedal-robot" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
           <a href="https://github.com/ALWINTR/esp32-bipedal-robot/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
@@ -140,9 +182,10 @@
         </div>
       </div>
 
-      <!-- Project 2: Waste Segregation System -->
-      <div class="project-card" data-category="automation">
+      <!-- Project 2: Automated Waste Segregation System -->
+      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-recycle"></i></div>
           <div class="card-badges">
@@ -160,7 +203,7 @@
           <span><i class="fa-solid fa-wave-square"></i> IR Sensor</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/waste-segregation-system" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/waste-segregation-system" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
           <a href="https://github.com/ALWINTR/waste-segregation-system/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
@@ -170,8 +213,9 @@
       </div>
 
       <!-- Project 3: Blynk 2.0 180 Servo Controller -->
-      <div class="project-card" data-category="iot">
+      <div class="project-card" data-category="iot" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-wifi"></i></div>
           <div class="card-badges">
@@ -181,7 +225,7 @@
         </div>
         <h3 class="card-title">Blynk 2.0 180° Servo Controller</h3>
         <p class="card-desc">
-          Cloud-connected PWM servo actuator controller with Blynk 2.0 mobile switch widgets, auto-reconnection logic, and brownout protection.
+          Cloud-connected PWM servo actuator controller with Blynk 2.0 mobile switch widgets, auto-reconnection logic, and brownout power safety.
         </p>
         <div class="card-tags">
           <span><i class="fa-solid fa-cloud"></i> Blynk 2.0</span>
@@ -189,7 +233,7 @@
           <span><i class="fa-solid fa-bolt"></i> Dual ESP Support</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/blynk-servo-controller" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/blynk-servo-controller" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
           <a href="https://github.com/ALWINTR/blynk-servo-controller/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
@@ -199,8 +243,9 @@
       </div>
 
       <!-- Project 4: ESP Webserver Servo -->
-      <div class="project-card" data-category="iot">
+      <div class="project-card" data-category="iot" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-sliders"></i></div>
           <div class="card-badges">
@@ -218,7 +263,7 @@
           <span><i class="fa-solid fa-code"></i> C++ & HTML</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/esp-webserver-servo" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/esp-webserver-servo" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
           <a href="https://github.com/ALWINTR/esp-webserver-servo/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
@@ -228,8 +273,9 @@
       </div>
 
       <!-- Project 5: Arduino Rain Sensor Servo -->
-      <div class="project-card" data-category="automation">
+      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-cloud-rain"></i></div>
           <div class="card-badges">
@@ -239,7 +285,7 @@
         </div>
         <h3 class="card-title">Arduino Rain Sensor Auto Shutter</h3>
         <p class="card-desc">
-          Automated weather detection system that triggers a high-torque servo mechanical cover or window shutter when raindrops are detected.
+          Automated weather detection system that triggers a high-torque servo mechanical cover or window shutter when raindrops are detected on the probe.
         </p>
         <div class="card-tags">
           <span><i class="fa-solid fa-droplet"></i> Rain Sensor</span>
@@ -247,7 +293,7 @@
           <span><i class="fa-solid fa-microchip"></i> Arduino Uno</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/rain-sensor-servo" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/rain-sensor-servo" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
           <a href="https://github.com/ALWINTR/rain-sensor-servo/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
@@ -257,8 +303,9 @@
       </div>
 
       <!-- Project 6: SPYBOT Surveillance Robot -->
-      <div class="project-card" data-category="robotics">
+      <div class="project-card" data-category="robotics" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="card-badges">
@@ -276,15 +323,16 @@
           <span><i class="fa-solid fa-car"></i> Tele-Op Rover</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/SPYBOT-WITH-METAL-AND-GAS-DETECTION" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/SPYBOT-WITH-METAL-AND-GAS-DETECTION" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
         </div>
       </div>
 
       <!-- Project 7: RFID Secure Access Control -->
-      <div class="project-card" data-category="security">
+      <div class="project-card" data-category="security" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-id-card"></i></div>
           <div class="card-badges">
@@ -302,15 +350,16 @@
           <span><i class="fa-solid fa-lock"></i> Proteus Sim</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/RFID-Based-Secure-Access-Control-System-PIC16F877A-" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/RFID-Based-Secure-Access-Control-System-PIC16F877A-" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
         </div>
       </div>
 
       <!-- Project 8: Earthquake Monitoring System -->
-      <div class="project-card" data-category="automation">
+      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
         <div class="card-glow"></div>
+        <div class="card-spotlight"></div>
         <div class="card-header">
           <div class="card-icon"><i class="fa-solid fa-wave-square"></i></div>
           <div class="card-badges">
@@ -328,7 +377,7 @@
           <span><i class="fa-solid fa-microchip"></i> Embedded Controller</span>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Earthquake_Monitoring_System" target="_blank" rel="noopener" class="card-link">
+          <a href="https://github.com/ALWINTR/Earthquake_Monitoring_System" target="_blank" rel="noopener" class="card-link btn-glow">
             <i class="fa-brands fa-github"></i> Source Code
           </a>
         </div>
@@ -338,56 +387,61 @@
 
   <!-- Skills & Tech Stack Section -->
   <section class="section" id="skills">
-    <div class="section-header">
-      <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> Technical Skills & Hardware Competencies</h2>
+    <div class="section-header" data-reveal="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-layer-group"></i> COMPETENCIES</div>
+      <h2 class="section-title">Technical Skills & Hardware Stack</h2>
       <p class="section-subtitle">Microcontrollers, communication protocols, simulation suites, and programming languages.</p>
     </div>
 
     <div class="skills-grid">
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-microchip"></i> Microcontrollers & Boards</h3>
+      <div class="skill-category" data-tilt data-reveal="fade-up">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Microcontrollers & Boards</h3>
         <div class="skill-pills">
-          <span>ESP32 DevKit</span>
-          <span>ESP8266 (NodeMCU / D1)</span>
-          <span>Arduino Uno / Nano</span>
-          <span>PIC16F877A</span>
-          <span>AVR / ATmega328P</span>
+          <span class="pill-glow">ESP32 DevKit</span>
+          <span class="pill-glow">ESP8266 (NodeMCU / D1)</span>
+          <span class="pill-glow">Arduino Uno / Nano</span>
+          <span class="pill-glow">PIC16F877A</span>
+          <span class="pill-glow">AVR / ATmega328P</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-network-wired"></i> IoT & Protocols</h3>
+      <div class="skill-category" data-tilt data-reveal="fade-up">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-network-wired"></i></div>
+        <h3>IoT & Communication Protocols</h3>
         <div class="skill-pills">
-          <span>Blynk 2.0 IoT</span>
-          <span>HTTP / REST Web Servers</span>
-          <span>UART / Serial Telemetry</span>
-          <span>PWM Servo Modulation</span>
-          <span>I2C & SPI Bus</span>
-          <span>WiFi AP/STA Mode</span>
+          <span class="pill-glow">Blynk 2.0 IoT</span>
+          <span class="pill-glow">HTTP / REST Web Servers</span>
+          <span class="pill-glow">UART / Serial Telemetry</span>
+          <span class="pill-glow">PWM Servo Modulation</span>
+          <span class="pill-glow">I2C & SPI Bus</span>
+          <span class="pill-glow">WiFi AP/STA Mode</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-code"></i> Software & Languages</h3>
+      <div class="skill-category" data-tilt data-reveal="fade-up">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
+        <h3>Software & Languages</h3>
         <div class="skill-pills">
-          <span>Embedded C / C++</span>
-          <span>Arduino IDE</span>
-          <span>Python 3</span>
-          <span>PowerShell Scripting</span>
-          <span>HTML5 / CSS3 / JavaScript</span>
-          <span>Git & GitHub CLI</span>
+          <span class="pill-glow">Embedded C / C++</span>
+          <span class="pill-glow">Arduino IDE</span>
+          <span class="pill-glow">Python 3</span>
+          <span class="pill-glow">PowerShell Scripting</span>
+          <span class="pill-glow">HTML5 / CSS3 / JavaScript</span>
+          <span class="pill-glow">Git & GitHub CLI</span>
         </div>
       </div>
 
-      <div class="skill-category">
-        <h3><i class="fa-solid fa-screwdriver-wrench"></i> Hardware & Tools</h3>
+      <div class="skill-category" data-tilt data-reveal="fade-up">
+        <div class="skill-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+        <h3>Hardware & Sensors</h3>
         <div class="skill-pills">
-          <span>Proteus Circuit Simulator</span>
-          <span>NEMA 17 Stepper & A4988</span>
-          <span>SG90 / MG995 Servos</span>
-          <span>Inductive & IR Sensors</span>
-          <span>RFID 13.56MHz Readers</span>
-          <span>Power & Brownout Safety</span>
+          <span class="pill-glow">Proteus Circuit Simulator</span>
+          <span class="pill-glow">NEMA 17 Stepper & A4988</span>
+          <span class="pill-glow">SG90 / MG995 Servos</span>
+          <span class="pill-glow">Inductive & IR Sensors</span>
+          <span class="pill-glow">RFID 13.56MHz Readers</span>
+          <span class="pill-glow">Power & Brownout Safety</span>
         </div>
       </div>
     </div>
@@ -401,12 +455,12 @@
         <p>Embedded Systems • Robotics • IoT Engineer</p>
       </div>
       <div class="footer-links">
-        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="#about"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="footer-btn"><i class="fa-brands fa-github"></i> GitHub Profile</a>
+        <a href="#about" class="footer-btn scroll-top-btn"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 ALWINTR. Hosted with ❤️ on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+      <p>&copy; 2026 ALWINTR. Hosted with high performance on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </div>
   </footer>
 
