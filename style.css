@@ -1009,3 +1009,31 @@ body {
   .projects-grid { grid-template-columns: 1fr; }
   .cursor-dot, .cursor-ring { display: none !important; }
 }
+
+/* LinkedIn Custom Button Styles */
+.btn-linkedin {
+  background: linear-gradient(135deg, #0a66c2, #004182);
+  color: #fff;
+  border: 1px solid rgba(10, 102, 194, 0.6);
+  box-shadow: 0 4px 20px rgba(10, 102, 194, 0.4);
+}
+
+.btn-linkedin:hover {
+  background: linear-gradient(135deg, #0d7fe8, #0a66c2);
+  border-color: #70b5f9;
+  box-shadow: 0 6px 28px rgba(10, 102, 194, 0.65);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-linkedin-hover:hover {
+  border-color: #0a66c2 !important;
+  background: rgba(10, 102, 194, 0.2) !important;
+  color: #70b5f9 !important;
+  box-shadow: 0 0 18px rgba(10, 102, 194, 0.5) !important;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
