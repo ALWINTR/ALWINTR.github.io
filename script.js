@@ -1,9 +1,9 @@
 // ==========================================================================
-// ALWINTR High Performance Animation & Interactivity Engine
+// ALWINTR High Performance Animation & Interactivity Engine (Red & Black)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Custom Smooth Cyber Cursor
+  // 1. Custom Smooth Cyber Red Cursor
   const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
   let mouseX = window.innerWidth / 2;
@@ -31,28 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
     renderCursor();
 
     // Hover effect on interactive elements
-    const clickables = document.querySelectorAll('a, button, input, .project-card, .stat-card');
+    const clickables = document.querySelectorAll('a, button, input, .project-card, .stat-card, .skill-category');
     clickables.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (ring) {
           ring.style.width = '55px';
           ring.style.height = '55px';
-          ring.style.borderColor = 'rgba(6, 182, 212, 0.9)';
-          ring.style.boxShadow = '0 0 20px rgba(6, 182, 212, 0.4)';
+          ring.style.borderColor = 'rgba(255, 23, 68, 0.95)';
+          ring.style.boxShadow = '0 0 25px rgba(255, 23, 68, 0.6)';
         }
       });
       el.addEventListener('mouseleave', () => {
         if (ring) {
           ring.style.width = '32px';
           ring.style.height = '32px';
-          ring.style.borderColor = 'rgba(99, 102, 241, 0.6)';
+          ring.style.borderColor = 'rgba(239, 68, 68, 0.7)';
           ring.style.boxShadow = 'none';
         }
       });
     });
   }
 
-  // 2. Interactive Background Particle / Constellation Canvas
+  // 2. Interactive Background Particle Canvas (Cyber Red Nodes)
   const canvas = document.getElementById('bg-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -65,16 +65,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const particles = [];
-    const count = Math.min(Math.floor((width * height) / 14000), 85);
+    const count = Math.min(Math.floor((width * height) / 13000), 90);
+    const redColors = ['#ff1744', '#ef4444', '#ff4d6d', '#ff5252', '#ff8a9b'];
 
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 2 + 1,
-        color: Math.random() > 0.4 ? '#6366f1' : '#06b6d4'
+        vx: (Math.random() - 0.5) * 0.65,
+        vy: (Math.random() - 0.5) * 0.65,
+        radius: Math.random() * 2.2 + 1,
+        color: redColors[Math.floor(Math.random() * redColors.length)]
       });
     }
 
@@ -104,32 +105,32 @@ document.addEventListener('DOMContentLoaded', () => {
         const dxMouse = canvasMouseX - p1.x;
         const dyMouse = canvasMouseY - p1.y;
         const distMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        if (distMouse < 140) {
-          p1.x += dxMouse * 0.015;
-          p1.y += dyMouse * 0.015;
+        if (distMouse < 150) {
+          p1.x += dxMouse * 0.018;
+          p1.y += dyMouse * 0.018;
         }
 
-        // Draw particle
+        // Draw glowing particle
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
         ctx.fillStyle = p1.color;
-        ctx.shadowBlur = 8;
+        ctx.shadowBlur = 10;
         ctx.shadowColor = p1.color;
         ctx.fill();
 
-        // Connect nearby particles
+        // Connect nearby particles with red laser lines
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p1.x - p2.x;
           const dy = p1.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
 
-          if (dist < 130) {
+          if (dist < 135) {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(99, 102, 241, ${(1 - dist / 130) * 0.25})`;
-            ctx.lineWidth = 0.8;
+            ctx.strokeStyle = `rgba(239, 68, 68, ${(1 - dist / 135) * 0.32})`;
+            ctx.lineWidth = 0.85;
             ctx.stroke();
           }
         }
@@ -168,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!isDeleting && charIdx === currentRole.length) {
       isDeleting = true;
-      typeSpeed = 1800; // Pause at end
+      typeSpeed = 1800;
     } else if (isDeleting && charIdx === 0) {
       isDeleting = false;
       roleIdx = (roleIdx + 1) % roles.length;
@@ -252,13 +253,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnClear = document.getElementById('btn-clear');
 
   const liveTelemetryPool = [
-    { type: 'success', tag: 'ESP32', msg: 'Core 1 Gait Loop: 50Hz stable | Ankle angle: 92.4°' },
+    { type: 'info', tag: 'ESP32', msg: 'Core 1 Gait Loop: 50Hz stable | Ankle angle: 92.4°' },
     { type: 'warning', tag: 'STEPPER', msg: 'NEMA 17 Microstep: 3200 steps/rev | Speed: 800 RPM' },
-    { type: 'info', tag: 'SENSOR', msg: 'Inductive Proximity: Ferrous item detected in chute' },
-    { type: 'primary', tag: 'BLYNK', msg: 'Heartbeat OK | Latency: 24ms | RSSI: -54 dBm' },
+    { type: 'primary', tag: 'SENSOR', msg: 'Inductive Proximity: Ferrous item detected in chute' },
+    { type: 'info', tag: 'BLYNK', msg: 'Heartbeat OK | Latency: 24ms | RSSI: -54 dBm' },
     { type: 'success', tag: 'WEB-UI', msg: 'Client connected: /servo/angle?deg=180 [HTTP 200]' },
     { type: 'dim', tag: 'RAIN', msg: 'Analog ADC Value: 1023 (Dry State)' },
-    { type: 'warning', tag: 'ROBOT', msg: 'Right Hip Servo PWM: 1500us -> Center position locked' }
+    { type: 'primary', tag: 'ROBOT', msg: 'Right Hip Servo PWM: 1500us -> Center position locked' }
   ];
 
   if (hudConsole) {
@@ -272,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
       hudConsole.appendChild(line);
       hudConsole.scrollTop = hudConsole.scrollHeight;
 
-      // Keep only last 10 lines
       while (hudConsole.children.length > 10) {
         hudConsole.removeChild(hudConsole.firstChild);
       }
