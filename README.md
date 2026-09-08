@@ -1,17 +1,17 @@
-# 🌐 ALWINTR.github.io
+# 🌐 Alwin T R - Developer Portfolio & Robotics Showcase
 
-Official personal developer portfolio & robotics showcase for **ALWINTR**.
+Official personal portfolio website of **Alwin T R**.
 
 Live website: **[https://alwintr.github.io](https://alwintr.github.io)**
+LinkedIn: **[https://www.linkedin.com/in/alwintr](https://www.linkedin.com/in/alwintr)**
+GitHub: **[https://github.com/ALWINTR](https://github.com/ALWINTR)**
 
-## 🚀 Features
-- **Embedded Systems & Robotics Showcase**: Detailed overview of ESP32 bipedal robot, Blynk IoT controllers, web sliders, rain sensors, PIC16F RFID systems, and surveillance bots.
-- **AI Assistant Pair-Programming Transcripts**: Live links to conversation histories, circuit diagrams, and setup guides.
-- **Interactive Search & Category Filters**: Real-time project search and categorization.
-- **Modern Responsive Cyber-Glassmorphism UI**: Built with pure HTML5, CSS3, and modern vanilla JavaScript.
-
-## 🛠️ Built With
-- HTML5 / CSS3 (CSS Grid, Flexbox, Glassmorphism)
-- Vanilla JavaScript (GitHub API integration, dynamic filtering)
-- FontAwesome 6 & Google Fonts
-- Hosted on **GitHub Pages**
+## 🚀 Projects
+- **ESP32 Bipedal Walking Robot**: Two-legged walking robot with joint telemetry and gait coordination.
+- **Automated Waste Segregation System**: Smart waste classifier with stepper motor, servo flap, inductive & IR sensors.
+- **Blynk 2.0 180° Servo Controller**: Cloud-connected servo controller for ESP8266 and ESP32.
+- **ESP Webserver Servo Angle Controller**: Browser range slider with REST API.
+- **Arduino Rain Sensor Auto Shutter**: Weather detection and automatic servo shutter.
+- **SPYBOT Surveillance Robot**: Long-range reconnaissance rover with video and gas/metal detection.
+- **RFID Secure Access Control**: PIC16F877A access lock system with 16x2 LCD.
+- **Earthquake Monitoring System**: Seismic vibration detection and alert system.
