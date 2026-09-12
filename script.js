@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderCursor();
 
-    const clickables = document.querySelectorAll('a, button, input, .project-card, .domain-card, .matrix-card');
+    const clickables = document.querySelectorAll('a, button, input, .project-card, .domain-card, .matrix-card, .highlight-pill, .tech-tag');
     clickables.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (ring) {
@@ -245,7 +245,7 @@ document.addEventListener('DOMContentLoaded', () => {
     "Multi-Axis Joint Kinematics",
     "ROS2 & Gazebo Physical Simulation",
     "Multi-Sensor Industrial Automation",
-    "Microcontroller Systems (PIC, STM32, AVR)"
+    "Microcontroller Architecture (PIC, STM32, AVR)"
   ];
   let phraseIdx = 0;
   let charIdx = 0;
@@ -358,5 +358,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
-  });
+});
