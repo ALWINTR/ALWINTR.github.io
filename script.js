@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     renderCursor();
 
-    const clickables = document.querySelectorAll('a, button, input, .project-card, .domain-card, .matrix-card, .holo-card');
+    const clickables = document.querySelectorAll('a, button, input, .project-card, .domain-card, .matrix-card');
     clickables.forEach(el => {
       el.addEventListener('mouseenter', () => {
         if (ring) {
@@ -359,33 +359,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ------------------------------------------------------------------------
-  // 7. Copy Email to Clipboard
-  // ------------------------------------------------------------------------
-  const btnCopyEmail = document.getElementById('btn-copy-email');
-  if (btnCopyEmail) {
-    btnCopyEmail.addEventListener('click', () => {
-      const email = 'alwintr2003@gmail.com';
-      navigator.clipboard.writeText(email).then(() => {
-        showToast('Email copied to clipboard: ' + email);
-      }).catch(() => {
-        showToast('Email: ' + email);
-      });
-    });
-  }
-
-  // ------------------------------------------------------------------------
-  // 8. Toast Notification Manager
-  // ------------------------------------------------------------------------
-  function showToast(msg) {
-    const toast = document.getElementById('cyber-toast');
-    const toastMsg = document.getElementById('toast-msg');
-    if (toast && toastMsg) {
-      toastMsg.textContent = msg;
-      toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 3000);
-    }
-  }
-});
+  });
