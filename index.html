@@ -4,38 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alwin T R | Robotics & Embedded Systems Engineer</title>
-  <meta name="description" content="Professional Engineering Portfolio of Alwin T R - Robotics, Autonomous Mobile Systems, Embedded Firmware, Virtual Hardware Simulators, and IoT Architecture.">
+  <meta name="description" content="Cosmic Engineering Portfolio of Alwin T R - Robotics, Autonomous Mobile Systems, Embedded Firmware, Virtual Hardware Simulators, and IoT Architecture.">
   <meta name="author" content="Alwin T R">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Custom Cyber Red Cursor -->
+  <!-- Custom Cosmic Cyan Cursor -->
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
 
-  <!-- Interactive Background Canvas (Constellation / Cyber Circuit) -->
-  <canvas id="bg-canvas"></canvas>
-  <div class="bg-overlay"></div>
+  <!-- Interactive Milky Way Galaxy & Nebula Canvas -->
+  <canvas id="galaxy-canvas"></canvas>
+  <div class="cosmic-dust-overlay"></div>
 
-  <!-- Ambient Glowing Red Spheres -->
-  <div class="glow-sphere sphere-1"></div>
-  <div class="glow-sphere sphere-2"></div>
-  <div class="glow-sphere sphere-3"></div>
+  <!-- Ambient Glowing Cosmic Nebulae -->
+  <div class="nebula-sphere nebula-1"></div>
+  <div class="nebula-sphere nebula-2"></div>
+  <div class="nebula-sphere nebula-3"></div>
 
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#" class="nav-logo">
-        <span class="logo-symbol">&lt;/&gt;</span>
+        <span class="logo-symbol">&lt;🌌/&gt;</span>
         <span class="logo-text">ALWIN <span class="highlight">T R</span></span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about" class="nav-item"><i class="fa-solid fa-user"></i> About</a></li>
-        <li><a href="#simulator" class="nav-item"><i class="fa-solid fa-flask"></i> Hardware Lab</a></li>
+        <li><a href="#about" class="nav-item"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
+        <li><a href="#simulator" class="nav-item"><i class="fa-solid fa-flask-vial"></i> Hardware Lab</a></li>
         <li><a href="#projects" class="nav-item"><i class="fa-solid fa-microchip"></i> Projects</a></li>
         <li><a href="#timeline" class="nav-item"><i class="fa-solid fa-route"></i> Roadmap</a></li>
         <li><a href="#skills" class="nav-item"><i class="fa-solid fa-layer-group"></i> Tech Stack</a></li>
@@ -43,7 +43,7 @@
       </ul>
       <div class="nav-actions">
         <!-- SFX Audio Toggle Button -->
-        <button class="btn-sfx" id="sfx-toggle" title="Toggle Audio Synthesizer SFX">
+        <button class="btn-sfx" id="sfx-toggle" title="Toggle Cosmic Synthesizer SFX">
           <i class="fa-solid fa-volume-high" id="sfx-icon"></i> <span id="sfx-text">SFX: ON</span>
         </button>
         <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="btn btn-linkedin" title="Connect on LinkedIn">
@@ -73,13 +73,13 @@
         
         <p class="hero-description">
           Robotics & Automation graduate specialized in <strong>Autonomous Mobile Robotics (AMR)</strong>, 
-          <strong>ESP32 & Real-Time Firmware (FreeRTOS)</strong>, <strong>Multi-Axis Kinematics</strong>, 
+          <strong>ESP32 & Real-Time Firmware (FreeRTOS)</strong>, <strong>Multi-Axis Joint Kinematics</strong>, 
           <strong>Industrial Sorting Automation</strong>, and <strong>Cloud IoT Telemetry</strong>.
         </p>
 
         <div class="hero-buttons">
           <a href="#simulator" class="btn btn-primary magnetic-btn">
-            <i class="fa-solid fa-flask"></i> Launch Hardware Lab
+            <i class="fa-solid fa-flask-vial"></i> Launch Hardware Lab
           </a>
           <a href="#projects" class="btn btn-secondary magnetic-btn">
             <i class="fa-solid fa-microchip"></i> Explore Projects
@@ -127,16 +127,16 @@
         <div class="hud-window" data-tilt>
           <div class="hud-header">
             <div class="hud-dots">
-              <span class="hud-dot red"></span>
-              <span class="hud-dot yellow"></span>
+              <span class="hud-dot cyan"></span>
+              <span class="hud-dot blue"></span>
               <span class="hud-dot green"></span>
             </div>
-            <div class="hud-title"><i class="fa-solid fa-terminal"></i> REAL-TIME HARDWARE TELEMETRY</div>
+            <div class="hud-title"><i class="fa-solid fa-satellite"></i> COSMIC HARDWARE TELEMETRY</div>
             <div class="hud-status"><span class="hud-live-indicator"></span> LIVE BUS</div>
           </div>
           <div class="hud-body" id="hud-console">
-            <div class="hud-line dim"><span class="hud-prompt">[SYSTEM]</span> Microcontroller Subsystems Initialized (50Hz).</div>
-            <div class="hud-line success"><span class="hud-prompt">[ESP32]</span> Dual-Core FreeRTOS Active | WiFi STA Connected</div>
+            <div class="hud-line dim"><span class="hud-prompt">[SYSTEM]</span> Galactic Bus Subsystems Initialized (50Hz).</div>
+            <div class="hud-line success"><span class="hud-prompt">[ESP32]</span> Dual-Core FreeRTOS Active | WiFi Station Connected</div>
             <div class="hud-line info"><span class="hud-prompt">[ROBOT]</span> Biped Gait Kinematics: 180° Synchronized Trajectory</div>
             <div class="hud-line warning"><span class="hud-prompt">[WASTE]</span> Inductive Sensor: Metallic Object Detected</div>
             <div class="hud-line primary"><span class="hud-prompt">[BLYNK]</span> Datastream V0 -> High-Torque PWM Servo Armed</div>
@@ -157,7 +157,7 @@
        ========================================================================= -->
   <section class="section section-simulator" id="simulator">
     <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-flask"></i> INTERACTIVE HARDWARE LAB</div>
+      <div class="section-tag"><i class="fa-solid fa-flask-vial"></i> INTERACTIVE HARDWARE LAB</div>
       <h2 class="section-title">Virtual Embedded Hardware Simulators</h2>
       <p class="section-subtitle">Interact with real-time physics and signal simulators for PWM Servo Kinematics, Waste Classification, and Multi-Sensor Telemetry.</p>
     </div>

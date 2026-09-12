@@ -1,10 +1,10 @@
 // ==========================================================================
-// ALWINTR Professional Robotics & Embedded Systems Interactive Engine
+// ALWINTR Cosmic Milky Way & Interactive Robotics Physics Engine
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
   // ------------------------------------------------------------------------
-  // 1. Web Audio API Cyber Synthesizer Sound Engine
+  // 1. Web Audio API Cosmic Synthesizer Sound Engine
   // ------------------------------------------------------------------------
   let sfxEnabled = true;
   let audioCtx = null;
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function playSynthSound(freq, type = 'sine', duration = 0.05, gainLevel = 0.06) {
+  function playSynthSound(freq, type = 'sine', duration = 0.06, gainLevel = 0.05) {
     if (!sfxEnabled) return;
     try {
       initAudio();
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       osc.type = type;
       osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(freq * 0.5, audioCtx.currentTime + duration);
+      osc.frequency.exponentialRampToValueAtTime(freq * 0.55, audioCtx.currentTime + duration);
 
       gain.gain.setValueAtTime(gainLevel, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
       osc.start();
       osc.stop(audioCtx.currentTime + duration);
     } catch (e) {
-      // Audio autoplay policy handled
+      // Audio autoplay handled
     }
   }
 
@@ -56,18 +56,18 @@ document.addEventListener('DOMContentLoaded', () => {
         initAudio();
         sfxIcon.className = 'fa-solid fa-volume-high';
         sfxText.textContent = 'SFX: ON';
-        playSynthSound(600, 'sine', 0.08, 0.08);
-        showToast('Synthesizer SFX Enabled');
+        playSynthSound(680, 'sine', 0.08, 0.08);
+        showToast('Cosmic SFX Enabled');
       } else {
         sfxIcon.className = 'fa-solid fa-volume-xmark';
         sfxText.textContent = 'SFX: OFF';
-        showToast('Synthesizer SFX Muted');
+        showToast('Cosmic SFX Muted');
       }
     });
   }
 
   // ------------------------------------------------------------------------
-  // 2. Custom Cyber Cursor (Desktop Only)
+  // 2. Custom Cosmic Cyan Cursor (Desktop Only)
   // ------------------------------------------------------------------------
   const dot = document.getElementById('cursor-dot');
   const ring = document.getElementById('cursor-ring');
@@ -101,16 +101,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (ring) {
           ring.style.width = '48px';
           ring.style.height = '48px';
-          ring.style.borderColor = 'rgba(255, 23, 68, 0.95)';
-          ring.style.boxShadow = '0 0 20px rgba(255, 23, 68, 0.5)';
+          ring.style.borderColor = 'rgba(0, 240, 255, 0.95)';
+          ring.style.boxShadow = '0 0 22px rgba(0, 240, 255, 0.6)';
         }
-        playSynthSound(750, 'sine', 0.03, 0.02);
+        playSynthSound(780, 'sine', 0.03, 0.02);
       });
       el.addEventListener('mouseleave', () => {
         if (ring) {
           ring.style.width = '32px';
           ring.style.height = '32px';
-          ring.style.borderColor = 'rgba(239, 68, 68, 0.7)';
+          ring.style.borderColor = 'rgba(0, 240, 255, 0.7)';
           ring.style.boxShadow = 'none';
         }
       });
@@ -118,94 +118,185 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 3. Interactive Background Particle Canvas (Cyber Red Nodes)
+  // 3. Realistic Milky Way Galaxy Canvas & Shooting Stars Engine
   // ------------------------------------------------------------------------
-  const canvas = document.getElementById('bg-canvas');
-  if (canvas) {
-    const ctx = canvas.getContext('2d');
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
+  const galaxyCanvas = document.getElementById('galaxy-canvas');
+  if (galaxyCanvas) {
+    const ctx = galaxyCanvas.getContext('2d');
+    let width = galaxyCanvas.width = window.innerWidth;
+    let height = galaxyCanvas.height = window.innerHeight;
 
     window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
+      width = galaxyCanvas.width = window.innerWidth;
+      height = galaxyCanvas.height = window.innerHeight;
     });
 
-    const particles = [];
-    const count = Math.min(Math.floor((width * height) / 14000), 85);
-    const redColors = ['#ff1744', '#ef4444', '#ff4d6d', '#ff5252', '#ff8a9b'];
+    // Generate Milky Way Stars
+    const stars = [];
+    const starColors = ['#ffffff', '#e0f2fe', '#bae6fd', '#7dd3fc', '#38bdf8', '#00f0ff', '#818cf8'];
+    const starCount = Math.min(Math.floor((width * height) / 3800), 320);
 
-    for (let i = 0; i < count; i++) {
-      particles.push({
+    for (let i = 0; i < starCount; i++) {
+      stars.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        radius: Math.random() * 2 + 1,
-        color: redColors[Math.floor(Math.random() * redColors.length)]
+        size: Math.random() * 1.8 + 0.5,
+        baseAlpha: Math.random() * 0.7 + 0.3,
+        twinkleSpeed: Math.random() * 0.03 + 0.008,
+        twinklePhase: Math.random() * Math.PI * 2,
+        color: starColors[Math.floor(Math.random() * starColors.length)],
+        vx: (Math.random() - 0.5) * 0.18,
+        vy: (Math.random() - 0.5) * 0.18
       });
     }
 
-    let canvasMouseX = -1000;
-    let canvasMouseY = -1000;
+    // Generate Milky Way Cosmic Band Particles
+    const bandParticles = [];
+    const bandCount = 120;
+    for (let i = 0; i < bandCount; i++) {
+      bandParticles.push({
+        dist: Math.random() * width * 1.2 - width * 0.1,
+        spread: (Math.random() - 0.5) * 220,
+        radius: Math.random() * 3.5 + 1.2,
+        color: Math.random() > 0.4 ? 'rgba(0, 240, 255,' : 'rgba(99, 102, 241,',
+        alpha: Math.random() * 0.45 + 0.15,
+        speed: Math.random() * 0.2 + 0.05
+      });
+    }
+
+    // Shooting Stars (Meteors)
+    const meteors = [];
+    function spawnMeteor() {
+      if (meteors.length < 2 && Math.random() < 0.02) {
+        meteors.push({
+          x: Math.random() * width * 0.8,
+          y: Math.random() * (height * 0.4),
+          length: Math.random() * 80 + 50,
+          speed: Math.random() * 7 + 9,
+          angle: (Math.PI / 4) + (Math.random() - 0.5) * 0.2,
+          alpha: 1
+        });
+      }
+    }
+
+    let mouseXPos = -1000;
+    let mouseYPos = -1000;
 
     window.addEventListener('mousemove', (e) => {
-      canvasMouseX = e.clientX;
-      canvasMouseY = e.clientY;
+      mouseXPos = e.clientX;
+      mouseYPos = e.clientY;
     });
 
-    function drawParticles() {
+    function drawMilkyWay() {
       ctx.clearRect(0, 0, width, height);
 
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
+      // Draw Milky Way Central Diagonal Glow Band
+      const angle = -Math.PI / 6;
+      ctx.save();
+      ctx.translate(width / 2, height / 2);
+      ctx.rotate(angle);
 
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+      const grad = ctx.createLinearGradient(0, -180, 0, 180);
+      grad.addColorStop(0, 'rgba(0, 240, 255, 0)');
+      grad.addColorStop(0.3, 'rgba(56, 189, 248, 0.04)');
+      grad.addColorStop(0.5, 'rgba(0, 240, 255, 0.09)');
+      grad.addColorStop(0.7, 'rgba(99, 102, 241, 0.04)');
+      grad.addColorStop(1, 'rgba(99, 102, 241, 0)');
+
+      ctx.fillStyle = grad;
+      ctx.fillRect(-width, -180, width * 2, 360);
+      ctx.restore();
+
+      // Render Milky Way Dust
+      bandParticles.forEach(bp => {
+        bp.dist += bp.speed;
+        if (bp.dist > width * 1.2) bp.dist = -width * 0.1;
+
+        const bx = bp.dist;
+        const by = (height * 0.35) + (bp.dist * 0.35) + bp.spread;
 
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = p.color;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = p.color;
+        ctx.arc(bx, by, bp.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `${bp.color} ${bp.alpha})`;
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 10;
         ctx.fill();
         ctx.shadowBlur = 0;
+      });
 
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+      // Render Twinkling Stars
+      stars.forEach(s => {
+        s.x += s.vx;
+        s.y += s.vy;
+        s.twinklePhase += s.twinkleSpeed;
 
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(239, 68, 68, ${0.25 * (1 - dist / 120)})`;
-            ctx.lineWidth = 0.8;
-            ctx.stroke();
-          }
-        }
+        if (s.x < 0) s.x = width;
+        if (s.x > width) s.x = 0;
+        if (s.y < 0) s.y = height;
+        if (s.y > height) s.y = 0;
 
-        const mdx = p.x - canvasMouseX;
-        const mdy = p.y - canvasMouseY;
-        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-        if (mdist < 140) {
+        const currentAlpha = Math.max(0.1, s.baseAlpha + Math.sin(s.twinklePhase) * 0.4);
+
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+        ctx.fillStyle = s.color;
+        ctx.globalAlpha = currentAlpha;
+        ctx.shadowColor = s.color;
+        ctx.shadowBlur = 6;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.globalAlpha = 1;
+
+        // Mouse Starlight Magnet
+        const dx = s.x - mouseXPos;
+        const dy = s.y - mouseYPos;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 110) {
           ctx.beginPath();
-          ctx.moveTo(p.x, p.y);
-          ctx.lineTo(canvasMouseX, canvasMouseY);
-          ctx.strokeStyle = `rgba(255, 23, 68, ${0.45 * (1 - mdist / 140)})`;
-          ctx.lineWidth = 1.2;
+          ctx.moveTo(s.x, s.y);
+          ctx.lineTo(mouseXPos, mouseYPos);
+          ctx.strokeStyle = `rgba(0, 240, 255, ${0.35 * (1 - dist / 110)})`;
+          ctx.lineWidth = 0.8;
           ctx.stroke();
         }
+      });
+
+      // Render Meteors
+      spawnMeteor();
+      for (let i = meteors.length - 1; i >= 0; i--) {
+        const m = meteors[i];
+        m.x += Math.cos(m.angle) * m.speed;
+        m.y += Math.sin(m.angle) * m.speed;
+        m.alpha -= 0.015;
+
+        if (m.alpha <= 0 || m.x > width || m.y > height) {
+          meteors.splice(i, 1);
+          continue;
+        }
+
+        const tailX = m.x - Math.cos(m.angle) * m.length;
+        const tailY = m.y - Math.sin(m.angle) * m.length;
+
+        const meteorGrad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
+        meteorGrad.addColorStop(0, `rgba(255, 255, 255, ${m.alpha})`);
+        meteorGrad.addColorStop(0.3, `rgba(0, 240, 255, ${m.alpha * 0.8})`);
+        meteorGrad.addColorStop(1, `rgba(99, 102, 241, 0)`);
+
+        ctx.beginPath();
+        ctx.moveTo(m.x, m.y);
+        ctx.lineTo(tailX, tailY);
+        ctx.strokeStyle = meteorGrad;
+        ctx.lineWidth = 2.2;
+        ctx.lineCap = 'round';
+        ctx.shadowColor = '#00f0ff';
+        ctx.shadowBlur = 12;
+        ctx.stroke();
+        ctx.shadowBlur = 0;
       }
-      requestAnimationFrame(drawParticles);
+
+      requestAnimationFrame(drawMilkyWay);
     }
-    drawParticles();
+    drawMilkyWay();
   }
 
   // ------------------------------------------------------------------------
@@ -253,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
   typeLoop();
 
   // ------------------------------------------------------------------------
-  // 5. Virtual Simulator 1: 2D PWM Servo Kinematics Canvas
+  // 5. Virtual Simulator 1: 2D PWM Servo Kinematics Canvas (Cosmic Cyan)
   // ------------------------------------------------------------------------
   const servoCanvas = document.getElementById('servo-canvas');
   const servoSlider = document.getElementById('servo-slider');
@@ -279,10 +370,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ctx.clearRect(0, 0, w, h);
 
-    // Grid arc & degree tick marks
+    // Cosmic Grid Arc
     ctx.beginPath();
     ctx.arc(centerX, centerY, 110, Math.PI, 0, false);
-    ctx.strokeStyle = 'rgba(239, 68, 68, 0.2)';
+    ctx.strokeStyle = 'rgba(0, 240, 255, 0.25)';
     ctx.lineWidth = 2;
     ctx.setLineDash([4, 4]);
     ctx.stroke();
@@ -299,7 +390,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.beginPath();
       ctx.moveTo(x1, y1);
       ctx.lineTo(x2, y2);
-      ctx.strokeStyle = (deg === 0 || deg === 90 || deg === 180) ? '#ff1744' : 'rgba(255, 255, 255, 0.3)';
+      ctx.strokeStyle = (deg === 0 || deg === 90 || deg === 180) ? '#00f0ff' : 'rgba(255, 255, 255, 0.3)';
       ctx.lineWidth = (deg === 0 || deg === 90 || deg === 180) ? 2 : 1;
       ctx.stroke();
 
@@ -312,8 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Servo Base Enclosure
-    ctx.fillStyle = '#16080e';
-    ctx.strokeStyle = '#ef4444';
+    ctx.fillStyle = '#06112c';
+    ctx.strokeStyle = '#00f0ff';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.roundRect(centerX - 50, centerY - 15, 100, 40, [8, 8, 4, 4]);
@@ -323,9 +414,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Pivot Circle
     ctx.beginPath();
     ctx.arc(centerX, centerY, 20, 0, Math.PI * 2);
-    ctx.fillStyle = '#2a0a14';
+    ctx.fillStyle = '#0c1e48';
     ctx.fill();
-    ctx.strokeStyle = '#ff1744';
+    ctx.strokeStyle = '#38bdf8';
     ctx.lineWidth = 2.5;
     ctx.stroke();
 
@@ -339,11 +430,11 @@ document.addEventListener('DOMContentLoaded', () => {
     ctx.beginPath();
     ctx.moveTo(centerX, centerY);
     ctx.lineTo(endX, endY);
-    ctx.strokeStyle = '#ff1744';
+    ctx.strokeStyle = '#00f0ff';
     ctx.lineWidth = 6;
     ctx.lineCap = 'round';
-    ctx.shadowColor = '#ff1744';
-    ctx.shadowBlur = 15;
+    ctx.shadowColor = '#00f0ff';
+    ctx.shadowBlur = 18;
     ctx.stroke();
     ctx.shadowBlur = 0;
 
@@ -358,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tip marker
     ctx.beginPath();
     ctx.arc(endX, endY, 6, 0, Math.PI * 2);
-    ctx.fillStyle = '#ff1744';
+    ctx.fillStyle = '#00f0ff';
     ctx.fill();
     ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = 1.5;
@@ -402,7 +493,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isAutoSweep = false;
       if (btnAutoSweep) btnAutoSweep.classList.remove('active');
       targetAngle = parseFloat(e.target.value);
-      playSynthSound(400 + targetAngle * 3, 'sine', 0.02, 0.03);
+      playSynthSound(400 + targetAngle * 2.5, 'sine', 0.02, 0.03);
     });
   }
 
@@ -413,7 +504,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const val = parseFloat(btn.getAttribute('data-angle'));
       targetAngle = val;
       if (servoSlider) servoSlider.value = val;
-      playSynthSound(500 + val * 2, 'sine', 0.06, 0.06);
+      playSynthSound(500 + val * 2, 'sine', 0.06, 0.05);
     });
   });
 
@@ -422,7 +513,7 @@ document.addEventListener('DOMContentLoaded', () => {
       isAutoSweep = !isAutoSweep;
       btnAutoSweep.classList.toggle('active', isAutoSweep);
       if (isAutoSweep) {
-        playSynthSound(700, 'triangle', 0.1, 0.08);
+        playSynthSound(700, 'sine', 0.1, 0.08);
         showToast('Auto Sweep Mode: ON');
       } else {
         showToast('Auto Sweep Mode: OFF');
@@ -460,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playSynthSound(520, 'sine', 0.08, 0.08);
 
     if (sorterLog) {
-      sorterLog.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-accent"></i> Analyzing object in intake chute...`;
+      sorterLog.innerHTML = `<i class="fa-solid fa-spinner fa-spin text-primary"></i> Analyzing object in intake chute...`;
     }
 
     // Step 1: Sensor Detection
@@ -468,31 +559,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (type === 'metal') {
         if (indSensor) indSensor.classList.add('active');
         if (indStatus) indStatus.textContent = 'DETECTED (FERROUS METAL)';
-        playSynthSound(900, 'square', 0.12, 0.09);
-        if (sorterLog) sorterLog.innerHTML = `<i class="fa-solid fa-magnet text-accent"></i> <strong>Inductive Trigger</strong>: Metallic mass confirmed. Indexing carousel...`;
+        playSynthSound(900, 'square', 0.12, 0.08);
+        if (sorterLog) sorterLog.innerHTML = `<i class="fa-solid fa-magnet text-primary"></i> <strong>Inductive Trigger</strong>: Metallic mass confirmed. Indexing carousel...`;
       } else {
         if (indSensor) indSensor.classList.remove('active');
         if (indStatus) indStatus.textContent = 'STANDBY (NON-METALLIC)';
-        playSynthSound(450, 'sine', 0.06, 0.06);
-        if (sorterLog) sorterLog.innerHTML = `<i class="fa-solid fa-box text-primary"></i> <strong>IR Optical Sensor</strong>: Non-metallic item (${type.toUpperCase()}). Indexing carousel...`;
+        playSynthSound(450, 'sine', 0.06, 0.05);
+        if (sorterLog) sorterLog.innerHTML = `<i class="fa-solid fa-box text-accent"></i> <strong>IR Optical Sensor</strong>: Non-metallic item (${type.toUpperCase()}). Indexing carousel...`;
       }
 
       // Step 2: NEMA 17 Stepper Rotation
       setTimeout(() => {
-        let targetDiscRotation = 0;
         let flapDeg = 0;
         let flapText = 'CENTER (0°)';
 
         if (type === 'metal') {
-          targetDiscRotation = 0;
           flapDeg = -45;
           flapText = 'LEFT FLAP (-45° -> METAL CHUTE)';
         } else if (type === 'dry') {
-          targetDiscRotation = 120;
           flapDeg = 45;
           flapText = 'RIGHT FLAP (+45° -> DRY PLASTIC)';
         } else {
-          targetDiscRotation = 240;
           flapDeg = 0;
           flapText = 'STRAIGHT (0° -> WET COMPOST)';
         }
@@ -501,7 +588,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (stepperDisc) {
           stepperDisc.style.transform = `rotate(${currentDiscDeg}deg)`;
         }
-        playSynthSound(320, 'sawtooth', 0.25, 0.07);
+        playSynthSound(340, 'sawtooth', 0.22, 0.06);
 
         // Step 3: Servo Flap Deflection
         setTimeout(() => {
@@ -511,7 +598,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (arm) arm.style.transform = `rotate(${flapDeg}deg)`;
           }
           if (flapStatus) flapStatus.textContent = flapText;
-          playSynthSound(720, 'triangle', 0.09, 0.08);
+          playSynthSound(750, 'sine', 0.09, 0.08);
 
           if (sorterLog) {
             sorterLog.innerHTML = `<i class="fa-solid fa-circle-check text-success"></i> <strong>Sorted Successfully</strong>: Routed into <strong>${type.toUpperCase()}</strong> partition.`;
@@ -580,7 +667,7 @@ document.addEventListener('DOMContentLoaded', () => {
     rainSlider.addEventListener('input', (e) => {
       const val = parseInt(e.target.value);
       updateRainFeedback(val);
-      playSynthSound(300 + val * 0.5, 'sine', 0.02, 0.02);
+      playSynthSound(320 + val * 0.4, 'sine', 0.02, 0.02);
     });
   }
 
@@ -588,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
     vibSlider.addEventListener('input', (e) => {
       const val = parseInt(e.target.value);
       updateVibFeedback(val);
-      playSynthSound(200 + val * 1.5, 'sawtooth', 0.03, 0.03);
+      playSynthSound(220 + val * 1.4, 'sawtooth', 0.03, 0.02);
     });
   }
 
@@ -596,7 +683,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnTestRain.addEventListener('click', () => {
       if (rainSlider) rainSlider.value = 180;
       updateRainFeedback(180);
-      playSynthSound(450, 'sine', 0.1, 0.08);
+      playSynthSound(480, 'sine', 0.1, 0.08);
       showToast('Rain Probe: 180 ADC (Heavy Rain Injected)');
     });
   }
@@ -605,7 +692,7 @@ document.addEventListener('DOMContentLoaded', () => {
     btnTestQuake.addEventListener('click', () => {
       if (vibSlider) vibSlider.value = 520;
       updateVibFeedback(520);
-      playSynthSound(850, 'square', 0.15, 0.1);
+      playSynthSound(850, 'square', 0.15, 0.09);
       showToast('MPU6050: 5.20G Seismic Event Triggered');
     });
   }
@@ -616,7 +703,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (vibSlider) vibSlider.value = 12;
       updateRainFeedback(1023);
       updateVibFeedback(12);
-      playSynthSound(500, 'triangle', 0.08, 0.06);
+      playSynthSound(520, 'sine', 0.08, 0.06);
       showToast('Sensor Matrix Reset to Calibrated Baseline');
     });
   }
@@ -786,7 +873,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modalTitle.innerHTML = `<i class="fa-solid fa-microchip"></i> ${data.title}`;
         modalBody.innerHTML = data.content;
         modalBackdrop.classList.add('active');
-        playSynthSound(650, 'sine', 0.1, 0.08);
+        playSynthSound(680, 'sine', 0.1, 0.08);
       }
     });
   });
@@ -881,10 +968,10 @@ document.addEventListener('DOMContentLoaded', () => {
       btnPing.addEventListener('click', () => {
         const line = document.createElement('div');
         line.className = 'hud-line info';
-        line.innerHTML = `<span class="hud-prompt">[PING]</span> Bus Latency: 11ms | All 8 peripheral hardware nodes ONLINE`;
+        line.innerHTML = `<span class="hud-prompt">[PING]</span> Galactic Bus Latency: 9ms | All 8 peripheral hardware nodes ONLINE`;
         hudConsole.appendChild(line);
         hudConsole.scrollTop = hudConsole.scrollHeight;
-        playSynthSound(800, 'sine', 0.1, 0.08);
+        playSynthSound(820, 'sine', 0.1, 0.08);
       });
     }
 
@@ -895,14 +982,14 @@ document.addEventListener('DOMContentLoaded', () => {
         line.innerHTML = `<span class="hud-prompt">[DIAG]</span> PWM Timers: PASS | I2C Bus: 400kHz PASS | FreeRTOS Heap: 184 KB Free`;
         hudConsole.appendChild(line);
         hudConsole.scrollTop = hudConsole.scrollHeight;
-        playSynthSound(950, 'triangle', 0.12, 0.08);
+        playSynthSound(980, 'triangle', 0.12, 0.08);
       });
     }
 
     if (btnClear) {
       btnClear.addEventListener('click', () => {
-        hudConsole.innerHTML = '<div class="hud-line dim"><span class="hud-prompt">[SYSTEM]</span> Telemetry buffer cleared. Streaming live bus events...</div>';
-        playSynthSound(350, 'sine', 0.06, 0.06);
+        hudConsole.innerHTML = '<div class="hud-line dim"><span class="hud-prompt">[SYSTEM]</span> Telemetry buffer cleared. Streaming live cosmic bus events...</div>';
+        playSynthSound(380, 'sine', 0.06, 0.06);
       });
     }
   }
@@ -920,7 +1007,7 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter');
       applyFilterAndSearch(filter, searchInput ? searchInput.value.toLowerCase() : '');
-      playSynthSound(550, 'sine', 0.04, 0.04);
+      playSynthSound(580, 'sine', 0.04, 0.04);
     });
   });
 
@@ -961,7 +1048,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const email = 'alwintr2003@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast('Email copied to clipboard: ' + email);
-        playSynthSound(850, 'sine', 0.1, 0.08);
+        playSynthSound(880, 'sine', 0.1, 0.08);
       }).catch(() => {
         showToast('Email: ' + email);
       });
