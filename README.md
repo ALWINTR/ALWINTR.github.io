@@ -1,72 +1,71 @@
-# 🌌 Alwin T R — Official Robotics & Embedded Systems Engineer Portfolio
+# Executive Engineering Portfolio and Project Showcase
 
-[![Live Portfolio](https://img.shields.io/badge/Live_Website-alwintr.github.io-00f0ff?style=for-the-badge&logo=googlechrome&logoColor=black)](https://alwintr.github.io)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Alwin_T_R-0a66c2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alwintr)
-[![GitHub Profile](https://img.shields.io/badge/GitHub-ALWINTR-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ALWINTR)
+[![Live Website](https://img.shields.io/badge/Live_Portfolio-alwintr.github.io-00f0ff?style=for-the-badge&logo=googlechrome&logoColor=black)](https://alwintr.github.io)
+[![Developer](https://img.shields.io/badge/Developer-Alwin_T_R-0284c7?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alwintr)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-The official personal engineering portfolio and embedded robotics repository showcase of **Alwin T R**, deployed on GitHub Pages. Built with custom cosmic Milky Way visual aesthetics, interactive 3D parallax tilt, real-time repository search, and comprehensive technical competency matrices.
+The official personal engineering portfolio and embedded robotics showcase of **Alwin T R**, deployed on GitHub Pages. Engineered with pure vanilla web technologies, custom cosmic Milky Way starfield physics, interactive 3D parallax tilt, real-time repository search, and technical competency matrices.
 
 ---
 
-## 🌟 Live Production URL
+## Live Production Link
 
-Visit the live website at: **[https://alwintr.github.io](https://alwintr.github.io)**
+The live portfolio is accessible at: **[https://alwintr.github.io](https://alwintr.github.io)**
 
 ---
 
-## 🚀 Key Features & Architectural Innovations
+## System Features and Technical Architecture
 
-- **Cosmic Milky Way Starfield Engine**: Real-time canvas-rendered diagonal galactic glow band, twinkling starlight particles, dynamic shooting meteors, and cursor starlight magnetism.
+- **Cosmic Milky Way Canvas Engine**: Real-time canvas-rendered diagonal galactic glow band, twinkling starlight particles, dynamic shooting meteors, and cursor starlight magnetism.
 - **Executive Centered Hero Section**: High-impact typography with gradient glow, high-tech engineering HUD badge, and dynamic multi-phrase typewriter rotation.
-- **Engineering Specialization Pillars**: Glassmorphic cards detailing Autonomous Robotics & Kinematics, Real-Time Embedded Firmware, Industrial Multi-Sensor Automation, and IoT Telemetry.
-- **Interactive Project Showcase**: Real-time multi-tag category filter (*Robotics*, *Automation*, *IoT*, *Embedded Security*) and live instant keyword search bar.
-- **Technical Competency Matrix**: 6 structured panels detailing microcontrollers, low-level languages, robotics toolchains, hardware bus protocols, wireless ecosystems, and EDA suites.
+- **Engineering Specialization Pillars**: Glassmorphic cards detailing Autonomous Robotics and Kinematics, Real-Time Embedded Firmware, Industrial Multi-Sensor Automation, and IoT Telemetry.
+- **Interactive Project Showcase**: Real-time multi-tag category filter and live instant keyword search bar.
+- **Technical Competency Matrix**: Six structured panels detailing microcontrollers, low-level languages, robotics toolchains, hardware bus protocols, wireless ecosystems, and EDA suites.
 - **Engineering Milestones Roadmap**: Interactive vertical timeline tracing historical embedded milestones.
-- **Fully Responsive & Performance-Optimized**: Zero external CSS bloat, pure vanilla JavaScript, and sub-second loading speeds.
+- **Optimized Performance**: Zero external heavy libraries, pure CSS3 glassmorphism, responsive breakpoints across mobile, tablet, and ultra-wide displays.
 
 ---
 
-## 📂 Project Structure
+## Repository Structure
 
 ```
 ALWINTR.github.io/
-├── index.html       # Primary semantic HTML5 architecture
-├── style.css        # Cosmic Milky Way styling, glassmorphism & responsive breakpoints
-├── script.js       # Starfield canvas, shooting meteors, tilt physics, typewriter, filters
+├── index.html       # Semantic HTML5 architecture and OpenGraph metadata
+├── style.css        # Cosmic Milky Way styling, glassmorphism and animations
+├── script.js        # Starfield canvas, shooting meteors, tilt physics, typewriter
 └── README.md        # Technical portfolio documentation
 ```
 
 ---
 
-## 🛠️ Local Development & Testing
+## Local Development Instructions
 
-To preview the portfolio locally:
+To test or preview the portfolio locally:
 
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/ALWINTR/ALWINTR.github.io.git
 
 # Navigate into directory
 cd ALWINTR.github.io
 
-# Start local lightweight HTTP server
+# Start lightweight local HTTP server
 python -m http.server 8000
 ```
 
-Open your browser and navigate to `http://localhost:8000`.
+Open a web browser and navigate to `http://localhost:8000`.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
-**Alwin T R** — Robotics & Automation Engineer  
-- 💼 LinkedIn: [linkedin.com/in/alwintr](https://www.linkedin.com/in/alwintr)  
-- 🌌 Portfolio: [alwintr.github.io](https://alwintr.github.io)  
-- 💻 GitHub: [github.com/ALWINTR](https://github.com/ALWINTR)
+**Alwin T R** - Robotics and Automation Engineer  
+- LinkedIn: [linkedin.com/in/alwintr](https://www.linkedin.com/in/alwintr)  
+- Portfolio: [alwintr.github.io](https://alwintr.github.io)  
+- GitHub: [github.com/ALWINTR](https://github.com/ALWINTR)
 
 ---
 
-## 📄 License
+## License
 
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
