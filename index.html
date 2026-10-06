@@ -10,10 +10,10 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://alwintr.github.io">
   <meta property="og:title" content="Alwin T R | Robotics & Embedded Systems Engineer">
-  <meta property="og:description" content="Official Engineering Portfolio of Alwin T R - Robotics, Embedded Firmware, FreeRTOS, ROS2, and IoT Architecture.">
+  <meta property="og:description" content="Official Engineering Portfolio of Alwin T R - 17 Robotics, Embedded Firmware, FreeRTOS, ROS2, and IoT Projects.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Alwin T R | Robotics & Embedded Systems Engineer">
-  <meta name="twitter:description" content="Official Engineering Portfolio of Alwin T R - Robotics, Embedded Firmware, FreeRTOS, ROS2, and IoT Architecture.">
+  <meta name="twitter:description" content="Official Engineering Portfolio of Alwin T R - 17 Robotics, Embedded Firmware, FreeRTOS, ROS2, and IoT Projects.">
   <meta name="description" content="Official Engineering Portfolio of Alwin T R - Robotics & Automation, Embedded Firmware, FreeRTOS, ROS2, and IoT Architecture.">
   <meta name="author" content="Alwin T R">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,6 +23,9 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
+
   <!-- Custom Cosmic Starlight Cursor -->
   <div class="cursor-dot" id="cursor-dot"></div>
   <div class="cursor-ring" id="cursor-ring"></div>
@@ -43,12 +46,13 @@
         <span class="logo-symbol">&lt;🌌/&gt;</span>
         <span class="logo-text">ALWIN <span class="highlight">T R</span></span>
       </a>
-      <ul class="nav-links">
+      <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-item"><i class="fa-solid fa-user-astronaut"></i> About</a></li>
         <li><a href="#domains" class="nav-item"><i class="fa-solid fa-layer-group"></i> Domains</a></li>
         <li><a href="#projects" class="nav-item"><i class="fa-solid fa-microchip"></i> Projects</a></li>
         <li><a href="#tech-stack" class="nav-item"><i class="fa-solid fa-code"></i> Tech Matrix</a></li>
         <li><a href="#journey" class="nav-item"><i class="fa-solid fa-route"></i> Roadmap</a></li>
+        <li><a href="#contact" class="nav-item"><i class="fa-solid fa-envelope"></i> Contact</a></li>
       </ul>
       <div class="nav-actions">
         <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="btn btn-linkedin" title="Connect on LinkedIn">
@@ -57,6 +61,9 @@
         <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github" title="View GitHub Profile">
           <i class="fa-brands fa-github"></i> <span>GitHub</span>
         </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
       </div>
     </div>
   </nav>
@@ -71,7 +78,7 @@
         <!-- High-Tech Engineering HUD Badge -->
         <div class="hero-tech-badge">
           <i class="fa-solid fa-microchip text-cyan"></i>
-          <span>ROBOTICS & EMBEDDED SYSTEMS ARCHITECTURE</span>
+          <span>ROBOTICS & EMBEDDED SYSTEMS ARCHITECT</span>
           <span class="badge-divider">•</span>
           <span class="badge-highlight">AUTONOMOUS SYSTEMS</span>
         </div>
@@ -85,18 +92,21 @@
         <p class="hero-description">
           Robotics & Automation graduate specialized in architecting <strong>intelligent autonomous mobile robots</strong>, 
           <strong>real-time embedded firmware</strong> (FreeRTOS / Bare-Metal C++), <strong>industrial sensor fusion automation</strong>, 
-          and <strong>resilient wireless IoT telemetry</strong>.
+          and <strong>resilient wireless IoT telemetry</strong>. Showcasing 17 fully documented engineering repositories.
         </p>
 
         <div class="hero-buttons">
           <a href="#projects" class="btn btn-primary magnetic-btn">
-            <i class="fa-solid fa-microchip"></i> Explore Featured Projects
+            <i class="fa-solid fa-microchip"></i> Explore All 17 Projects
           </a>
-          <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="btn btn-secondary magnetic-btn">
+          <a href="#contact" class="btn btn-secondary magnetic-btn">
+            <i class="fa-solid fa-envelope"></i> Initialize Contact
+          </a>
+          <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="btn btn-linkedin-hero magnetic-btn">
             <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
           </a>
           <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-tertiary magnetic-btn">
-            <i class="fa-brands fa-github"></i> View GitHub Repositories
+            <i class="fa-brands fa-github"></i> GitHub Repositories
           </a>
         </div>
 
@@ -112,7 +122,7 @@
           </div>
           <div class="highlight-pill">
             <i class="fa-solid fa-network-wired text-indigo"></i>
-            <span>UART • SPI • I2C • CAN • Blynk IoT</span>
+            <span>UART • SPI • I2C • CAN • mmWave Radar</span>
           </div>
           <div class="highlight-pill">
             <i class="fa-solid fa-cubes text-cyan"></i>
@@ -201,62 +211,69 @@
   </section>
 
   <!-- =========================================================================
-       SECTION 2: FEATURED REPOSITORY SHOWCASE
+       SECTION 2: FEATURED REPOSITORY SHOWCASE (All 17 Projects)
        ========================================================================= -->
   <section class="section" id="projects">
     <div class="section-header" data-reveal="fade-up">
       <div class="section-tag"><i class="fa-solid fa-microchip"></i> PORTFOLIO REPOSITORIES</div>
       <h2 class="section-title">Featured Hardware & Robotics Projects</h2>
-      <p class="section-subtitle">Real-world embedded systems, robotics rovers, and firmware repositories built and maintained on GitHub.</p>
+      <p class="section-subtitle">17 physical embedded systems, autonomous robotics rovers, and firmware repositories built and maintained on GitHub.</p>
     </div>
 
     <!-- Category Filters & Search -->
     <div class="controls-wrapper" data-reveal="fade-up">
       <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects</button>
-        <button class="filter-btn" data-filter="robotics"><i class="fa-solid fa-robot"></i> Robotics & Bipeds</button>
-        <button class="filter-btn" data-filter="automation"><i class="fa-solid fa-recycle"></i> Automation & Sensors</button>
-        <button class="filter-btn" data-filter="iot"><i class="fa-solid fa-wifi"></i> IoT & Cloud</button>
-        <button class="filter-btn" data-filter="security"><i class="fa-solid fa-shield-halved"></i> Embedded Security</button>
+        <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects <span class="filter-count">17</span></button>
+        <button class="filter-btn" data-filter="robotics"><i class="fa-solid fa-robot"></i> Robotics & Kinematics <span class="filter-count">3</span></button>
+        <button class="filter-btn" data-filter="automation"><i class="fa-solid fa-gears"></i> Industrial Automation <span class="filter-count">3</span></button>
+        <button class="filter-btn" data-filter="firmware"><i class="fa-solid fa-microchip"></i> Embedded Firmware <span class="filter-count">4</span></button>
+        <button class="filter-btn" data-filter="sensors"><i class="fa-solid fa-satellite-dish"></i> Radar & Sensing <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="iot"><i class="fa-solid fa-wifi"></i> IoT & Telemetry <span class="filter-count">2</span></button>
       </div>
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="project-search" placeholder="Search projects by MCU, protocol, or tag...">
+        <input type="text" id="project-search" placeholder="Search by MCU, sensor, protocol, or title...">
       </div>
+    </div>
+
+    <!-- Active Count Counter -->
+    <div class="project-count-bar" data-reveal="fade-up">
+      <span>Showing <strong id="project-count">17</strong> of 17 Engineering Repositories</span>
     </div>
 
     <!-- Project Cards Grid -->
     <div class="projects-grid" id="projects-grid">
-      <!-- Project 1: SpyBot Surveillance Robot -->
-      <div class="project-card" data-category="robotics" data-tilt data-reveal="zoom-in">
+      <!-- Project: Autonomous Reconnaissance Rover with Gas and Metal Detection -->
+      <div class="project-card" data-category="robotics" data-project="rover" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon cyan"><i class="fa-solid fa-shield-halved"></i></div>
           <div class="card-badges">
-            <span class="badge badge-cyan">ESP32 / C++</span>
+            <span class="badge badge-cyan">ESP32 / Dual-Core</span>
             <span class="badge badge-cat">Robotics</span>
           </div>
         </div>
-        <h3 class="card-title">SpyBot Surveillance Robot</h3>
+        <h3 class="card-title">Autonomous Reconnaissance Rover with Gas and Metal Detection</h3>
         <p class="card-desc">
-          Long-range tele-operated reconnaissance vehicle featuring real-time wireless video transmission, hazardous combustible gas detection, and inductive metal detection for hazardous search-and-rescue.
+          Long-range tele-operated reconnaissance vehicle featuring real-time wireless video transmission, hazardous combustible gas leak detection, and inductive metal proximity sensing for dangerous environments.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>MCU:</strong> ESP32 & Arduino</div>
-          <div class="spec-item"><strong>Sensors:</strong> MQ-2 Gas & Inductive Metal</div>
-          <div class="spec-item"><strong>Motors:</strong> Dual L298N Differential Drive</div>
+          <div class="spec-item"><strong>MCU:</strong> ESP32 Dual-Core & Arduino Uno</div><div class="spec-item"><strong>Sensors:</strong> MQ-2 Combustible Gas & Inductive Proximity</div><div class="spec-item"><strong>Motors:</strong> Dual L298N H-Bridge • 4WD Geared Chassis</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="rover" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 2: Automated Waste Segregation System -->
-      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
+      <!-- Project: Automated Multi Material Waste Classification System -->
+      <div class="project-card" data-category="automation" data-project="waste-carousel" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon blue"><i class="fa-solid fa-recycle"></i></div>
           <div class="card-badges">
@@ -264,27 +281,28 @@
             <span class="badge badge-cat">Industrial Automation</span>
           </div>
         </div>
-        <h3 class="card-title">Automated Waste Segregation System</h3>
+        <h3 class="card-title">Automated Multi Material Waste Classification System</h3>
         <p class="card-desc">
-          Automated multi-material classification station utilizing NEMA 17 stepper motor carousel indexing, inductive metal detection, IR drop detection, and servo-actuated sorting flaps.
+          Closed-loop industrial waste classification station utilizing precision NEMA 17 stepper carousel indexing, inductive metal detection, infrared drop verification, and high-speed servo diversion flaps.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Actuation:</strong> NEMA 17 + A4988 (1/16 Step)</div>
-          <div class="spec-item"><strong>Sensors:</strong> Inductive Proximity & IR</div>
-          <div class="spec-item"><strong>Sorting:</strong> High-Speed SG90 Servo Flap</div>
+          <div class="spec-item"><strong>Actuation:</strong> NEMA 17 Stepper + A4988 (1/16 Microstepping)</div><div class="spec-item"><strong>Sensors:</strong> Inductive Proximity & TCRT5000 IR Drop Beam</div><div class="spec-item"><strong>Sorting:</strong> High-Speed SG90 Metal-Gear Servo Flap</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="waste-carousel" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 3: ESP32 Bipedal Walking Robot -->
-      <div class="project-card" data-category="robotics" data-tilt data-reveal="zoom-in">
+      <!-- Project: ESP32 4 DOF Bipedal Walking Robot with FreeRTOS Kinematics -->
+      <div class="project-card" data-category="robotics" data-project="biped" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon cyan"><i class="fa-solid fa-robot"></i></div>
           <div class="card-badges">
@@ -292,27 +310,28 @@
             <span class="badge badge-cat">Kinematics</span>
           </div>
         </div>
-        <h3 class="card-title">ESP32 Bipedal Walking Robot</h3>
+        <h3 class="card-title">ESP32 4 DOF Bipedal Walking Robot with FreeRTOS Kinematics</h3>
         <p class="card-desc">
-          Four-DOF bipedal walking robot featuring synchronized hip and ankle inverse kinematics, multi-channel 16-bit PWM timer coordination, and real-time serial telemetry streaming.
+          Four-DOF bipedal walking robot featuring synchronized hip and ankle inverse kinematics, multi-channel 16-bit hardware PWM timers, and real-time serial telemetry running on FreeRTOS Core 1.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Firmware:</strong> ESP32 FreeRTOS Core 1</div>
-          <div class="spec-item"><strong>Actuators:</strong> MG996R Metal Gear Servos</div>
-          <div class="spec-item"><strong>Resolution:</strong> 16-Bit LEDC PWM (50Hz)</div>
+          <div class="spec-item"><strong>Firmware:</strong> ESP32 FreeRTOS Kernel (Core 1 Kinematics)</div><div class="spec-item"><strong>Actuators:</strong> 4x MG996R High-Torque Servos (13 kg-cm)</div><div class="spec-item"><strong>Timers:</strong> 16-Bit LEDC Hardware PWM (50Hz Carrier)</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="biped" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 4: RFID Secure Access Control -->
-      <div class="project-card" data-category="security" data-tilt data-reveal="zoom-in">
+      <!-- Project: RFID Secure Access Control and Authentication System (PIC16F877A) -->
+      <div class="project-card" data-category="firmware" data-project="rfid" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon indigo"><i class="fa-solid fa-id-card"></i></div>
           <div class="card-badges">
@@ -320,27 +339,28 @@
             <span class="badge badge-cat">Embedded Security</span>
           </div>
         </div>
-        <h3 class="card-title">RFID Secure Access Control</h3>
+        <h3 class="card-title">RFID Secure Access Control and Authentication System (PIC16F877A)</h3>
         <p class="card-desc">
-          High-security embedded credential validation station powered by PIC16F877A microcontroller, featuring 13.56MHz RFID card reader, 16x2 alphanumeric LCD feedback, and servo lock control.
+          High-security embedded hardware access validator powered by Microchip PIC16F877A, featuring 125kHz RFID card reader, internal EEPROM credential whitelist, 16x2 LCD status, and electronic strike relay.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>MCU:</strong> PIC16F877A (20MHz)</div>
-          <div class="spec-item"><strong>Reader:</strong> RC522 SPI 13.56MHz RFID</div>
-          <div class="spec-item"><strong>Display:</strong> 16x2 HD44780 Parallel LCD</div>
+          <div class="spec-item"><strong>MCU:</strong> Microchip PIC16F877A (20MHz Crystal)</div><div class="spec-item"><strong>Reader:</strong> EM-18 RFID Reader (Hardware USART)</div><div class="spec-item"><strong>Actuators:</strong> 12V Solenoid Door Strike Relay & Piezo Siren</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="rfid" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 5: Earthquake Monitoring System -->
-      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
+      <!-- Project: Real Time Seismic Vibration and Earthquake Early Warning System -->
+      <div class="project-card" data-category="sensors" data-project="seismic" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon blue"><i class="fa-solid fa-volcano"></i></div>
           <div class="card-badges">
@@ -348,27 +368,28 @@
             <span class="badge badge-cat">Seismic Sensor</span>
           </div>
         </div>
-        <h3 class="card-title">Earthquake Monitoring & Seismic Alarm</h3>
+        <h3 class="card-title">Real Time Seismic Vibration and Earthquake Early Warning System</h3>
         <p class="card-desc">
-          Real-time tri-axial seismic acceleration detection system with analog noise filtering, dynamic threshold calibration, acoustic alarm triggering, and LCD vector magnitude reporting.
+          Real-time tri-axial seismic acceleration detection system with analog noise filtering, dynamic baseline calibration, acoustic alarm triggering, and OLED vector magnitude telemetry.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Accelerometer:</strong> ADXL335 3-Axis Analog</div>
-          <div class="spec-item"><strong>Processing:</strong> 10-Bit ADC Vector Sampling</div>
-          <div class="spec-item"><strong>Alerts:</strong> Piezo Siren + Status LED Array</div>
+          <div class="spec-item"><strong>Accelerometer:</strong> ADXL335 3-Axis Analog (±3g Dynamic Range)</div><div class="spec-item"><strong>Processing:</strong> 10-Bit ADC Vector Sampling at 100Hz</div><div class="spec-item"><strong>Display & Alert:</strong> 0.96" I2C SSD1306 OLED + 85dB Siren</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="seismic" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 6: Rain Sensor Auto Shutter -->
-      <div class="project-card" data-category="automation" data-tilt data-reveal="zoom-in">
+      <!-- Project: Automated Rain Responsive Shutter and Protection Mechanism -->
+      <div class="project-card" data-category="automation" data-project="rain-shutter" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon cyan"><i class="fa-solid fa-cloud-showers-heavy"></i></div>
           <div class="card-badges">
@@ -376,27 +397,28 @@
             <span class="badge badge-cat">Weather Automation</span>
           </div>
         </div>
-        <h3 class="card-title">Arduino Rain Sensor Auto Shutter</h3>
+        <h3 class="card-title">Automated Rain Responsive Shutter and Protection Mechanism</h3>
         <p class="card-desc">
           Automated weather-responsive protective shutter system utilizing FC-37 precipitation sensor, software hysteresis debounce filter, and precision SG90 servo angle actuation.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Precipitation:</strong> FC-37 Nickel Sensor Plate</div>
-          <div class="spec-item"><strong>Comparator:</strong> LM393 Dual Differential</div>
-          <div class="spec-item"><strong>Actuation:</strong> Microsecond Servo Timing</div>
+          <div class="spec-item"><strong>Precipitation:</strong> FC-37 Nickel Sensor Plate + LM393 Dual Comparator</div><div class="spec-item"><strong>Logic:</strong> Dual-Threshold Analog & Digital Hysteresis Filter</div><div class="spec-item"><strong>Actuation:</strong> Microsecond PWM Servo Deployment (0° to 180°)</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Automated-Rain-Responsive-Shutter-and-Protection-Mechanism" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/Automated-Rain-Responsive-Shutter-and-Protection-Mechanism" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/Automated-Rain-Responsive-Shutter-and-Protection-Mechanism/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/Automated-Rain-Responsive-Shutter-and-Protection-Mechanism/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="rain-shutter" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 7: ESP Webserver Servo Controller -->
-      <div class="project-card" data-category="iot" data-tilt data-reveal="zoom-in">
+      <!-- Project: ESP Asynchronous Web Server Real Time Servo Controller -->
+      <div class="project-card" data-category="iot" data-project="webserver-servo" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon indigo"><i class="fa-solid fa-globe"></i></div>
           <div class="card-badges">
@@ -404,27 +426,28 @@
             <span class="badge badge-cat">Web Telemetry</span>
           </div>
         </div>
-        <h3 class="card-title">ESP Webserver Servo Controller</h3>
+        <h3 class="card-title">ESP Asynchronous Web Server Real Time Servo Controller</h3>
         <p class="card-desc">
           Embedded asynchronous HTTP web server hosted directly on ESP microcontrollers delivering an interactive browser slider UI for multi-angle servo motor telemetry and PWM calibration.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Stack:</strong> ESPAsyncWebServer + REST</div>
-          <div class="spec-item"><strong>Wireless:</strong> 802.11 b/g/n SoftAP & STA</div>
-          <div class="spec-item"><strong>Control:</strong> Real-Time AJAX Telemetry</div>
+          <div class="spec-item"><strong>Stack:</strong> ESPAsyncWebServer + RESTful AJAX Endpoints</div><div class="spec-item"><strong>Network:</strong> 802.11 b/g/n Wi-Fi SoftAP and Station Modes</div><div class="spec-item"><strong>Actuation:</strong> Instantaneous Non-Blocking PWM Pulse Modulation (<20ms)</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/ESP-Asynchronous-Web-Server-Real-Time-Servo-Controller" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/ESP-Asynchronous-Web-Server-Real-Time-Servo-Controller" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/ESP-Asynchronous-Web-Server-Real-Time-Servo-Controller/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/ESP-Asynchronous-Web-Server-Real-Time-Servo-Controller/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="webserver-servo" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
 
-      <!-- Project 8: Blynk 2.0 Cloud Servo Controller -->
-      <div class="project-card" data-category="iot" data-tilt data-reveal="zoom-in">
+      <!-- Project: Blynk Cloud Connected Real Time Servo Actuation Framework -->
+      <div class="project-card" data-category="iot" data-project="blynk-servo" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon blue"><i class="fa-solid fa-cloud-arrow-up"></i></div>
           <div class="card-badges">
@@ -432,22 +455,284 @@
             <span class="badge badge-cat">Cloud IoT</span>
           </div>
         </div>
-        <h3 class="card-title">Blynk 2.0 Cloud Servo Controller</h3>
+        <h3 class="card-title">Blynk Cloud Connected Real Time Servo Actuation Framework</h3>
         <p class="card-desc">
-          Enterprise IoT actuator framework connecting ESP32 to Blynk 2.0 Cloud, featuring bidirectional Virtual Pin telemetry, auto-reconnection state machines, and angle telemetry sync.
+          Cloud IoT actuator framework connecting ESP32 to Blynk 2.0 Cloud Platform, featuring bidirectional Virtual Pin telemetry, auto-reconnection state machines, and angle telemetry sync.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Cloud:</strong> Blynk 2.0 IoT Platform</div>
-          <div class="spec-item"><strong>Pins:</strong> Virtual Pin V0 Angle Stream</div>
-          <div class="spec-item"><strong>Failsafe:</strong> Auto-Reconnect State Machine</div>
+          <div class="spec-item"><strong>Cloud:</strong> Blynk 2.0 Cloud Platform (SSL/TLS Encrypted)</div><div class="spec-item"><strong>Telemetry:</strong> Virtual Pin V0 Real-Time Angle Sync & Feedback</div><div class="spec-item"><strong>Reliability:</strong> Non-Blocking Wi-Fi Watchdog & Auto-Reconnect Engine</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Blynk-Cloud-Connected-Real-Time-Servo-Actuation-Framework" target="_blank" rel="noopener" class="card-link btn-glow">
-            <i class="fa-brands fa-github"></i> View Repository
+          <a href="https://github.com/ALWINTR/Blynk-Cloud-Connected-Real-Time-Servo-Actuation-Framework" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/Blynk-Cloud-Connected-Real-Time-Servo-Actuation-Framework/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary">
-            <i class="fa-solid fa-book-open"></i> Technical Guide
+          <a href="https://github.com/ALWINTR/Blynk-Cloud-Connected-Real-Time-Servo-Actuation-Framework/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="blynk-servo" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Smart Bidirectional People Counter and Room Occupancy Monitor -->
+      <div class="project-card" data-category="sensors" data-project="people-counter" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon cyan"><i class="fa-solid fa-users"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-cyan">ESP32 / Dual-Sensor</span>
+            <span class="badge badge-cat">Room Telemetry</span>
+          </div>
+        </div>
+        <h3 class="card-title">Smart Bidirectional People Counter and Room Occupancy Monitor</h3>
+        <p class="card-desc">
+          Directional room occupancy tracking station utilizing dual ultrasonic/infrared sensors, state-machine sequence discrimination for entry and exit events, and live OLED capacity telemetry.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Logic:</strong> Sequential Threshold State Machine (A-B vs B-A Discrimination)</div><div class="spec-item"><strong>Sensors:</strong> Dual Ultrasonic HC-SR04 / Sharp GP2Y0A21YK0F</div><div class="spec-item"><strong>Feedback:</strong> 0.96" SSD1306 OLED HUD + Capacity Exceeded Alert Buzzer</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Smart-Bidirectional-People-Counter-and-Room-Occupancy-Monitor" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Smart-Bidirectional-People-Counter-and-Room-Occupancy-Monitor/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="people-counter" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Automated Wet and Dry Waste Classification System -->
+      <div class="project-card" data-category="automation" data-project="waste-segregation-dry-wet" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon blue"><i class="fa-solid fa-trash-can-arrow-up"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-blue">ESP32 / Moisture</span>
+            <span class="badge badge-cat">Smart Sorting</span>
+          </div>
+        </div>
+        <h3 class="card-title">Automated Wet and Dry Waste Classification System</h3>
+        <p class="card-desc">
+          Automated municipal waste sorting station utilizing soil hygrometer conductivity sensing to classify organic wet waste versus recyclable dry waste, with ultrasonic bin capacity telemetry.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Sensing:</strong> Soil Moisture Hygrometer Probe + Dual Threshold ADC</div><div class="spec-item"><strong>Sorting:</strong> High-Torque SG90 Flap Actuator for Dual-Chamber Routing</div><div class="spec-item"><strong>Monitoring:</strong> Ultrasonic HC-SR04 for Continuous Bin Fill-Level Telemetry</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Automated-Wet-and-Dry-Waste-Classification-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Automated-Wet-and-Dry-Waste-Classification-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="waste-segregation-dry-wet" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: 24GHz mmWave Human Presence and Micro Motion Radar Monitor -->
+      <div class="project-card" data-category="sensors" data-project="radar-ld2410c" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon cyan"><i class="fa-solid fa-satellite-dish"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-cyan">24GHz FMCW / ESP32</span>
+            <span class="badge badge-cat">Radar Sensing</span>
+          </div>
+        </div>
+        <h3 class="card-title">24GHz mmWave Human Presence and Micro Motion Radar Monitor</h3>
+        <p class="card-desc">
+          Advanced 24GHz FMCW millimeter-wave radar monitoring station utilizing Hi-Link HLK-LD2410C to detect microscopic chest movements (breathing, sedentary presence) across 8 range gates up to 6 meters.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Sensor:</strong> HLK-LD2410C 24GHz FMCW Millimeter-Wave Radar</div><div class="spec-item"><strong>Telemetry:</strong> Hardware UART (115200 baud) Real-Time Gate Energy Extraction</div><div class="spec-item"><strong>Detection:</strong> Micro-Motion (Breathing, Typing) & Macro-Motion (Walking)</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="radar-ld2410c" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Precision Stepper Motor Angle Controller with Microstepping -->
+      <div class="project-card" data-category="firmware" data-project="stepper-controller" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon indigo"><i class="fa-solid fa-arrows-spin"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-indigo">A4988 / Microstepping</span>
+            <span class="badge badge-cat">Motion Control</span>
+          </div>
+        </div>
+        <h3 class="card-title">Precision Stepper Motor Angle Controller with Microstepping</h3>
+        <p class="card-desc">
+          High-precision stepper motor positioning firmware implementing sub-degree angle mapping, linear frequency acceleration ramps, and serial CLI angle commands with 1/16 microstepping.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Actuation:</strong> NEMA 17 Stepper (1.8° step) + A4988 / ULN2003 Driver</div><div class="spec-item"><strong>Accuracy:</strong> Sub-degree 0.1125° Positioning Resolution with 1/16 Step</div><div class="spec-item"><strong>Motion:</strong> Trapezoidal Acceleration Ramps & Anti-Resonance Timing</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Precision-Stepper-Motor-Angle-Controller-with-Microstepping" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Precision-Stepper-Motor-Angle-Controller-with-Microstepping/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="stepper-controller" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Pipeline Water Flow Rate and Structural Tilt Monitor -->
+      <div class="project-card" data-category="sensors" data-project="water-tilt" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon blue"><i class="fa-solid fa-faucet-drip"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-blue">ESP32 / Dual-Sensor</span>
+            <span class="badge badge-cat">Hydrodynamic Sensing</span>
+          </div>
+        </div>
+        <h3 class="card-title">Pipeline Water Flow Rate and Structural Tilt Monitor</h3>
+        <p class="card-desc">
+          Industrial dual-parameter telemetry station measuring pipeline volumetric liquid flow rate and structural pipe angular deviation using hardware interrupt counters and tilt switches.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Flow Sensor:</strong> YF-S201 Hall-Effect Turbine (7.5 pulses / L/min)</div><div class="spec-item"><strong>Structural Sensor:</strong> SW-520D Ball Tilt Switch (Angular Anomaly Detection)</div><div class="spec-item"><strong>Firmware:</strong> Edge-Triggered ISR Pulse Accumulator & Liters/Hour Integrator</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Pipeline-Water-Flow-Rate-and-Structural-Tilt-Monitor" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Pipeline-Water-Flow-Rate-and-Structural-Tilt-Monitor/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="water-tilt" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Biometric Pulse Oximeter and Heart Rate Telemetry System -->
+      <div class="project-card" data-category="sensors" data-project="max30102-oximeter" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon cyan"><i class="fa-solid fa-heart-pulse"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-cyan">MAX30102 / PPG</span>
+            <span class="badge badge-cat">Biomedical Instrumentation</span>
+          </div>
+        </div>
+        <h3 class="card-title">Biometric Pulse Oximeter and Heart Rate Telemetry System</h3>
+        <p class="card-desc">
+          Optical photoplethysmography (PPG) pulse oximeter computing Heart Rate (BPM) and blood oxygen saturation (SpO2) using dual Red (660nm) and Infrared (880nm) LEDs with live OLED waveform display.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Biosensor:</strong> Maxim Integrated MAX30102 Biosensor (I2C Fast Mode)</div><div class="spec-item"><strong>Signal Processing:</strong> DC Removal Filter + Chebyshev Bandpass + Peak Detector</div><div class="spec-item"><strong>Calibration:</strong> Ratio-of-Ratios (R = (AC_red/DC_red) / (AC_ir/DC_ir)) Calibration</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Biometric-Pulse-Oximeter-and-Heart-Rate-Telemetry-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Biometric-Pulse-Oximeter-and-Heart-Rate-Telemetry-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="max30102-oximeter" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Dynamic Angular Velocity Servo Controller with Smooth Easing -->
+      <div class="project-card" data-category="robotics" data-project="servo-easing" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon indigo"><i class="fa-solid fa-bezier-curve"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-indigo">Arduino / Non-Blocking</span>
+            <span class="badge badge-cat">Motion Planning</span>
+          </div>
+        </div>
+        <h3 class="card-title">Dynamic Angular Velocity Servo Controller with Smooth Easing</h3>
+        <p class="card-desc">
+          Non-blocking servo angle interpolation firmware implementing adjustable angular velocity control and smooth cubic S-curve easing to prevent mechanical backlash and jitter in robotic joints.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Motion:</strong> Cubic Ease-In-Out S-Curve Velocity Profile Mapping</div><div class="spec-item"><strong>Timing:</strong> Non-Blocking millisecond Timer Scheduler (Zero delay() calls)</div><div class="spec-item"><strong>Resolution:</strong> Microsecond PWM Output for Vibration-Free Actuation</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Dynamic-Angular-Velocity-Servo-Controller-with-Smooth-Easing" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Dynamic-Angular-Velocity-Servo-Controller-with-Smooth-Easing/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="servo-easing" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: ESP32 Embedded Systems and Firmware Architecture Laboratory -->
+      <div class="project-card" data-category="firmware" data-project="esp32-lab" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon cyan"><i class="fa-solid fa-cubes"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-cyan">ESP-IDF / FreeRTOS</span>
+            <span class="badge badge-cat">Firmware Architecture</span>
+          </div>
+        </div>
+        <h3 class="card-title">ESP32 Embedded Systems and Firmware Architecture Laboratory</h3>
+        <p class="card-desc">
+          Comprehensive firmware architecture laboratory containing production-ready low-level peripheral drivers, FreeRTOS queue pipelines, task pinning, and non-volatile storage (NVS) implementations on ESP32.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Framework:</strong> ESP-IDF Native C & FreeRTOS Dual-Core Architecture</div><div class="spec-item"><strong>Peripherals:</strong> SPI Master, I2C Fast-Mode, Hardware UART Ring Buffers, ADC DMA</div><div class="spec-item"><strong>Memory:</strong> Partition Table Management & Non-Volatile Storage (NVS)</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/ESP32-Embedded-Systems-and-Firmware-Architecture-Laboratory" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/ESP32-Embedded-Systems-and-Firmware-Architecture-Laboratory/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="esp32-lab" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Project: Developer Repository and Conversation Synchronization Suite -->
+      <div class="project-card" data-category="iot" data-project="sync-tools" data-tilt data-reveal="zoom-in">
+        <div class="card-header">
+          <div class="card-icon blue"><i class="fa-solid fa-code-compare"></i></div>
+          <div class="card-badges">
+            <span class="badge badge-blue">Python / GitHub CLI</span>
+            <span class="badge badge-cat">Developer Automation</span>
+          </div>
+        </div>
+        <h3 class="card-title">Developer Repository and Conversation Synchronization Suite</h3>
+        <p class="card-desc">
+          Automated developer conversation synchronization engine maintaining version-controlled AI pair-programming repositories and session archives with automated JSONL parsing and Git synchronization.
+        </p>
+        <div class="card-specs">
+          <div class="spec-item"><strong>Toolchain:</strong> Python 3.10+, GitHub CLI (gh), MinGit, Windows Task Scheduler</div><div class="spec-item"><strong>Pipeline:</strong> JSONL Transcript Stream -> Scrubbing Engine -> Automated Git Sync</div><div class="spec-item"><strong>Scheduling:</strong> 15-minute Silent Background Scheduled Task Execution</div>
+        </div>
+        <div class="card-footer">
+          <a href="https://github.com/ALWINTR/Developer-Repository-and-Conversation-Synchronization-Suite" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+            <i class="fa-brands fa-github"></i> <span>Repo</span>
+          </a>
+          <a href="https://github.com/ALWINTR/Developer-Repository-and-Conversation-Synchronization-Suite/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+          </a>
+          <button class="card-link btn-specs open-specs-btn" data-project="sync-tools" title="Open Circuit Architecture, BOM & Pinouts">
+            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
+          </button>
         </div>
       </div>
     </div>
@@ -613,15 +898,15 @@
 
       <!-- Milestone 3 -->
       <div class="timeline-item left" data-reveal="fade-right">
-        <div class="timeline-dot"><i class="fa-solid fa-cloud"></i></div>
+        <div class="timeline-dot"><i class="fa-solid fa-satellite-dish"></i></div>
         <div class="timeline-content" data-tilt>
-          <span class="timeline-date">IoT & Wireless Telemetry</span>
-          <h3>Cloud Actuator Networks (Blynk 2.0 & REST)</h3>
-          <p>Built dual-protocol wireless control suites supporting both ESP8266 and ESP32 with zero-downtime auto-reconnection algorithms.</p>
+          <span class="timeline-date">Advanced Radar Sensing</span>
+          <h3>24GHz mmWave Micro-Motion Radar</h3>
+          <p>Integrated FMCW 24GHz radar with ESP32 high-speed UART to detect sedentary respiration, micro-motions, and multi-gate spatial presence.</p>
           <div class="timeline-tags">
-            <span>Blynk Cloud V0</span>
-            <span>HTTP REST Server</span>
-            <span>Brownout Safety</span>
+            <span>24GHz FMCW Radar</span>
+            <span>UART Telemetry</span>
+            <span>Micro-Motion Detection</span>
           </div>
         </div>
       </div>
@@ -630,12 +915,12 @@
       <div class="timeline-item right" data-reveal="fade-left">
         <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
         <div class="timeline-content" data-tilt>
-          <span class="timeline-date">Microcontroller Foundations</span>
-          <h3>PIC16F877A & Security Access Control</h3>
-          <p>Designed embedded hardware lock validation utilizing RFID 13.56MHz SPI readers, 16x2 parallel LCDs, and Proteus simulation suites.</p>
+          <span class="timeline-date">Embedded Firmware</span>
+          <h3>PIC16F877A Security & Architecture Laboratory</h3>
+          <p>Designed embedded hardware lock validation utilizing RFID 125kHz readers, 16x2 parallel LCDs, and modular ESP-IDF firmware architectures.</p>
           <div class="timeline-tags">
             <span>PIC16F877A</span>
-            <span>Proteus VSM</span>
+            <span>ESP-IDF Native</span>
             <span>Embedded C Assembly</span>
           </div>
         </div>
@@ -643,21 +928,212 @@
     </div>
   </section>
 
+  <!-- =========================================================================
+       SECTION 5: DIRECT ENGINEERING CONTACT & COLLABORATION
+       ========================================================================= -->
+  <section class="section" id="contact">
+    <div class="section-header" data-reveal="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-envelope"></i> DIRECT COMMUNICATION</div>
+      <h2 class="section-title">Initialize Contact & Collaboration</h2>
+      <p class="section-subtitle">Open for full-time robotics engineering roles, embedded firmware architecture, and hardware collaboration.</p>
+    </div>
+
+    <div class="contact-grid" data-reveal="fade-up">
+      <!-- Email Card -->
+      <div class="contact-card" data-tilt>
+        <div class="contact-icon cyan">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <h3>Direct Email</h3>
+        <p class="contact-val">alwintr2003@gmail.com</p>
+        <p class="contact-note">Fast response time for technical inquiries, job opportunities, and engineering collaboration.</p>
+        <div class="contact-actions">
+          <a href="mailto:alwintr2003@gmail.com" class="btn btn-primary btn-sm">
+            <i class="fa-solid fa-paper-plane"></i> Send Email
+          </a>
+          <button class="btn btn-secondary btn-sm copy-btn" data-copy="alwintr2003@gmail.com">
+            <i class="fa-regular fa-copy"></i> <span>Copy Email</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- LinkedIn Card -->
+      <div class="contact-card" data-tilt>
+        <div class="contact-icon blue">
+          <i class="fa-brands fa-linkedin"></i>
+        </div>
+        <h3>LinkedIn Profile</h3>
+        <p class="contact-val">linkedin.com/in/alwintr</p>
+        <p class="contact-note">Connect for professional network discussions, embedded career opportunities, and robotics updates.</p>
+        <div class="contact-actions">
+          <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="btn btn-linkedin btn-sm">
+            <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <!-- GitHub Profile Card -->
+      <div class="contact-card" data-tilt>
+        <div class="contact-icon indigo">
+          <i class="fa-brands fa-github"></i>
+        </div>
+        <h3>GitHub Workspace</h3>
+        <p class="contact-val">github.com/ALWINTR</p>
+        <p class="contact-note">Explore all 17 public engineering repositories with circuit schematics, BOMs, and firmware source code.</p>
+        <div class="contact-actions">
+          <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github btn-sm">
+            <i class="fa-brands fa-github"></i> View GitHub Profile
+          </a>
+        </div>
+      </div>
+
+      <!-- Status Card -->
+      <div class="contact-card" data-tilt>
+        <div class="contact-icon cyan">
+          <i class="fa-solid fa-location-crosshairs"></i>
+        </div>
+        <h3>Engineering Focus</h3>
+        <p class="contact-val">Robotics & Embedded Systems</p>
+        <p class="contact-note">Specializing in Autonomous Mobile Robots (AMR), FreeRTOS dual-core firmware, ROS2, and sensor telemetry.</p>
+        <div class="availability-badge">
+          <span class="status-pulse"></span>
+          <span>Available for Engineering Roles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE QUICK-VIEW SPECS & ARCHITECTURE MODAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="specs-modal-backdrop" aria-hidden="true">
+    <div class="modal-container" id="specs-modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Specs Modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div class="modal-header">
+        <div class="modal-icon-wrap" id="modal-icon-wrap">
+          <i class="fa-solid fa-microchip" id="modal-icon"></i>
+        </div>
+        <div class="modal-title-group">
+          <div class="modal-badges" id="modal-badges"></div>
+          <h2 class="modal-title" id="modal-title">Project Title</h2>
+          <p class="modal-desc" id="modal-desc">Project Description</p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <!-- Architecture Diagram -->
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <i class="fa-solid fa-diagram-project text-cyan"></i>
+            <span>System Architecture & Signal Flow</span>
+          </div>
+          <div class="terminal-block">
+            <div class="terminal-bar">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">architecture_block_diagram.txt</span>
+            </div>
+            <pre class="terminal-code" id="modal-diagram"></pre>
+          </div>
+        </div>
+
+        <!-- Bill of Materials (BOM) Table -->
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <i class="fa-solid fa-list-check text-blue"></i>
+            <span>Hardware Bill of Materials (BOM)</span>
+          </div>
+          <div class="table-responsive">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th>Component Name</th>
+                  <th>Operating Voltage</th>
+                  <th>Interface / Functionality</th>
+                </tr>
+              </thead>
+              <tbody id="modal-bom-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Circuit Pinout Interconnect Table -->
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <i class="fa-solid fa-network-wired text-indigo"></i>
+            <span>Circuit Pinout & Microcontroller Interconnect</span>
+          </div>
+          <div class="table-responsive">
+            <table class="specs-table">
+              <thead>
+                <tr>
+                  <th>MCU Pin / Channel</th>
+                  <th>Peripheral Pin</th>
+                  <th>Signal Function / Bus</th>
+                </tr>
+              </thead>
+              <tbody id="modal-pinout-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Firmware Details -->
+        <div class="modal-section">
+          <div class="modal-section-title">
+            <i class="fa-solid fa-code text-cyan"></i>
+            <span>Firmware Architecture & State Machines</span>
+          </div>
+          <p class="modal-firmware-text" id="modal-firmware"></p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <div class="clone-box">
+          <span class="clone-label">Clone:</span>
+          <code class="clone-cmd" id="modal-clone-cmd">git clone ...</code>
+          <button class="btn btn-secondary btn-sm copy-btn" id="modal-copy-clone-btn" title="Copy git clone command">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+        </div>
+        <div class="modal-action-btns">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modal-repo-link">
+            <i class="fa-brands fa-github"></i> Open Repository
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-secondary" id="modal-readme-link">
+            <i class="fa-solid fa-book-open"></i> View Full README
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Pill -->
+  <div class="toast-notification" id="toast-notification">
+    <i class="fa-solid fa-check-circle text-cyan"></i>
+    <span id="toast-text">Copied to clipboard!</span>
+  </div>
+
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-left">
         <span class="logo-text">ALWIN <span class="highlight">T R</span></span>
-        <p>Robotics & Automation Engineer • Embedded Systems • IoT Firmware</p>
+        <p>Robotics & Automation Engineer • Embedded Systems Architect • IoT Firmware</p>
       </div>
       <div class="footer-links">
+        <a href="#about" class="footer-btn"><i class="fa-solid fa-user-astronaut"></i> About</a>
+        <a href="#projects" class="footer-btn"><i class="fa-solid fa-microchip"></i> 17 Projects</a>
         <a href="https://www.linkedin.com/in/alwintr" target="_blank" rel="noopener" class="footer-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="footer-btn"><i class="fa-brands fa-github"></i> GitHub Profile</a>
-        <a href="#about" class="footer-btn scroll-top-btn"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+        <a href="#about" class="footer-btn scroll-top-btn"><i class="fa-solid fa-arrow-up"></i> Top</a>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Alwin T R. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+      <p>&copy; 2026 Alwin T R. Engineered with precision for robotics and embedded systems. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </div>
   </footer>
 
