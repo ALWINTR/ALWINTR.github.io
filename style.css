@@ -46,7 +46,12 @@ body {
   position: relative;
   min-height: 100vh;
   cursor: default;
-  background: radial-gradient(ellipse at 50% 5%, #081636 0%, #030712 55%, #010206 100%);
+  background-color: #030712;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(14, 165, 233, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 85% 25%, rgba(99, 102, 241, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 15% 65%, rgba(6, 182, 212, 0.06) 0%, transparent 50%);
+  background-attachment: fixed;
 }
 
 /* Custom Cosmic Cursor */
@@ -104,50 +109,6 @@ body {
   pointer-events: none;
 }
 
-/* Ambient Glowing Nebulae */
-.nebula-sphere {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(150px);
-  pointer-events: none;
-  z-index: -1;
-  opacity: 0.35;
-  animation: floatNebula 22s infinite alternate ease-in-out;
-}
-
-.nebula-1 {
-  top: -15%;
-  left: -8%;
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, #0284c7, #1e1b4b, transparent 70%);
-}
-
-.nebula-2 {
-  top: 40%;
-  right: -10%;
-  width: 750px;
-  height: 750px;
-  background: radial-gradient(circle, #00f0ff, #312e81, transparent 70%);
-  animation-duration: 28s;
-  animation-delay: -6s;
-}
-
-.nebula-3 {
-  bottom: -15%;
-  left: 20%;
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle, #4338ca, #0369a1, transparent 70%);
-  animation-duration: 24s;
-  animation-delay: -12s;
-}
-
-@keyframes floatNebula {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(60px, 80px) scale(1.18); }
-  100% { transform: translate(-40px, -60px) scale(0.92); }
-}
 
 /* Navigation */
 .navbar {
@@ -378,7 +339,7 @@ body {
   filter: drop-shadow(0 0 28px rgba(0, 240, 255, 0.55));
 }
 
-.hero-role-prefix {
+.hero-prefix {
   font-size: 2.1rem;
   color: var(--text-muted);
   font-weight: 600;
@@ -449,6 +410,74 @@ body {
   border-color: var(--primary);
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(0, 240, 255, 0.3);
+}
+
+/* Metrics HUD Bar */
+.metrics-hud-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 3.2rem auto 1.5rem auto;
+  max-width: 1040px;
+  width: 100%;
+}
+
+.metric-hud-item {
+  background: rgba(8, 16, 36, 0.72);
+  border: 1px solid rgba(56, 189, 248, 0.22);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+.metric-hud-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0.6;
+}
+
+.metric-hud-item:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.55);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.15);
+  background: rgba(14, 26, 56, 0.88);
+}
+
+.metric-hud-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 0.35rem;
+  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-hud-label {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.metric-hud-desc {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.35;
 }
 
 /* ==========================================================================
@@ -1182,7 +1211,7 @@ body {
 }
 
 /* ==========================================================================
-   SECTION: Direct Engineering Contact & Collaboration
+   SECTION: Direct Engineering Contact
    ========================================================================== */
 .contact-grid {
   display: grid;
@@ -1293,33 +1322,33 @@ body {
   font-size: 0.82rem;
 }
 
-.availability-badge {
+.status-badge-verified {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
-  background: rgba(16, 185, 129, 0.12);
-  border: 1px solid rgba(16, 185, 129, 0.35);
-  color: #34d399;
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #38bdf8;
   font-size: 0.82rem;
   font-weight: 600;
   font-family: 'JetBrains Mono', monospace;
 }
 
-.status-pulse {
+.status-badge-verified .status-pulse {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 10px #10b981;
-  animation: pulse 2s infinite;
+  background: #38bdf8;
+  box-shadow: 0 0 10px #38bdf8;
+  animation: pulseCyan 2s infinite;
 }
 
-@keyframes pulse {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+@keyframes pulseCyan {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(56, 189, 248, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
 }
 
 /* ==========================================================================
@@ -1707,10 +1736,16 @@ body {
   .timeline-item.left .timeline-tags { justify-content: flex-start; }
 }
 
+@media (max-width: 900px) {
+  .metrics-hud-bar {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .hero-title { font-size: 2.5rem; }
-  .hero-role-prefix, .typewriter-text { font-size: 1.5rem; }
+  .hero-prefix, .typewriter-text { font-size: 1.5rem; }
   .cursor-dot, .cursor-ring { display: none; }
   .hero-tech-badge { font-size: 0.72rem; padding: 0.4rem 0.9rem; }
   .projects-grid { grid-template-columns: 1fr; }
@@ -1729,5 +1764,14 @@ body {
   .modal-action-btns { flex-direction: column; width: 100%; }
   .modal-action-btns .btn { width: 100%; justify-content: center; }
   .toast-notification { bottom: 1rem; right: 1rem; left: 1rem; justify-content: center; }
+}
 
+@media (max-width: 480px) {
+  .metrics-hud-bar {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  .metric-hud-number {
+    font-size: 1.8rem;
+  }
 }

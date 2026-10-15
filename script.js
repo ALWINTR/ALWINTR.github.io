@@ -1058,178 +1058,175 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 2. Cosmic Milky Way Canvas Physics Engine
+  // 2. High-Performance Constellation & Starfield Engine (Low Graphics / Zero Lag)
   // ------------------------------------------------------------------------
   const canvas = document.getElementById('galaxy-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
-    let width, height;
+    let width = 0, height = 0;
     let stars = [];
-    let meteors = [];
-    let backgroundParticles = [];
+    let meteor = null;
     let mouseXPos = -1000;
     let mouseYPos = -1000;
+    let isTabVisible = true;
+    let animFrameId = null;
 
     function resizeCanvas() {
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
-      initMilkyWay();
+      initStars();
     }
     window.addEventListener('resize', resizeCanvas);
 
     window.addEventListener('mousemove', (e) => {
       mouseXPos = e.clientX;
       mouseYPos = e.clientY;
-    });
+    }, { passive: true });
 
     window.addEventListener('mouseleave', () => {
       mouseXPos = -1000;
       mouseYPos = -1000;
     });
 
-    function initMilkyWay() {
+    document.addEventListener('visibilitychange', () => {
+      isTabVisible = !document.hidden;
+      if (isTabVisible && !animFrameId) {
+        animFrameId = requestAnimationFrame(render);
+      }
+    });
+
+    function initStars() {
       stars = [];
-      backgroundParticles = [];
-      const starCount = Math.floor((width * height) / 3800);
+      const starCount = Math.min(80, Math.max(40, Math.floor((width * height) / 24000)));
+      const colors = ['#ffffff', '#38bdf8', '#00f0ff', '#818cf8', '#e2e8f0'];
 
-      // Star types
-      const colors = ['#ffffff', '#38bdf8', '#00f0ff', '#818cf8', '#93c5fd', '#c7d2fe'];
-
-      // Generate Twinkling Stars
       for (let i = 0; i < starCount; i++) {
         stars.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          size: Math.random() * 1.8 + 0.3,
+          size: Math.random() * 1.3 + 0.6,
           color: colors[Math.floor(Math.random() * colors.length)],
-          baseAlpha: Math.random() * 0.7 + 0.2,
-          twinkleSpeed: Math.random() * 0.03 + 0.005,
+          baseAlpha: Math.random() * 0.55 + 0.35,
+          twinkleSpeed: Math.random() * 0.025 + 0.008,
           twinklePhase: Math.random() * Math.PI * 2,
-          vx: (Math.random() - 0.5) * 0.12,
-          vy: (Math.random() - 0.5) * 0.12
-        });
-      }
-
-      // Milky Way Galactic Band Dust Particles
-      const bandParticles = Math.floor((width * height) / 4500);
-      for (let i = 0; i < bandParticles; i++) {
-        const spread = (Math.random() - 0.5) * (height * 0.45);
-        backgroundParticles.push({
-          dist: Math.random() * width,
-          spread: spread,
-          radius: Math.random() * 2.2 + 0.5,
-          alpha: Math.random() * 0.25 + 0.05,
-          color: Math.random() > 0.4 ? 'rgba(0, 240, 255,' : 'rgba(56, 189, 248,'
+          vx: (Math.random() - 0.5) * 0.15,
+          vy: (Math.random() - 0.5) * 0.15
         });
       }
     }
     resizeCanvas();
 
     function spawnMeteor() {
-      if (Math.random() < 0.015 && meteors.length < 3) {
-        meteors.push({
+      if (!meteor && Math.random() < 0.008) {
+        meteor = {
           x: Math.random() * width * 0.8,
-          y: Math.random() * height * 0.4,
-          length: Math.random() * 90 + 50,
-          speed: Math.random() * 7 + 8,
+          y: Math.random() * height * 0.35,
+          length: Math.random() * 70 + 40,
+          speed: Math.random() * 6 + 7,
           angle: (Math.PI / 4) + (Math.random() - 0.5) * 0.2,
           alpha: 1
-        });
+        };
       }
     }
 
-    function drawMilkyWay() {
+    function render() {
+      if (!isTabVisible) {
+        animFrameId = null;
+        return;
+      }
+
       ctx.clearRect(0, 0, width, height);
 
-      // Render Galactic Dust Cloud
-      backgroundParticles.forEach(bp => {
-        bp.dist += 0.04;
-        if (bp.dist > width) bp.dist = 0;
-
-        const bx = bp.dist;
-        const by = (height * 0.35) + (bp.dist * 0.35) + bp.spread;
-
-        ctx.beginPath();
-        ctx.arc(bx, by, bp.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `${bp.color} ${bp.alpha})`;
-        ctx.fill();
-      });
-
-      // Render Twinkling Stars
-      stars.forEach(s => {
+      // 1. Update & Draw Stars
+      const len = stars.length;
+      for (let i = 0; i < len; i++) {
+        const s = stars[i];
         s.x += s.vx;
         s.y += s.vy;
         s.twinklePhase += s.twinkleSpeed;
 
         if (s.x < 0) s.x = width;
-        if (s.x > width) s.x = 0;
+        else if (s.x > width) s.x = 0;
         if (s.y < 0) s.y = height;
-        if (s.y > height) s.y = 0;
+        else if (s.y > height) s.y = 0;
 
-        const currentAlpha = Math.max(0.1, s.baseAlpha + Math.sin(s.twinklePhase) * 0.4);
+        const currentAlpha = Math.max(0.15, s.baseAlpha + Math.sin(s.twinklePhase) * 0.35);
 
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
         ctx.fillStyle = s.color;
         ctx.globalAlpha = currentAlpha;
-        ctx.shadowColor = s.color;
-        ctx.shadowBlur = 6;
         ctx.fill();
-        ctx.shadowBlur = 0;
-        ctx.globalAlpha = 1;
 
-        // Mouse Starlight Magnet
-        const dx = s.x - mouseXPos;
-        const dy = s.y - mouseYPos;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 110) {
-          ctx.beginPath();
-          ctx.moveTo(s.x, s.y);
-          ctx.lineTo(mouseXPos, mouseYPos);
-          ctx.strokeStyle = `rgba(0, 240, 255, ${0.35 * (1 - dist / 110)})`;
-          ctx.lineWidth = 0.8;
-          ctx.stroke();
-        }
-      });
-
-      // Render Meteors
-      spawnMeteor();
-      for (let i = meteors.length - 1; i >= 0; i--) {
-        const m = meteors[i];
-        m.x += Math.cos(m.angle) * m.speed;
-        m.y += Math.sin(m.angle) * m.speed;
-        m.alpha -= 0.015;
-
-        if (m.alpha <= 0 || m.x > width || m.y > height) {
-          meteors.splice(i, 1);
-          continue;
+        // Delicate constellation links (check nearby neighbors)
+        const checkLimit = Math.min(len, i + 8);
+        for (let j = i + 1; j < checkLimit; j++) {
+          const s2 = stars[j];
+          const cdx = s.x - s2.x;
+          const cdy = s.y - s2.y;
+          const distSq = cdx * cdx + cdy * cdy;
+          if (distSq < 7225) { // 85px squared
+            const dist = Math.sqrt(distSq);
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(s2.x, s2.y);
+            ctx.strokeStyle = `rgba(56, 189, 248, ${0.09 * (1 - dist / 85)})`;
+            ctx.lineWidth = 0.6;
+            ctx.stroke();
+          }
         }
 
-        const tailX = m.x - Math.cos(m.angle) * m.length;
-        const tailY = m.y - Math.sin(m.angle) * m.length;
-
-        const meteorGrad = ctx.createLinearGradient(m.x, m.y, tailX, tailY);
-        meteorGrad.addColorStop(0, `rgba(255, 255, 255, ${m.alpha})`);
-        meteorGrad.addColorStop(0.3, `rgba(0, 240, 255, ${m.alpha * 0.8})`);
-        meteorGrad.addColorStop(1, `rgba(99, 102, 241, 0)`);
-
-        ctx.beginPath();
-        ctx.moveTo(m.x, m.y);
-        ctx.lineTo(tailX, tailY);
-        ctx.strokeStyle = meteorGrad;
-        ctx.lineWidth = 2.2;
-        ctx.lineCap = 'round';
-        ctx.shadowColor = '#00f0ff';
-        ctx.shadowBlur = 12;
-        ctx.stroke();
-        ctx.shadowBlur = 0;
+        // Mouse Tether
+        if (mouseXPos > 0) {
+          const mdx = s.x - mouseXPos;
+          const mdy = s.y - mouseYPos;
+          const mDistSq = mdx * mdx + mdy * mdy;
+          if (mDistSq < 12100) { // 110px squared
+            const mDist = Math.sqrt(mDistSq);
+            ctx.beginPath();
+            ctx.moveTo(s.x, s.y);
+            ctx.lineTo(mouseXPos, mouseYPos);
+            ctx.strokeStyle = `rgba(0, 240, 255, ${0.3 * (1 - mDist / 110)})`;
+            ctx.lineWidth = 0.75;
+            ctx.stroke();
+          }
+        }
       }
 
-      requestAnimationFrame(drawMilkyWay);
+      ctx.globalAlpha = 1;
+
+      // 2. Render Single Shooting Star
+      spawnMeteor();
+      if (meteor) {
+        meteor.x += Math.cos(meteor.angle) * meteor.speed;
+        meteor.y += Math.sin(meteor.angle) * meteor.speed;
+        meteor.alpha -= 0.02;
+
+        if (meteor.alpha <= 0 || meteor.x > width || meteor.y > height) {
+          meteor = null;
+        } else {
+          const tailX = meteor.x - Math.cos(meteor.angle) * meteor.length;
+          const tailY = meteor.y - Math.sin(meteor.angle) * meteor.length;
+
+          const grad = ctx.createLinearGradient(meteor.x, meteor.y, tailX, tailY);
+          grad.addColorStop(0, `rgba(255, 255, 255, ${meteor.alpha})`);
+          grad.addColorStop(0.4, `rgba(56, 189, 248, ${meteor.alpha * 0.7})`);
+          grad.addColorStop(1, 'rgba(0, 240, 255, 0)');
+
+          ctx.beginPath();
+          ctx.moveTo(meteor.x, meteor.y);
+          ctx.lineTo(tailX, tailY);
+          ctx.strokeStyle = grad;
+          ctx.lineWidth = 1.6;
+          ctx.stroke();
+        }
+      }
+
+      animFrameId = requestAnimationFrame(render);
     }
-    drawMilkyWay();
+    render();
   }
 
   // ------------------------------------------------------------------------
