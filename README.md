@@ -75,7 +75,7 @@ Open a web browser and navigate to `http://localhost:8000`.
 ## 👨‍💻 Author
 
 **Alwin T R** - Robotics & Automation Engineer  
-- 💼 LinkedIn: [linkedin.com/in/alwintr](https://www.linkedin.com/in/alwintr)  
+- 💼 LinkedIn: www.linkedin.com/in/alwin-t-r-
 - 🌐 Portfolio: [alwintr.github.io](https://alwintr.github.io)  
 - 🐙 GitHub: [github.com/ALWINTR](https://github.com/ALWINTR)  
 - ✉️ Email: [alwintr2003@gmail.com](mailto:alwintr2003@gmail.com)
