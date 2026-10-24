@@ -321,7 +321,7 @@
         </div>
       </div>
 
-      <!-- Project: ESP32 4 DOF Bipedal Walking Robot with FreeRTOS Kinematics -->
+      <!-- Project: ESP32 6-DOF Bipedal Walking Robot with FreeRTOS Kinematics -->
       <div class="project-card" data-category="robotics" data-project="biped" data-tilt data-reveal="zoom-in">
         <div class="card-header">
           <div class="card-icon cyan"><i class="fa-solid fa-robot"></i></div>
@@ -330,18 +330,18 @@
             <span class="badge badge-cat">Kinematics</span>
           </div>
         </div>
-        <h3 class="card-title">ESP32 4 DOF Bipedal Walking Robot with FreeRTOS Kinematics</h3>
+        <h3 class="card-title">ESP32 6-DOF Bipedal Walking Robot with FreeRTOS Kinematics</h3>
         <p class="card-desc">
-          Four-DOF bipedal walking robot featuring synchronized hip and ankle inverse kinematics, multi-channel 16-bit hardware PWM timers, and real-time serial telemetry running on FreeRTOS Core 1.
+          Six-DOF humanoid bipedal walking robot featuring closed-form 2D Inverse Kinematics, PCA9685 16-channel PWM servo drive over 400kHz I2C, and real-time Web Control Studio on FreeRTOS.
         </p>
         <div class="card-specs">
-          <div class="spec-item"><strong>Firmware:</strong> ESP32 FreeRTOS Kernel (Core 1 Kinematics)</div><div class="spec-item"><strong>Actuators:</strong> 4x MG996R High-Torque Servos (13 kg-cm)</div><div class="spec-item"><strong>Timers:</strong> 16-Bit LEDC Hardware PWM (50Hz Carrier)</div>
+          <div class="spec-item"><strong>Firmware:</strong> ESP32 FreeRTOS Kernel (50Hz Locomotion)</div><div class="spec-item"><strong>Actuators:</strong> 6x MG996R Servos (13 kg-cm) via PCA9685</div><div class="spec-item"><strong>Kinematics:</strong> Closed-Form 2D IK & Quintic Smoothstep</div>
         </div>
         <div class="card-footer">
-          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
+          <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
             <i class="fa-brands fa-github"></i> <span>Repo</span>
           </a>
-          <a href="https://github.com/ALWINTR/ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
+          <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
             <i class="fa-solid fa-book-open"></i> <span>Guide</span>
           </a>
           <button class="card-link btn-specs open-specs-btn" data-project="biped" title="Open Circuit Architecture, BOM & Pinouts">
@@ -891,8 +891,8 @@
         <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
         <div class="timeline-content" data-tilt>
           <span class="timeline-date">Advanced Robotics</span>
-          <h3>ESP32 FreeRTOS Bipedal Kinematics</h3>
-          <p>Engineered 4-DOF bipedal robot with synchronized hip-ankle gait cycles, 16-bit hardware PWM timers, and real-time serial telemetry.</p>
+          <h3>ESP32 FreeRTOS 6-DOF Bipedal Kinematics</h3>
+          <p>Engineered 6-DOF bipedal robot with PCA9685 PWM drive, closed-form 2D Inverse Kinematics, quintic zero-jerk trajectories, and Web Studio.</p>
           <div class="timeline-tags">
             <span>ESP32 FreeRTOS</span>
             <span>Inverse Kinematics</span>

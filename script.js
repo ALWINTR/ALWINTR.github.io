@@ -136,16 +136,30 @@ const PROJECTS_DATA = [
   },
   {
     "id": "biped",
-    "repo": "ESP32-4-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics",
-    "title": "ESP32 4 DOF Bipedal Walking Robot with FreeRTOS Kinematics",
+    "repo": "ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics",
+    "title": "ESP32 6-DOF Bipedal Walking Robot with FreeRTOS Kinematics",
     "category": "robotics",
     "category_name": "Robotics",
     "icon": "fa-solid fa-robot",
     "color": "cyan",
     "badge_primary": "ESP32 / FreeRTOS",
     "badge_cat": "Kinematics",
-    "desc": "Four-DOF bipedal walking robot featuring synchronized hip and ankle inverse kinematics, multi-channel 16-bit hardware PWM timers, and real-time serial telemetry running on FreeRTOS Core 1.",
-    "diagram": "+--------------------------------------------------------------+\n|                ESP32 Dual-Core SoC (240MHz)                  |\n|  [Core 0: Telemetry & Comm]   |   [Core 1: FreeRTOS Gait Task]|\n+--------------------------------------------------------------+\n                                |\n                                v Sinusoidal Gait Trajectory Generator\n        +-----------------------+-----------------------+\n        |                       |                       |\n        v                       v                       v\n  [LEDC Channel 0]        [LEDC Channel 1]        [LEDC Channels 2,3]\n        |                       |                       |\n        v                       v                       v\n [Right Hip MG996R]      [Right Foot MG996R]     [Left Hip & Foot MG996R]",
+    "desc": "Six-DOF humanoid bipedal walking robot featuring closed-form 2D Inverse Kinematics, PCA9685 16-channel PWM servo drive over 400kHz I2C, and real-time Web Control Studio on FreeRTOS.",
+    "diagram": "+--------------------------------------------------------------+
+|                ESP32 Dual-Core SoC (240MHz)                  |
+|  [Core 0: Web Studio & Comm]  |  [Core 1: FreeRTOS 50Hz Gait]|
++--------------------------------------------------------------+
+                                |
+                                | I2C Fast Mode (400kHz, GPIO 21/22)
+                                v
++--------------------------------------------------------------+
+|           PCA9685 16-Channel 12-Bit PWM Driver (0x40)        |
++--------------------------------------------------------------+
+        |                                        |
+        v Right Leg Channels                     v Left Leg Channels
+  [Ch 0:  Right Hip MG996R]                [Ch 4:  Left Hip MG996R]
+  [Ch 1:  Right Knee MG996R]               [Ch 8:  Left Knee MG996R]
+  [Ch 12: Right Ankle MG996R]              [Ch 15: Left Ankle MG996R]",
     "bom": [
       [
         "ESP32-WROOM-32D",
@@ -153,7 +167,12 @@ const PROJECTS_DATA = [
         "Dual Xtensa 240MHz, FreeRTOS"
       ],
       [
-        "4x TowerPro MG996R Servos",
+        "PCA9685 16-Channel PWM",
+        "3.3V / 5V",
+        "12-bit PWM, I2C Fast Mode 400kHz"
+      ],
+      [
+        "6x TowerPro MG996R Servos",
         "6.0V / 2.5A peak",
         "Metal gear, 13 kg-cm torque"
       ],
@@ -170,32 +189,27 @@ const PROJECTS_DATA = [
     ],
     "pinout": [
       [
-        "ESP32 GPIO 18",
-        "Left Hip Servo PWM",
-        "LEDC Timer 0, Channel 0"
-      ],
-      [
-        "ESP32 GPIO 19",
-        "Left Foot Servo PWM",
-        "LEDC Timer 0, Channel 1"
-      ],
-      [
-        "ESP32 GPIO 22",
-        "Right Hip Servo PWM",
-        "LEDC Timer 1, Channel 2"
-      ],
-      [
-        "ESP32 GPIO 23",
-        "Right Foot Servo PWM",
-        "LEDC Timer 1, Channel 3"
-      ],
-      [
         "ESP32 GPIO 21 / 22",
-        "MPU-6050 SDA / SCL",
-        "I2C Bus at 400kHz"
+        "PCA9685 SDA / SCL",
+        "I2C Bus at 400kHz Fast Mode"
+      ],
+      [
+        "PCA9685 Ch 0, 1, 12",
+        "Right Hip, Knee, Foot",
+        "12-Bit PWM Servo Signals"
+      ],
+      [
+        "PCA9685 Ch 4, 8, 15",
+        "Left Hip, Knee, Foot",
+        "12-Bit PWM Servo Signals"
+      ],
+      [
+        "ESP32 GND",
+        "UBEC GND & PCA9685 GND",
+        "Common System Ground"
       ]
     ],
-    "firmware": "Dual-core FreeRTOS firmware dedicating Core 1 to high-priority sinusoidal inverse kinematics and gait trajectory generation, while Core 0 handles serial telemetry streaming."
+    "firmware": "Dual-core FreeRTOS architecture dedicating Core 1 to deterministic 50Hz closed-form 2D Inverse Kinematics and quintic zero-jerk trajectories, while Core 0 runs an asynchronous Web Control Studio."
   },
   {
     "id": "rfid",
