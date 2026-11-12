@@ -1322,4 +1322,316 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ------------------------------------------------------------------------
+  // 11. Interactive Engineering Workbench Controllers
+  // ------------------------------------------------------------------------
+  const wbTabBtns = document.querySelectorAll('.wb-tab-btn');
+  const wbPanels = document.querySelectorAll('.wb-panel');
+
+  wbTabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      wbTabBtns.forEach(b => b.classList.remove('active'));
+      wbPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      const targetId = 'wb-' + btn.getAttribute('data-tab');
+      const targetPanel = document.getElementById(targetId);
+      if (targetPanel) targetPanel.classList.add('active');
+    });
+  });
+
+  // --- Kinematics Simulator ---
+  const kinCanvas = document.getElementById('kinematics-canvas');
+  const inputFootX = document.getElementById('input-foot-x');
+  const inputFootY = document.getElementById('input-foot-y');
+  const valFootX = document.getElementById('val-foot-x');
+  const valFootY = document.getElementById('val-foot-y');
+  const dispHipAngle = document.getElementById('disp-hip-angle');
+  const dispKneeAngle = document.getElementById('disp-knee-angle');
+  const dispAnkleAngle = document.getElementById('disp-ankle-angle');
+  const dispHipPwm = document.getElementById('disp-hip-pwm');
+  const dispKneePwm = document.getElementById('disp-knee-pwm');
+  const dispAnklePwm = document.getElementById('disp-ankle-pwm');
+  const btnAutoGait = document.getElementById('btn-auto-gait');
+
+  let autoGaitActive = false;
+  let gaitTime = 0;
+  const L1 = 105;
+  const L2 = 110;
+
+  function solveIK(x, y) {
+    const distSq = x * x + y * y;
+    const dist = Math.sqrt(distSq);
+    const maxReach = L1 + L2 - 2;
+    let targetX = x;
+    let targetY = y;
+    if (dist > maxReach) {
+      targetX = (x / dist) * maxReach;
+      targetY = (y / dist) * maxReach;
+    }
+
+    const cosKnee = (targetX * targetX + targetY * targetY - L1 * L1 - L2 * L2) / (2 * L1 * L2);
+    const clampedCos = Math.max(-1, Math.min(1, cosKnee));
+    const kneeRad = Math.acos(clampedCos);
+
+    const alpha = Math.atan2(targetY, targetX);
+    const beta = Math.atan2(L2 * Math.sin(kneeRad), L1 + L2 * Math.cos(kneeRad));
+    const hipRad = alpha - beta;
+
+    const hipDeg = (hipRad * 180 / Math.PI) - 90;
+    const kneeDeg = kneeRad * 180 / Math.PI;
+    const ankleDeg = kneeDeg - hipDeg;
+
+    return { hipDeg, kneeDeg, ankleDeg, kneeRad, hipRad, targetX, targetY };
+  }
+
+  function degToPwm(deg) {
+    const clamped = Math.max(0, Math.min(180, deg + 90));
+    const pulseUs = Math.round(500 + (clamped / 180) * 2000);
+    const counts = Math.round((pulseUs / 20000) * 4096);
+    return { pulseUs, counts };
+  }
+
+  function renderKinematics() {
+    if (!kinCanvas) return;
+    const ctx = kinCanvas.getContext('2d');
+    const w = kinCanvas.width;
+    const h = kinCanvas.height;
+
+    ctx.clearRect(0, 0, w, h);
+
+    // Grid
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+    ctx.lineWidth = 1;
+    for (let gx = 0; gx < w; gx += 40) {
+      ctx.beginPath();
+      ctx.moveTo(gx, 0);
+      ctx.lineTo(gx, h);
+      ctx.stroke();
+    }
+    for (let gy = 0; gy < h; gy += 40) {
+      ctx.beginPath();
+      ctx.moveTo(0, gy);
+      ctx.lineTo(w, gy);
+      ctx.stroke();
+    }
+
+    let x = parseFloat(inputFootX ? inputFootX.value : 0);
+    let y = parseFloat(inputFootY ? inputFootY.value : 180);
+
+    if (autoGaitActive) {
+      gaitTime += 0.04;
+      x = Math.sin(gaitTime) * 35;
+      y = 175 - Math.abs(Math.cos(gaitTime)) * 25;
+      if (inputFootX) inputFootX.value = Math.round(x);
+      if (inputFootY) inputFootY.value = Math.round(y);
+    }
+
+    if (valFootX) valFootX.textContent = Math.round(x) + ' mm';
+    if (valFootY) valFootY.textContent = Math.round(y) + ' mm';
+
+    const ik = solveIK(x, y);
+
+    if (dispHipAngle) dispHipAngle.textContent = ik.hipDeg.toFixed(1) + '°';
+    if (dispKneeAngle) dispKneeAngle.textContent = ik.kneeDeg.toFixed(1) + '°';
+    if (dispAnkleAngle) dispAnkleAngle.textContent = ik.ankleDeg.toFixed(1) + '°';
+
+    const hipPwm = degToPwm(ik.hipDeg);
+    const kneePwm = degToPwm(ik.kneeDeg - 45);
+    const anklePwm = degToPwm(ik.ankleDeg - 45);
+
+    if (dispHipPwm) dispHipPwm.textContent = 'Ch 0: ' + hipPwm.counts + ' counts (' + hipPwm.pulseUs + 'µs)';
+    if (dispKneePwm) dispKneePwm.textContent = 'Ch 1: ' + kneePwm.counts + ' counts (' + kneePwm.pulseUs + 'µs)';
+    if (dispAnklePwm) dispAnklePwm.textContent = 'Ch 2: ' + anklePwm.counts + ' counts (' + anklePwm.pulseUs + 'µs)';
+
+    const originX = w / 2;
+    const originY = 50;
+    const scale = 1.15;
+
+    const hipX = originX;
+    const hipY = originY;
+
+    const kneeX = hipX + Math.cos(ik.hipRad) * (L1 * scale);
+    const kneeY = hipY + Math.sin(ik.hipRad) * (L1 * scale);
+
+    const footX = kneeX + Math.cos(ik.hipRad + Math.PI - ik.kneeRad) * (L2 * scale);
+    const footY = kneeY + Math.sin(ik.hipRad + Math.PI - ik.kneeRad) * (L2 * scale);
+
+    // Ground plane
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(30, originY + 205 * scale);
+    ctx.lineTo(w - 30, originY + 205 * scale);
+    ctx.stroke();
+
+    // Thigh Link
+    ctx.strokeStyle = '#00f0ff';
+    ctx.lineWidth = 7;
+    ctx.lineCap = 'round';
+    ctx.beginPath();
+    ctx.moveTo(hipX, hipY);
+    ctx.lineTo(kneeX, kneeY);
+    ctx.stroke();
+
+    // Shank Link
+    ctx.strokeStyle = '#3b82f6';
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    ctx.moveTo(kneeX, kneeY);
+    ctx.lineTo(footX, footY);
+    ctx.stroke();
+
+    // Foot Plate
+    ctx.strokeStyle = '#10b981';
+    ctx.lineWidth = 5;
+    ctx.beginPath();
+    ctx.moveTo(footX - 18, footY);
+    ctx.lineTo(footX + 22, footY);
+    ctx.stroke();
+
+    function drawJoint(jx, jy, color, label) {
+      ctx.fillStyle = '#070a12';
+      ctx.strokeStyle = color;
+      ctx.lineWidth = 3;
+      ctx.beginPath();
+      ctx.arc(jx, jy, 8, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.fillStyle = '#ffffff';
+      ctx.beginPath();
+      ctx.arc(jx, jy, 3, 0, Math.PI * 2);
+      ctx.fill();
+
+      ctx.fillStyle = color;
+      ctx.font = '10px JetBrains Mono, monospace';
+      ctx.fillText(label, jx + 12, jy + 4);
+    }
+
+    drawJoint(hipX, hipY, '#00f0ff', 'HIP');
+    drawJoint(kneeX, kneeY, '#3b82f6', 'KNEE');
+    drawJoint(footX, footY, '#10b981', 'FOOT');
+  }
+
+  if (inputFootX) inputFootX.addEventListener('input', () => { autoGaitActive = false; renderKinematics(); });
+  if (inputFootY) inputFootY.addEventListener('input', () => { autoGaitActive = false; renderKinematics(); });
+
+  if (btnAutoGait) {
+    btnAutoGait.addEventListener('click', () => {
+      autoGaitActive = !autoGaitActive;
+      const icon = btnAutoGait.querySelector('i');
+      const text = btnAutoGait.querySelector('span');
+      if (autoGaitActive) {
+        if (icon) icon.className = 'fa-solid fa-pause';
+        if (text) text.textContent = 'Pause Walking Gait Simulation';
+      } else {
+        if (icon) icon.className = 'fa-solid fa-play';
+        if (text) text.textContent = 'Toggle Continuous Walking Gait Simulation';
+      }
+    });
+  }
+
+  // --- 24GHz Radar Simulator ---
+  const radarGatesContainer = document.getElementById('radar-gates-container');
+  const radarScopeCanvas = document.getElementById('radar-scope-canvas');
+  const inputRadarDist = document.getElementById('input-radar-dist');
+  const valRadarDist = document.getElementById('val-radar-dist');
+  const selectRadarMode = document.getElementById('select-radar-mode');
+  const radarUartFrame = document.getElementById('radar-uart-frame');
+
+  let radarScopeData = new Array(80).fill(50);
+  let radarPhase = 0;
+
+  function initRadarGates() {
+    if (!radarGatesContainer) return;
+    radarGatesContainer.innerHTML = '';
+    for (let i = 0; i < 8; i++) {
+      const distEnd = ((i + 1) * 0.75).toFixed(2);
+      const col = document.createElement('div');
+      col.className = 'gate-bar-col';
+      col.id = 'gate-col-' + i;
+      col.innerHTML = '<span class="gate-energy-val" id="gate-energy-' + i + '">0%</span>' +
+        '<div class="gate-bar-track"><div class="gate-bar-fill" id="gate-fill-' + i + '"></div></div>' +
+        '<span class="gate-label">G' + i + '</span>' +
+        '<span class="gate-dist">' + distEnd + 'm</span>';
+      radarGatesContainer.appendChild(col);
+    }
+  }
+  initRadarGates();
+
+  function updateRadarSimulation() {
+    const targetGate = parseInt(inputRadarDist ? inputRadarDist.value : 3, 10) - 1;
+    const mode = selectRadarMode ? selectRadarMode.value : 'micro';
+    const distMeters = ((targetGate + 1) * 0.75).toFixed(2);
+
+    if (valRadarDist) valRadarDist.textContent = distMeters + ' m (Range Gate ' + targetGate + ')';
+
+    radarPhase += (mode === 'macro' ? 0.12 : 0.05);
+
+    for (let i = 0; i < 8; i++) {
+      const fill = document.getElementById('gate-fill-' + i);
+      const val = document.getElementById('gate-energy-' + i);
+      if (!fill || !val) continue;
+
+      const delta = Math.abs(i - targetGate);
+      let baseEnergy = Math.max(0, 96 - delta * 36);
+      if (delta === 0) {
+        baseEnergy += Math.sin(radarPhase * 2) * (mode === 'macro' ? 8 : 3);
+      }
+      const clampedEnergy = Math.min(100, Math.max(0, Math.round(baseEnergy)));
+
+      fill.style.height = clampedEnergy + '%';
+      fill.style.background = delta === 0 ? 'linear-gradient(to top, #0284c7, #00f0ff)' : 'rgba(56, 189, 248, 0.4)';
+      val.textContent = clampedEnergy + '%';
+    }
+
+    if (radarScopeCanvas) {
+      const ctx = radarScopeCanvas.getContext('2d');
+      const w = radarScopeCanvas.width;
+      const h = radarScopeCanvas.height;
+
+      ctx.clearRect(0, 0, w, h);
+
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.05)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, h / 2);
+      ctx.lineTo(w, h / 2);
+      ctx.stroke();
+
+      const newSample = (h / 2) + Math.sin(radarPhase) * (mode === 'macro' ? 32 : 18) + (Math.random() - 0.5) * 4;
+      radarScopeData.push(newSample);
+      if (radarScopeData.length > w / 4) radarScopeData.shift();
+
+      ctx.strokeStyle = '#00f0ff';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let i = 0; i < radarScopeData.length; i++) {
+        const px = i * 4;
+        const py = radarScopeData[i];
+        if (i === 0) ctx.moveTo(px, py);
+        else ctx.lineTo(px, py);
+      }
+      ctx.stroke();
+    }
+
+    if (radarUartFrame) {
+      const hexDist = (targetGate * 75).toString(16).padStart(4, '0').toUpperCase();
+      const hexEnergy = Math.round(80 + Math.random() * 15).toString(16).padStart(2, '0').toUpperCase();
+      radarUartFrame.textContent = 'FD FC FB FA 08 00 02 AA 0' + targetGate + ' ' + hexDist.slice(0, 2) + ' ' + hexDist.slice(2) + ' ' + hexEnergy + ' 00 55 CC';
+    }
+  }
+
+  if (inputRadarDist) inputRadarDist.addEventListener('input', updateRadarSimulation);
+  if (selectRadarMode) selectRadarMode.addEventListener('change', updateRadarSimulation);
+
+  let wbAnimId = null;
+  function workbenchLoop() {
+    renderKinematics();
+    updateRadarSimulation();
+    wbAnimId = requestAnimationFrame(workbenchLoop);
+  }
+  workbenchLoop();
+
 });

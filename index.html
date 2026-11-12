@@ -24,6 +24,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <!-- Structured Data (Schema.org JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Alwin T R",
+    "jobTitle": "Embedded Systems & Robotics Engineer",
+    "url": "https://alwintr.github.io",
+    "sameAs": [
+      "https://www.linkedin.com/in/alwin-t-r-",
+      "https://github.com/ALWINTR"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kochi",
+      "addressRegion": "Kerala",
+      "addressCountry": "India"
+    },
+    "knowsAbout": [
+      "Robotics & Automation",
+      "Embedded Systems",
+      "FreeRTOS Microkernel",
+      "ROS 2 Humble & Nav2",
+      "Inverse Kinematics",
+      "24GHz mmWave Radar",
+      "STM32 ARM Cortex-M",
+      "ESP32 Dual-Core",
+      "CAN Bus & I2C Fast-Mode"
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Scroll Progress Indicator -->
@@ -39,6 +70,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="#about" class="nav-item"><i class="fa-solid fa-user"></i> About</a></li>
         <li><a href="#domains" class="nav-item"><i class="fa-solid fa-layer-group"></i> Domains</a></li>
+        <li><a href="#workbench" class="nav-item"><i class="fa-solid fa-terminal"></i> Workbench</a></li>
         <li><a href="#projects" class="nav-item"><i class="fa-solid fa-microchip"></i> Projects</a></li>
         <li><a href="#tech-stack" class="nav-item"><i class="fa-solid fa-code"></i> Tech Matrix</a></li>
         <li><a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
@@ -223,6 +255,221 @@
           <li><i class="fa-solid fa-circle-check text-cyan"></i> Cubic S-curve velocity easing preventing mechanical backlash</li>
           <li><i class="fa-solid fa-circle-check text-cyan"></i> Proteus VSM circuit modeling and hardware bring-up</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION: INTERACTIVE ENGINEERING WORKBENCH
+       ========================================================================= -->
+  <section class="section" id="workbench">
+    <div class="section-header" data-reveal="fade-up">
+      <div class="section-tag"><i class="fa-solid fa-terminal"></i> LIVE SIMULATION HUD</div>
+      <h2 class="section-title">Interactive Engineering Workbench</h2>
+      <p class="section-subtitle">Client-side telemetry simulators demonstrating real-time sensor DSP, closed-form inverse kinematics, and deterministic RTOS scheduling.</p>
+    </div>
+
+    <div class="workbench-container" data-reveal="fade-up">
+      <!-- Tabs -->
+      <div class="workbench-nav">
+        <button class="wb-tab-btn active" data-tab="kinematics">
+          <i class="fa-solid fa-robot"></i> <span>6-DOF Inverse Kinematics</span>
+        </button>
+        <button class="wb-tab-btn" data-tab="radar">
+          <i class="fa-solid fa-satellite-dish"></i> <span>24GHz mmWave Radar DSP</span>
+        </button>
+        <button class="wb-tab-btn" data-tab="rtos">
+          <i class="fa-solid fa-microchip"></i> <span>FreeRTOS Core Profiler</span>
+        </button>
+      </div>
+
+      <!-- Tab 1: 6-DOF Inverse Kinematics -->
+      <div class="wb-panel active" id="wb-kinematics">
+        <div class="wb-grid">
+          <div class="wb-visualizer">
+            <div class="wb-viz-header">
+              <span>Bipedal Leg 2D Kinematic Solver</span>
+              <span class="wb-status-tag text-cyan"><i class="fa-solid fa-circle"></i> 50Hz Real-Time</span>
+            </div>
+            <canvas id="kinematics-canvas" width="460" height="320"></canvas>
+            <div class="wb-viz-footer">
+              <span>L1 (Thigh) = 105mm • L2 (Shank) = 110mm</span>
+            </div>
+          </div>
+          <div class="wb-controls">
+            <h4 class="wb-panel-title">End-Effector Target Controls</h4>
+            <p class="wb-panel-desc">Adjust displacement or stance depth to solve closed-form 2D inverse kinematics and observe PCA9685 PWM pulse output in real time.</p>
+            
+            <div class="slider-group">
+              <div class="slider-header">
+                <label>Foot Position X (Stride Displacement):</label>
+                <span id="val-foot-x">0 mm</span>
+              </div>
+              <input type="range" id="input-foot-x" min="-60" max="60" value="0" step="1">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <label>Foot Position Y (Stance Depth):</label>
+                <span id="val-foot-y">180 mm</span>
+              </div>
+              <input type="range" id="input-foot-y" min="120" max="205" value="180" step="1">
+            </div>
+
+            <div class="wb-metrics-grid">
+              <div class="wb-metric-box">
+                <span class="wb-m-label">Hip Angle (θ1)</span>
+                <span class="wb-m-val text-cyan" id="disp-hip-angle">12.4°</span>
+                <span class="wb-m-sub" id="disp-hip-pwm">Ch 0: 312 counts (1520µs)</span>
+              </div>
+              <div class="wb-metric-box">
+                <span class="wb-m-label">Knee Angle (θ2)</span>
+                <span class="wb-m-val text-blue" id="disp-knee-angle">62.8°</span>
+                <span class="wb-m-sub" id="disp-knee-pwm">Ch 1: 418 counts (1780µs)</span>
+              </div>
+              <div class="wb-metric-box">
+                <span class="wb-m-label">Ankle Angle (θ3)</span>
+                <span class="wb-m-val text-indigo" id="disp-ankle-angle">50.4°</span>
+                <span class="wb-m-sub" id="disp-ankle-pwm">Ch 2: 394 counts (1680µs)</span>
+              </div>
+              <div class="wb-metric-box">
+                <span class="wb-m-label">Trajectory Easing</span>
+                <span class="wb-m-val" style="color: #10b981;">Quintic S-Curve</span>
+                <span class="wb-m-sub">Zero-Jerk Boundary Met</span>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary btn-sm" id="btn-auto-gait" style="margin-top: 1rem; width: 100%;">
+              <i class="fa-solid fa-play"></i> <span>Toggle Continuous Walking Gait Simulation</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: 24GHz mmWave Radar DSP -->
+      <div class="wb-panel" id="wb-radar">
+        <div class="wb-grid">
+          <div class="wb-visualizer">
+            <div class="wb-viz-header">
+              <span>8-Gate Spatial Energy Distribution (0.75m – 6.0m)</span>
+              <span class="wb-status-tag text-cyan"><i class="fa-solid fa-circle"></i> UART 115200 Baud</span>
+            </div>
+            <div class="radar-gates-bars" id="radar-gates-container"></div>
+            <div class="radar-scope-wrapper">
+              <div class="radar-scope-header">
+                <span>Micro-Motion Chest Respiration Waveform (0.25 Hz)</span>
+                <span id="radar-resp-rate" class="text-cyan">16 Breaths/Min</span>
+              </div>
+              <canvas id="radar-scope-canvas" width="460" height="90"></canvas>
+            </div>
+          </div>
+          <div class="wb-controls">
+            <h4 class="wb-panel-title">HLK-LD2410C FMCW Simulator</h4>
+            <p class="wb-panel-desc">Simulate target range gate and observe real-time spatial gate energy extraction and raw UART frame telemetry.</p>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <label>Target Distance:</label>
+                <span id="val-radar-dist">2.25 m (Range Gate 3)</span>
+              </div>
+              <input type="range" id="input-radar-dist" min="1" max="8" value="3" step="1">
+            </div>
+
+            <div class="slider-group">
+              <div class="slider-header">
+                <label>Target Motion State:</label>
+              </div>
+              <select id="select-radar-mode" class="wb-select">
+                <option value="micro">Sedentary Presence (Micro-Motion Respiration)</option>
+                <option value="macro">Dynamic Macro-Motion (Walking Across Range)</option>
+              </select>
+            </div>
+
+            <div class="terminal-block" style="margin-top: 1rem;">
+              <div class="terminal-bar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">Raw UART Frame (115200 8N1)</span>
+              </div>
+              <pre class="terminal-code" id="radar-uart-frame" style="font-size: 0.75rem; padding: 0.65rem;">FD FC FB FA 08 00 02 AA 03 48 00 00 55 CC</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 3: FreeRTOS Dual-Core Profiler -->
+      <div class="wb-panel" id="wb-rtos">
+        <div class="rtos-grid">
+          <div class="rtos-core-card">
+            <div class="rtos-core-header">
+              <div class="core-badge cyan">ESP32 Core 0 (Protocol & Web Telemetry)</div>
+              <span class="core-load" id="core0-load">24% CPU</span>
+            </div>
+            <div class="rtos-task-list">
+              <div class="rtos-task-row">
+                <span class="task-name">AsyncWebServerTask</span>
+                <span class="task-prio">Prio 1</span>
+                <div class="task-bar-bg"><div class="task-bar-fill cyan" style="width: 14%;"></div></div>
+                <span class="task-pct">14%</span>
+              </div>
+              <div class="rtos-task-row">
+                <span class="task-name">Wi-Fi TCP/IP Stack</span>
+                <span class="task-prio">Prio 18</span>
+                <div class="task-bar-bg"><div class="task-bar-fill cyan" style="width: 8%;"></div></div>
+                <span class="task-pct">8%</span>
+              </div>
+              <div class="rtos-task-row">
+                <span class="task-name">IDLE0 Task</span>
+                <span class="task-prio">Prio 0</span>
+                <div class="task-bar-bg"><div class="task-bar-fill muted" style="width: 78%;"></div></div>
+                <span class="task-pct">78%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rtos-core-card">
+            <div class="rtos-core-header">
+              <div class="core-badge blue">ESP32 Core 1 (Deterministic Locomotion)</div>
+              <span class="core-load" id="core1-load">42% CPU</span>
+            </div>
+            <div class="rtos-task-list">
+              <div class="rtos-task-row">
+                <span class="task-name">vTaskLocomotion50Hz</span>
+                <span class="task-prio">Prio 5 (Pinned)</span>
+                <div class="task-bar-bg"><div class="task-bar-fill blue" style="width: 28%;"></div></div>
+                <span class="task-pct">28% (20ms Period)</span>
+              </div>
+              <div class="rtos-task-row">
+                <span class="task-name">vTaskSensorRead</span>
+                <span class="task-prio">Prio 3</span>
+                <div class="task-bar-bg"><div class="task-bar-fill blue" style="width: 11%;"></div></div>
+                <span class="task-pct">11% (100Hz IMU)</span>
+              </div>
+              <div class="rtos-task-row">
+                <span class="task-name">IDLE1 Task</span>
+                <span class="task-prio">Prio 0</span>
+                <div class="task-bar-bg"><div class="task-bar-fill muted" style="width: 61%;"></div></div>
+                <span class="task-pct">61%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rtos-summary-bar">
+          <div class="rtos-sum-item">
+            <i class="fa-solid fa-clock text-cyan"></i>
+            <span><strong>Tick Rate:</strong> 1000Hz (1ms tick period)</span>
+          </div>
+          <div class="rtos-sum-item">
+            <i class="fa-solid fa-lock text-blue"></i>
+            <span><strong>Synchronization:</strong> Binary Semaphores & Mutex Queues</span>
+          </div>
+          <div class="rtos-sum-item">
+            <i class="fa-solid fa-shield-halved text-indigo"></i>
+            <span><strong>Timing Guarantees:</strong> Zero Locomotion Jitter (&lt;±8µs)</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
