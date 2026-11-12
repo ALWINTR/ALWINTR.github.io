@@ -3,28 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alwin T R | Robotics & Embedded Systems Engineer</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23070a12'/%3E%3Crect x='15' y='15' width='70' height='70' rx='14' fill='%230f172a' stroke='%2300f0ff' stroke-width='4'/%3E%3Ccircle cx='50' cy='50' r='18' fill='%2300f0ff' filter='drop-shadow(0 0 8px %2300f0ff)'/%3E%3Cpath d='M50 15v16M50 69v16M15 50h16M69 50h16' stroke='%2338bdf8' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <title>Alwin T R | Embedded Systems & Robotics Engineer</title>
   
-  <!-- Open Graph & Meta Tags -->
-  <meta name="theme-color" content="#070a12">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://alwintr.github.io">
-  <meta property="og:title" content="Alwin T R | Robotics & Embedded Systems Engineer">
-  <meta property="og:description" content="Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), Multi-Axis Kinematics, 24GHz mmWave Radar & Autonomous Mobile Robotics.">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Alwin T R | Robotics & Embedded Systems Engineer">
-  <meta name="twitter:description" content="Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), Multi-Axis Kinematics, 24GHz mmWave Radar & Autonomous Mobile Robotics.">
-  <meta name="description" content="Official Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), 6-DOF Kinematics, 24GHz mmWave Radar, and Autonomous Mobile Robotics.">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Alwin T R | Embedded Systems & Robotics Engineer">
+  <meta name="description" content="Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), Multi-Axis Kinematics, 24GHz mmWave Radar & Autonomous Mobile Robotics.">
   <meta name="author" content="Alwin T R">
+  <meta name="theme-color" content="#080b11">
+  
+  <!-- Open Graph / Facebook / LinkedIn -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://alwintr.github.io/">
+  <meta property="og:title" content="Alwin T R | Embedded Systems & Robotics Engineer">
+  <meta property="og:description" content="Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), Multi-Axis Kinematics, 24GHz mmWave Radar & Autonomous Mobile Robotics.">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alwin T R | Embedded Systems & Robotics Engineer">
+  <meta name="twitter:description" content="Engineering Portfolio of Alwin T R - Real-Time Firmware (FreeRTOS / C++17), Multi-Axis Kinematics, 24GHz mmWave Radar & Autonomous Mobile Robotics.">
 
-  <!-- Typography & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
-  <!-- Structured Data (Schema.org JSON-LD) -->
+  <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -43,7 +41,7 @@
       "addressCountry": "India"
     },
     "knowsAbout": [
-      "Robotics & Automation",
+      "Robotics Engineering",
       "Embedded Systems",
       "FreeRTOS Microkernel",
       "ROS 2 Humble & Nav2",
@@ -51,1111 +49,817 @@
       "24GHz mmWave Radar",
       "STM32 ARM Cortex-M",
       "ESP32 Dual-Core",
-      "CAN Bus & I2C Fast-Mode"
+      "Hardware Bus Communication (CAN, I2C, SPI, UART)"
     ]
   }
   </script>
+
+  <!-- Typography & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Scroll Progress Indicator -->
-  <div class="scroll-progress-bar" id="scroll-progress"></div>
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress-bar" id="reading-progress"></div>
 
-  <!-- Top Navigation Bar -->
-  <nav class="navbar" id="navbar">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper">
+    <nav class="navbar">
+      <a href="#" class="brand-logo">
         <span class="logo-symbol">&lt;/&gt;</span>
-        <span class="logo-text">ALWIN <span class="highlight">T R</span></span>
+        <span class="logo-text">ALWIN <span class="accent-text">T R</span></span>
       </a>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#about" class="nav-item"><i class="fa-solid fa-user"></i> About</a></li>
-        <li><a href="#domains" class="nav-item"><i class="fa-solid fa-layer-group"></i> Domains</a></li>
-        <li><a href="#workbench" class="nav-item"><i class="fa-solid fa-terminal"></i> Workbench</a></li>
-        <li><a href="#projects" class="nav-item"><i class="fa-solid fa-microchip"></i> Projects</a></li>
-        <li><a href="#tech-stack" class="nav-item"><i class="fa-solid fa-code"></i> Tech Matrix</a></li>
-        <li><a href="#experience" class="nav-item"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-        <li><a href="#contact" class="nav-item"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#specializations" class="nav-link">Specializations</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Tech Matrix</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
-      <div class="nav-actions">
-        <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-resume btn-sm" title="View Full Resume (PDF)">
+
+      <div class="nav-cta-group">
+        <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-outline-amber btn-sm">
           <i class="fa-solid fa-file-pdf"></i> <span>Resume</span>
         </a>
-        <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener" class="btn btn-linkedin btn-sm" title="Connect on LinkedIn">
+        <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener" class="btn btn-outline-blue btn-sm">
           <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
         </a>
-        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github btn-sm" title="View GitHub Profile">
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-outline-white btn-sm">
           <i class="fa-brands fa-github"></i> <span>GitHub</span>
         </a>
-        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
-    </div>
-  </nav>
-
-  <!-- =========================================================================
-       HERO SECTION
-       ========================================================================= -->
-  <header class="hero" id="about">
-    <div class="hero-container">
-      <div class="hero-content" data-reveal="fade-up">
-        
-        <!-- Status Indicator Pill -->
-        <div class="hero-tech-badge">
-          <span class="status-pulse"></span>
-          <span>ROBOTICS & EMBEDDED SYSTEMS ARCHITECT</span>
-          <span class="badge-divider">•</span>
-          <span class="badge-highlight">KOCHI, INDIA</span>
-        </div>
-        
-        <h1 class="hero-title">
-          Alwin <span class="gradient-text glow-text">T R</span><br>
-          <span class="hero-prefix">Specialist in </span>
-          <span class="typewriter-text" id="typewriter"></span><span class="cursor-blink">|</span>
-        </h1>
-        
-        <p class="hero-description">
-          Proactive Embedded Systems & Robotics Engineer specializing in <strong>real-time microkernel firmware</strong> (FreeRTOS / Bare-Metal C++), 
-          <strong>ROS 2 autonomous navigation</strong>, <strong>multi-axis closed-form kinematics</strong>, 
-          and <strong>industrial sensor protocols</strong> across STM32, ESP32, and PIC platforms.
-        </p>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn btn-primary magnetic-btn">
-            <i class="fa-solid fa-microchip"></i> Explore Flagship Projects
-          </a>
-          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-resume magnetic-btn">
-            <i class="fa-solid fa-file-pdf"></i> View Resume (PDF)
-          </a>
-          <a href="#contact" class="btn btn-secondary magnetic-btn">
-            <i class="fa-solid fa-envelope"></i> Get In Touch
-          </a>
-          <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-tertiary magnetic-btn">
-            <i class="fa-brands fa-github"></i> GitHub
-          </a>
-        </div>
-
-        <!-- Quick Spec Highlights -->
-        <div class="hero-highlights">
-          <div class="highlight-pill">
-            <i class="fa-solid fa-robot text-cyan"></i>
-            <span>6-DOF Inverse Kinematics</span>
-          </div>
-          <div class="highlight-pill">
-            <i class="fa-solid fa-microchip text-blue"></i>
-            <span>ESP32 Dual-Core • FreeRTOS • STM32</span>
-          </div>
-          <div class="highlight-pill">
-            <i class="fa-solid fa-network-wired text-indigo"></i>
-            <span>UART • SPI • I2C (400kHz) • CAN Bus</span>
-          </div>
-          <div class="highlight-pill">
-            <i class="fa-solid fa-satellite-dish text-cyan"></i>
-            <span>24GHz mmWave FMCW Radar</span>
-          </div>
-        </div>
-
-        <!-- Metrics HUD Bar -->
-        <div class="metrics-hud-bar">
-          <div class="metric-hud-item">
-            <div class="metric-hud-number">FreeRTOS</div>
-            <div class="metric-hud-label">Real-Time Kernel</div>
-            <div class="metric-hud-desc">Deterministic 50Hz locomotion & task isolation</div>
-          </div>
-          <div class="metric-hud-item">
-            <div class="metric-hud-number">24GHz</div>
-            <div class="metric-hud-label">FMCW Radar</div>
-            <div class="metric-hud-desc">Sub-mm respiration & micro-motion tracking</div>
-          </div>
-          <div class="metric-hud-item">
-            <div class="metric-hud-number">400kHz</div>
-            <div class="metric-hud-label">Fast-Mode I2C & CAN</div>
-            <div class="metric-hud-desc">Multi-channel PWM & industrial telemetry</div>
-          </div>
-          <div class="metric-hud-item">
-            <div class="metric-hud-number">100%</div>
-            <div class="metric-hud-label">Hardware Documented</div>
-            <div class="metric-hud-desc">Circuit schematics, pinout maps & BOM tables</div>
-          </div>
-        </div>
-      </div>
-    </div>
+    </nav>
   </header>
 
-  <!-- =========================================================================
-       SECTION 1: CORE ENGINEERING DOMAINS
-       ========================================================================= -->
-  <section class="section" id="domains">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-layer-group"></i> CORE SPECIALIZATIONS</div>
-      <h2 class="section-title">Engineering Pillars & Focus Areas</h2>
-      <p class="section-subtitle">Bridging physical mechanics, real-time microkernel firmware, and autonomous robotics software.</p>
-    </div>
-
-    <div class="domains-grid">
-      <!-- Domain 1 -->
-      <div class="domain-card" data-tilt data-reveal="zoom-in">
-        <div class="domain-icon-wrap cyan">
-          <i class="fa-solid fa-robot"></i>
+  <!-- Hero Section -->
+  <main>
+    <section class="hero-section" id="about">
+      <div class="hero-container">
+        <!-- Status Pill -->
+        <div class="status-pill">
+          <span class="pulse-indicator"></span>
+          <span>ROBOTICS & EMBEDDED SYSTEMS ENGINEER • KOCHI, INDIA</span>
         </div>
-        <h3>Autonomous Robotics & Kinematics</h3>
-        <p>
-          Design, kinematic simulation, and fabrication of differential drive surveillance rovers and multi-joint bipedal walking mechanisms with synchronized gait trajectories.
-        </p>
-        <ul class="domain-list">
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> Multi-joint bipedal gait timing & inverse kinematics</li>
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> Differential drive mobile rovers & telemetry control</li>
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> ROS 2 Navigation2 & Gazebo physical dynamic modeling</li>
-        </ul>
-      </div>
 
-      <!-- Domain 2 -->
-      <div class="domain-card" data-tilt data-reveal="zoom-in">
-        <div class="domain-icon-wrap blue">
-          <i class="fa-solid fa-microchip"></i>
+        <h1 class="hero-heading">
+          Engineering Autonomous Systems & <span class="gradient-text">Real-Time Embedded Firmware</span>
+        </h1>
+
+        <p class="hero-summary">
+          I'm <strong>Alwin T R</strong>, a Robotics and Automation Engineer building 
+          <strong>deterministic FreeRTOS firmware</strong>, <strong>ROS 2 autonomous navigation stacks</strong>, 
+          <strong>closed-form multi-axis kinematics</strong>, and <strong>24GHz mmWave radar signal pipelines</strong> across STM32, ESP32, and PIC architectures.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-microchip"></i> Explore Flagship Systems
+          </a>
+          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-amber">
+            <i class="fa-solid fa-file-pdf"></i> Download Resume (PDF)
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-envelope"></i> Get In Touch
+          </a>
         </div>
-        <h3>Real-Time Embedded Firmware</h3>
-        <p>
-          Developing reliable bare-metal and FreeRTOS firmware in C/C++ for STM32, ESP32, PIC16F877A, and AVR microcontrollers with hardware timer PWM, interrupts, and power management.
-        </p>
-        <ul class="domain-list">
-          <li><i class="fa-solid fa-circle-check text-blue"></i> Dual-core FreeRTOS task scheduling & mutex queues</li>
-          <li><i class="fa-solid fa-circle-check text-blue"></i> Hardware timer PWM with microsecond pulse accuracy</li>
-          <li><i class="fa-solid fa-circle-check text-blue"></i> Low-power sleep states and brownout safety routines</li>
-        </ul>
-      </div>
 
-      <!-- Domain 3 -->
-      <div class="domain-card" data-tilt data-reveal="zoom-in">
-        <div class="domain-icon-wrap indigo">
-          <i class="fa-solid fa-satellite-dish"></i>
+        <!-- Key Engineering Metrics -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">50 Hz</div>
+            <div class="metric-title">FreeRTOS Locomotion</div>
+            <div class="metric-subtitle">Deterministic Core 1 Task Isolation</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">24 GHz</div>
+            <div class="metric-title">FMCW Radar DSP</div>
+            <div class="metric-subtitle">Sub-mm Respiration & Range Gates</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">400 kHz</div>
+            <div class="metric-title">Fast-Mode I2C & CAN</div>
+            <div class="metric-subtitle">12-Bit Hardware PWM Precision</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">99.4%</div>
+            <div class="metric-title">HIL Test Pass Rate</div>
+            <div class="metric-subtitle">Automated Hardware Validation</div>
+          </div>
         </div>
-        <h3>mmWave Radar & Sensor Processing</h3>
-        <p>
-          High-frequency FMCW millimeter-wave radar signal processing and sensor fusion for sub-millimeter human respiration detection, seismic IMU analysis, and environmental monitoring.
-        </p>
-        <ul class="domain-list">
-          <li><i class="fa-solid fa-circle-check text-indigo"></i> 24GHz FMCW non-blocking UART frame parsers</li>
-          <li><i class="fa-solid fa-circle-check text-indigo"></i> Spatial gate motion energy extraction (up to 6m)</li>
-          <li><i class="fa-solid fa-circle-check text-indigo"></i> 3D vector acceleration delta calculation & baseline calibration</li>
-        </ul>
+      </div>
+    </section>
+
+    <!-- Engineering Specializations -->
+    <section class="section" id="specializations">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERING DOMAINS</span>
+        <h2 class="section-title">Core Technical Specializations</h2>
+        <p class="section-desc">Bridging physical mechanical kinematics with deterministic microkernel firmware and autonomous software architectures.</p>
       </div>
 
-      <!-- Domain 4 -->
-      <div class="domain-card" data-tilt data-reveal="zoom-in">
-        <div class="domain-icon-wrap cyan">
-          <i class="fa-solid fa-gears"></i>
+      <div class="specializations-grid">
+        <!-- Specialization 1 -->
+        <div class="spec-card">
+          <div class="spec-icon-wrap cyan">
+            <i class="fa-solid fa-robot"></i>
+          </div>
+          <h3>Autonomous Robotics & Kinematics</h3>
+          <p>
+            Design, simulation, and fabrication of mobile rovers and multi-joint bipedal mechanisms. Implementing closed-form 2D/3D inverse kinematics, quintic polynomial zero-jerk swing trajectories, and ROS 2 Nav2 navigation.
+          </p>
+          <ul class="spec-list">
+            <li><i class="fa-solid fa-check text-cyan"></i> 6-DOF dynamic bipedal gait trajectory generation</li>
+            <li><i class="fa-solid fa-check text-cyan"></i> Differential-drive autonomous mobile robot navigation</li>
+            <li><i class="fa-solid fa-check text-cyan"></i> 2D Cartographer SLAM & LiDAR-odometry EKF fusion</li>
+          </ul>
         </div>
-        <h3>Industrial Automation & Motion Control</h3>
-        <p>
-          Designing multi-sensor automated classification machinery combining stepper motor carousel indexing, inductive proximity sensors, and servo rejection sorting flaps.
-        </p>
-        <ul class="domain-list">
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> NEMA 17 stepper indexing with A4988 1/16 microstepping</li>
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> Cubic S-curve velocity easing preventing mechanical backlash</li>
-          <li><i class="fa-solid fa-circle-check text-cyan"></i> Proteus VSM circuit modeling and hardware bring-up</li>
-        </ul>
+
+        <!-- Specialization 2 -->
+        <div class="spec-card">
+          <div class="spec-icon-wrap blue">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3>Real-Time Microkernel Firmware</h3>
+          <p>
+            Architecting production-grade bare-metal and FreeRTOS firmware in Embedded C and C++17. Designing thread-safe ring buffers, mutex queues, timer ISRs, and hardware abstraction layers (HAL) across STM32 and ESP32.
+          </p>
+          <ul class="spec-list">
+            <li><i class="fa-solid fa-check text-blue"></i> Dual-core task affinity & zero-jitter timing isolation</li>
+            <li><i class="fa-solid fa-check text-blue"></i> 16-bit hardware PWM timers with microsecond precision</li>
+            <li><i class="fa-solid fa-check text-blue"></i> Non-volatile flash storage (NVS) parameter persistence</li>
+          </ul>
+        </div>
+
+        <!-- Specialization 3 -->
+        <div class="spec-card">
+          <div class="spec-icon-wrap emerald">
+            <i class="fa-solid fa-satellite-dish"></i>
+          </div>
+          <h3>Radar DSP & Industrial Sensor Protocols</h3>
+          <p>
+            Interfacing high-speed industrial sensors, FMCW millimeter-wave radar modules, and analog transducers. Implementing deterministic non-blocking UART parsers, I2C fast mode, hardware SPI, and CAN bus telemetry.
+          </p>
+          <ul class="spec-list">
+            <li><i class="fa-solid fa-check text-emerald"></i> 24GHz FMCW non-blocking UART frame parsing (115200)</li>
+            <li><i class="fa-solid fa-check text-emerald"></i> Sub-millimeter human respiration & micro-motion tracking</li>
+            <li><i class="fa-solid fa-check text-emerald"></i> 3D vector acceleration delta calculation & baseline filtering</li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- =========================================================================
-       SECTION: INTERACTIVE ENGINEERING WORKBENCH
-       ========================================================================= -->
-  <section class="section" id="workbench">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-terminal"></i> LIVE SIMULATION HUD</div>
-      <h2 class="section-title">Interactive Engineering Workbench</h2>
-      <p class="section-subtitle">Client-side telemetry simulators demonstrating real-time sensor DSP, closed-form inverse kinematics, and deterministic RTOS scheduling.</p>
-    </div>
-
-    <div class="workbench-container" data-reveal="fade-up">
-      <!-- Tabs -->
-      <div class="workbench-nav">
-        <button class="wb-tab-btn active" data-tab="kinematics">
-          <i class="fa-solid fa-robot"></i> <span>6-DOF Inverse Kinematics</span>
-        </button>
-        <button class="wb-tab-btn" data-tab="radar">
-          <i class="fa-solid fa-satellite-dish"></i> <span>24GHz mmWave Radar DSP</span>
-        </button>
-        <button class="wb-tab-btn" data-tab="rtos">
-          <i class="fa-solid fa-microchip"></i> <span>FreeRTOS Core Profiler</span>
-        </button>
+    <!-- Flagship Engineering Projects -->
+    <section class="section" id="projects">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERING PORTFOLIO</span>
+        <h2 class="section-title">Flagship Hardware & Firmware Projects</h2>
+        <p class="section-desc">Fully documented physical systems, robotics mechanisms, and firmware architectures with complete schematics, BOMs, and pinout tables.</p>
       </div>
 
-      <!-- Tab 1: 6-DOF Inverse Kinematics -->
-      <div class="wb-panel active" id="wb-kinematics">
-        <div class="wb-grid">
-          <div class="wb-visualizer">
-            <div class="wb-viz-header">
-              <span>Bipedal Leg 2D Kinematic Solver</span>
-              <span class="wb-status-tag text-cyan"><i class="fa-solid fa-circle"></i> 50Hz Real-Time</span>
+      <!-- Controls: Filters & Search -->
+      <div class="projects-controls">
+        <div class="filter-tab-group">
+          <button class="filter-tab active" data-filter="all">All Systems <span class="tab-count">6</span></button>
+          <button class="filter-tab" data-filter="robotics">Robotics & Kinematics <span class="tab-count">2</span></button>
+          <button class="filter-tab" data-filter="firmware">Embedded Firmware <span class="tab-count">2</span></button>
+          <button class="filter-tab" data-filter="sensors">Sensors & Radar <span class="tab-count">2</span></button>
+        </div>
+        <div class="search-input-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="project-search-input" placeholder="Search by MCU, sensor, protocol, or keyword...">
+        </div>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- Project 1: ESP32 6-DOF Bipedal Robot -->
+        <article class="project-card" data-category="robotics" data-project-id="biped">
+          <div class="card-top-bar">
+            <span class="card-badge primary">ESP32 • FreeRTOS</span>
+            <span class="card-badge category">Robotics & Kinematics</span>
+          </div>
+          <h3 class="card-title">ESP32 6-DOF Bipedal Walking Robot with FreeRTOS Kinematics</h3>
+          <p class="card-summary">
+            Six-DOF humanoid walking robot utilizing dual-core ESP32 thread isolation. Features a dedicated 50Hz locomotion loop on Core 1 computing closed-form 2D Inverse Kinematics and quintic zero-jerk swing trajectories, while offloading wireless telemetry to Core 0.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">Locomotion Loop:</span>
+              <span class="spec-val">50Hz Real-Time Core 1 Task • Quintic Zero-Jerk Easing</span>
             </div>
-            <canvas id="kinematics-canvas" width="460" height="320"></canvas>
-            <div class="wb-viz-footer">
-              <span>L1 (Thigh) = 105mm • L2 (Shank) = 110mm</span>
+            <div class="spec-row">
+              <span class="spec-key">PWM Actuation:</span>
+              <span class="spec-val">PCA9685 16-Ch 12-bit PWM • 400kHz Fast-Mode I2C Bus</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Telemetry Studio:</span>
+              <span class="spec-val">Asynchronous Web Server on Core 0 • Zero-Jitter Timing</span>
             </div>
           </div>
-          <div class="wb-controls">
-            <h4 class="wb-panel-title">End-Effector Target Controls</h4>
-            <p class="wb-panel-desc">Adjust displacement or stance depth to solve closed-form 2D inverse kinematics and observe PCA9685 PWM pulse output in real time.</p>
-            
-            <div class="slider-group">
-              <div class="slider-header">
-                <label>Foot Position X (Stride Displacement):</label>
-                <span id="val-foot-x">0 mm</span>
-              </div>
-              <input type="range" id="input-foot-x" min="-60" max="60" value="0" step="1">
-            </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="biped">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
 
-            <div class="slider-group">
-              <div class="slider-header">
-                <label>Foot Position Y (Stance Depth):</label>
-                <span id="val-foot-y">180 mm</span>
-              </div>
-              <input type="range" id="input-foot-y" min="120" max="205" value="180" step="1">
+        <!-- Project 2: 24GHz mmWave Radar -->
+        <article class="project-card" data-category="sensors" data-project-id="radar-ld2410c">
+          <div class="card-top-bar">
+            <span class="card-badge primary">24GHz FMCW • ESP32</span>
+            <span class="card-badge category">Sensors & Radar</span>
+          </div>
+          <h3 class="card-title">24GHz mmWave Human Presence and Micro-Motion Radar Monitor</h3>
+          <p class="card-summary">
+            Millimeter-wave FMCW radar monitoring station utilizing Hi-Link HLK-LD2410C to detect microscopic chest movements (breathing, sedentary presence) across 8 spatial range gates up to 6 meters with 99.2% reliability.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">RF Sensor:</span>
+              <span class="spec-val">HLK-LD2410C 24GHz FMCW Radar (8 Spatial Range Gates)</span>
             </div>
-
-            <div class="wb-metrics-grid">
-              <div class="wb-metric-box">
-                <span class="wb-m-label">Hip Angle (θ1)</span>
-                <span class="wb-m-val text-cyan" id="disp-hip-angle">12.4°</span>
-                <span class="wb-m-sub" id="disp-hip-pwm">Ch 0: 312 counts (1520µs)</span>
-              </div>
-              <div class="wb-metric-box">
-                <span class="wb-m-label">Knee Angle (θ2)</span>
-                <span class="wb-m-val text-blue" id="disp-knee-angle">62.8°</span>
-                <span class="wb-m-sub" id="disp-knee-pwm">Ch 1: 418 counts (1780µs)</span>
-              </div>
-              <div class="wb-metric-box">
-                <span class="wb-m-label">Ankle Angle (θ3)</span>
-                <span class="wb-m-val text-indigo" id="disp-ankle-angle">50.4°</span>
-                <span class="wb-m-sub" id="disp-ankle-pwm">Ch 2: 394 counts (1680µs)</span>
-              </div>
-              <div class="wb-metric-box">
-                <span class="wb-m-label">Trajectory Easing</span>
-                <span class="wb-m-val" style="color: #10b981;">Quintic S-Curve</span>
-                <span class="wb-m-sub">Zero-Jerk Boundary Met</span>
-              </div>
+            <div class="spec-row">
+              <span class="spec-key">UART Telemetry:</span>
+              <span class="spec-val">Deterministic Non-Blocking Parser (115200 Baud 8N1)</span>
             </div>
+            <div class="spec-row">
+              <span class="spec-key">Sensitivity:</span>
+              <span class="spec-val">Sub-Millimeter Static Respiration & Micro-Motion Extraction</span>
+            </div>
+          </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="radar-ld2410c">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
 
-            <button class="btn btn-secondary btn-sm" id="btn-auto-gait" style="margin-top: 1rem; width: 100%;">
-              <i class="fa-solid fa-play"></i> <span>Toggle Continuous Walking Gait Simulation</span>
+        <!-- Project 3: Autonomous Reconnaissance Rover -->
+        <article class="project-card" data-category="robotics" data-project-id="rover">
+          <div class="card-top-bar">
+            <span class="card-badge primary">ESP32-CAM • Arduino</span>
+            <span class="card-badge category">Robotics & Kinematics</span>
+          </div>
+          <h3 class="card-title">Autonomous Reconnaissance Rover with Gas and Metal Detection</h3>
+          <p class="card-summary">
+            All-terrain tele-operated surveillance rover featuring wireless video streaming over local Wi-Fi UDP stream. Integrates MQ-2 combustible gas sensing and inductive metal proximity detection with edge-triggered alert interrupts.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">Dual-MCU Architecture:</span>
+              <span class="spec-val">ESP32-CAM (UDP Video) + Arduino Uno (Control & ADC)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Hazard Sensing:</span>
+              <span class="spec-val">MQ-2 Flammable Gas Sensor + Inductive Metallic Proximity</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Motor Actuation:</span>
+              <span class="spec-val">Dual L298N H-Bridge • 4WD Geared Chassis with Auto-Braking</span>
+            </div>
+          </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="rover">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 4: RFID Secure Access Control (PIC16F877A) -->
+        <article class="project-card" data-category="firmware" data-project-id="rfid">
+          <div class="card-top-bar">
+            <span class="card-badge primary">PIC16F877A • Bare-Metal C</span>
+            <span class="card-badge category">Embedded Firmware</span>
+          </div>
+          <h3 class="card-title">RFID Secure Access Control and Authentication System (PIC16F877A)</h3>
+          <p class="card-summary">
+            Bare-metal security firmware implemented on a resource-constrained Microchip PIC16F877A MCU. Interfaces a 13.56MHz MFRC522 RFID reader over high-speed SPI with internal EEPROM whitelist authentication.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">Microcontroller:</span>
+              <span class="spec-val">Microchip PIC16F877A • XC8 Compiler / Bare-Metal C</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Bus Interface:</span>
+              <span class="spec-val">Hardware SPI Bus (MFRC522) • 4-Bit Parallel 16x2 HD44780 LCD</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Authentication:</span>
+              <span class="spec-val">Non-Volatile EEPROM Whitelist • Anti-Collision UID Checking</span>
+            </div>
+          </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="rfid">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 5: Automated Multi-Material Waste Sorting -->
+        <article class="project-card" data-category="firmware" data-project-id="waste-carousel">
+          <div class="card-top-bar">
+            <span class="card-badge primary">NEMA 17 • Arduino Uno</span>
+            <span class="card-badge category">Embedded Firmware</span>
+          </div>
+          <h3 class="card-title">Automated Multi-Material Waste Classification System</h3>
+          <p class="card-summary">
+            Closed-loop industrial waste classification station utilizing precision NEMA 17 stepper carousel indexing, inductive metal detection, infrared drop verification, and high-speed servo diversion flaps.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">Stepper Indexing:</span>
+              <span class="spec-val">NEMA 17 Stepper + A4988 Driver (1/16 Microstepping)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Sensory Interconnect:</span>
+              <span class="spec-val">Inductive Proximity Sensor + TCRT5000 IR Drop Beam</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Sorting Mechanism:</span>
+              <span class="spec-val">High-Speed SG90 Servo Flap Dual-Chamber Routing</span>
+            </div>
+          </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="waste-carousel">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
+
+        <!-- Project 6: Real-Time Seismic Vibration Monitor -->
+        <article class="project-card" data-category="sensors" data-project-id="seismic">
+          <div class="card-top-bar">
+            <span class="card-badge primary">ADXL335 • I2C OLED</span>
+            <span class="card-badge category">Sensors & Radar</span>
+          </div>
+          <h3 class="card-title">Real-Time Seismic Vibration & Earthquake Early Warning System</h3>
+          <p class="card-summary">
+            High-frequency 3D vector acceleration delta calculation with dynamic baseline calibration, emergency acoustic buzzer actuation, and live I2C OLED seismic waveform visualizer.
+          </p>
+          <div class="card-specs-list">
+            <div class="spec-row">
+              <span class="spec-key">Acceleration IMU:</span>
+              <span class="spec-val">ADXL335 3-Axis Analog Accelerometer (±3g Dynamic Range)</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Signal Filter:</span>
+              <span class="spec-val">3D Vector Magnitude Delta RMS Baseline Calibration</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Display HUD:</span>
+              <span class="spec-val">0.96" SSD1306 Fast I2C OLED Waveform Telemetry</span>
+            </div>
+          </div>
+          <div class="card-action-bar">
+            <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System" target="_blank" rel="noopener" class="card-btn primary">
+              <i class="fa-brands fa-github"></i> <span>Repository</span>
+            </a>
+            <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System/blob/main/README.md" target="_blank" rel="noopener" class="card-btn secondary">
+              <i class="fa-solid fa-book-open"></i> <span>Guide</span>
+            </a>
+            <button class="card-btn specs-btn" data-open-specs="seismic">
+              <i class="fa-solid fa-microchip"></i> <span>Specs & BOM</span>
+            </button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Technical Skills Matrix -->
+    <section class="section" id="skills">
+      <div class="section-header">
+        <span class="section-tag">COMPETENCIES</span>
+        <h2 class="section-title">Technical Skills Matrix</h2>
+        <p class="section-desc">Comprehensive matrix covering hardware microcontrollers, firmware microkernels, kinematic software, and test tools.</p>
+      </div>
+
+      <div class="skills-matrix-grid">
+        <!-- Matrix 1 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-microchip text-cyan"></i>
+            <h3>Microcontrollers & Hardware</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">ESP32 (Xtensa Dual-Core)</span>
+            <span class="skill-tag">STM32 (ARM Cortex-M)</span>
+            <span class="skill-tag">PIC16F877A (Microchip)</span>
+            <span class="skill-tag">ATmega328P / AVR</span>
+            <span class="skill-tag">Raspberry Pi 4</span>
+            <span class="skill-tag">PCA9685 PWM Driver</span>
+          </div>
+        </div>
+
+        <!-- Matrix 2 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-laptop-code text-blue"></i>
+            <h3>Firmware, RTOS & Languages</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">FreeRTOS (Queues, Mutexes, ISRs)</span>
+            <span class="skill-tag">Bare-Metal C</span>
+            <span class="skill-tag">Modern C++ (C++17)</span>
+            <span class="skill-tag">PIC Assembly / XC8</span>
+            <span class="skill-tag">Python 3 / NumPy</span>
+            <span class="skill-tag">Hardware Timers & Interrupts</span>
+          </div>
+        </div>
+
+        <!-- Matrix 3 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-robot text-purple"></i>
+            <h3>Robotics, Kinematics & SLAM</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">ROS 2 (Humble)</span>
+            <span class="skill-tag">Nav2 Navigation Stack</span>
+            <span class="skill-tag">2D Cartographer SLAM</span>
+            <span class="skill-tag">Inverse & Forward Kinematics</span>
+            <span class="skill-tag">Gazebo Dynamic Simulation</span>
+            <span class="skill-tag">LiDAR & Odometry EKF Fusion</span>
+          </div>
+        </div>
+
+        <!-- Matrix 4 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-network-wired text-cyan"></i>
+            <h3>Hardware Protocols & Busses</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">CAN Bus (Controller Area)</span>
+            <span class="skill-tag">UART Serial Telemetry</span>
+            <span class="skill-tag">I2C (Fast Mode 400kHz)</span>
+            <span class="skill-tag">SPI (High-Speed Bus)</span>
+            <span class="skill-tag">16-Bit Hardware PWM</span>
+            <span class="skill-tag">ADC / DAC Conversion</span>
+          </div>
+        </div>
+
+        <!-- Matrix 5 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-satellite-dish text-blue"></i>
+            <h3>Radar, Sensing & Wireless</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">24GHz mmWave FMCW Radar</span>
+            <span class="skill-tag">ESP-NOW (&lt;10ms Latency)</span>
+            <span class="skill-tag">MQTT IoT Messaging</span>
+            <span class="skill-tag">Wi-Fi 802.11 UDP/TCP</span>
+            <span class="skill-tag">Bluetooth Low Energy (BLE)</span>
+            <span class="skill-tag">ADXL335 3D IMU Sensing</span>
+          </div>
+        </div>
+
+        <!-- Matrix 6 -->
+        <div class="matrix-card">
+          <div class="matrix-header">
+            <i class="fa-solid fa-screwdriver-wrench text-purple"></i>
+            <h3>Toolchains & Engineering Suites</h3>
+          </div>
+          <div class="matrix-tags">
+            <span class="skill-tag">STM32CubeIDE</span>
+            <span class="skill-tag">PlatformIO Embedded IDE</span>
+            <span class="skill-tag">MPLAB X / XC8</span>
+            <span class="skill-tag">Proteus VSM Circuit Suite</span>
+            <span class="skill-tag">Git & GitHub CLI</span>
+            <span class="skill-tag">Ubuntu Linux 22.04 LTS</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Professional Experience & Education -->
+    <section class="section" id="experience">
+      <div class="section-header">
+        <span class="section-tag">CAREER MILESTONES</span>
+        <h2 class="section-title">Professional Experience & Education</h2>
+        <p class="section-desc">Track record delivering firmware solutions, autonomous navigation nodes, and validated embedded hardware.</p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Experience 1 -->
+        <div class="timeline-entry">
+          <div class="timeline-marker"><i class="fa-solid fa-briefcase"></i></div>
+          <div class="timeline-body">
+            <span class="timeline-time">May 2026 – Present • Kochi, India</span>
+            <h3 class="timeline-role">Embedded Systems & Robotics Engineer</h3>
+            <h4 class="timeline-company">Mepits Infotech Pvt. Ltd.</h4>
+            <p class="timeline-text">
+              Architecting and deploying embedded firmware solutions across STM32 and ESP32 microcontrollers. Designing modular device drivers and real-time control algorithms with FreeRTOS task synchronization. Conducting peripheral validation and automated hardware-in-the-loop (HIL) testing with a 99.4% test pass rate.
+            </p>
+            <div class="timeline-chips">
+              <span>STM32 ARM</span>
+              <span>ESP32 Dual-Core</span>
+              <span>FreeRTOS</span>
+              <span>HIL Automated Testing</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience 2 -->
+        <div class="timeline-entry">
+          <div class="timeline-marker"><i class="fa-solid fa-robot"></i></div>
+          <div class="timeline-body">
+            <span class="timeline-time">Aug 2025 – Apr 2026 • Kochi, India</span>
+            <h3 class="timeline-role">Robotics Trainee</h3>
+            <h4 class="timeline-company">Evolve Robotics</h4>
+            <p class="timeline-text">
+              Architected custom ROS 2 (Humble) nodes in C++ and Python for differential-drive mobile robots, integrating Nav2 stacks for autonomous navigation and dynamic obstacle avoidance. Configured 2D SLAM mapping and sensor fusion pipelines fusing LiDAR and wheel odometry. Implemented deterministic motor PWM control routines.
+            </p>
+            <div class="timeline-chips">
+              <span>ROS 2 Humble</span>
+              <span>Nav2 Stack</span>
+              <span>2D SLAM</span>
+              <span>LiDAR Sensor Fusion</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-entry">
+          <div class="timeline-marker"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="timeline-body">
+            <span class="timeline-time">2021 – 2025</span>
+            <h3 class="timeline-role">B.E. in Robotics and Automation</h3>
+            <h4 class="timeline-company">Dhanalakshmi Srinivasan Engineering College</h4>
+            <p class="timeline-text">
+              Graduated with specialized coursework in robotics kinematics, microprocessors & microcontrollers, industrial automation, PLC programming, control systems, and computer vision.
+            </p>
+            <div class="timeline-chips">
+              <span>Robotics & Automation</span>
+              <span>Kinematic Modeling</span>
+              <span>Control Systems</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Internships -->
+        <div class="timeline-entry">
+          <div class="timeline-marker"><i class="fa-solid fa-microchip"></i></div>
+          <div class="timeline-body">
+            <span class="timeline-time">2023 • Kochi & Thiruvananthapuram</span>
+            <h3 class="timeline-role">Embedded Systems & IoT Engineering Internships</h3>
+            <h4 class="timeline-company">Keltron & Aester India Pvt. Ltd.</h4>
+            <p class="timeline-text">
+              Engineered embedded C/C++ firmware on AVR and PIC microcontrollers for industrial modules. Developed IoT sensor-monitoring prototypes on ESP32 publishing real-time telemetry via MQTT. Interfaced RFID access controllers and executed circuit verification in Proteus.
+            </p>
+            <div class="timeline-chips">
+              <span>PIC16F877A</span>
+              <span>MQTT Telemetry</span>
+              <span>Circuit Prototyping</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Direct Engineering Contact Hub -->
+    <section class="section" id="contact">
+      <div class="section-header">
+        <span class="section-tag">DIRECT INQUIRIES</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-desc">Open for discussions on embedded firmware, robotics engineering, hardware validation, and technical collaborations.</p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Email Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrap cyan">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h3>Direct Email</h3>
+          <p class="contact-handle">alwintr2003@gmail.com</p>
+          <p class="contact-desc">Direct inquiries for firmware architecture, robotics engineering, and technical discussions.</p>
+          <div class="contact-btn-group">
+            <a href="mailto:alwintr2003@gmail.com" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-paper-plane"></i> Send Email
+            </a>
+            <button class="btn btn-secondary btn-sm copy-email-btn" data-copy="alwintr2003@gmail.com">
+              <i class="fa-regular fa-copy"></i> <span>Copy Email</span>
             </button>
           </div>
         </div>
-      </div>
 
-      <!-- Tab 2: 24GHz mmWave Radar DSP -->
-      <div class="wb-panel" id="wb-radar">
-        <div class="wb-grid">
-          <div class="wb-visualizer">
-            <div class="wb-viz-header">
-              <span>8-Gate Spatial Energy Distribution (0.75m – 6.0m)</span>
-              <span class="wb-status-tag text-cyan"><i class="fa-solid fa-circle"></i> UART 115200 Baud</span>
-            </div>
-            <div class="radar-gates-bars" id="radar-gates-container"></div>
-            <div class="radar-scope-wrapper">
-              <div class="radar-scope-header">
-                <span>Micro-Motion Chest Respiration Waveform (0.25 Hz)</span>
-                <span id="radar-resp-rate" class="text-cyan">16 Breaths/Min</span>
-              </div>
-              <canvas id="radar-scope-canvas" width="460" height="90"></canvas>
-            </div>
+        <!-- LinkedIn Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrap blue">
+            <i class="fa-brands fa-linkedin"></i>
           </div>
-          <div class="wb-controls">
-            <h4 class="wb-panel-title">HLK-LD2410C FMCW Simulator</h4>
-            <p class="wb-panel-desc">Simulate target range gate and observe real-time spatial gate energy extraction and raw UART frame telemetry.</p>
-
-            <div class="slider-group">
-              <div class="slider-header">
-                <label>Target Distance:</label>
-                <span id="val-radar-dist">2.25 m (Range Gate 3)</span>
-              </div>
-              <input type="range" id="input-radar-dist" min="1" max="8" value="3" step="1">
-            </div>
-
-            <div class="slider-group">
-              <div class="slider-header">
-                <label>Target Motion State:</label>
-              </div>
-              <select id="select-radar-mode" class="wb-select">
-                <option value="micro">Sedentary Presence (Micro-Motion Respiration)</option>
-                <option value="macro">Dynamic Macro-Motion (Walking Across Range)</option>
-              </select>
-            </div>
-
-            <div class="terminal-block" style="margin-top: 1rem;">
-              <div class="terminal-bar">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">Raw UART Frame (115200 8N1)</span>
-              </div>
-              <pre class="terminal-code" id="radar-uart-frame" style="font-size: 0.75rem; padding: 0.65rem;">FD FC FB FA 08 00 02 AA 03 48 00 00 55 CC</pre>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: FreeRTOS Dual-Core Profiler -->
-      <div class="wb-panel" id="wb-rtos">
-        <div class="rtos-grid">
-          <div class="rtos-core-card">
-            <div class="rtos-core-header">
-              <div class="core-badge cyan">ESP32 Core 0 (Protocol & Web Telemetry)</div>
-              <span class="core-load" id="core0-load">24% CPU</span>
-            </div>
-            <div class="rtos-task-list">
-              <div class="rtos-task-row">
-                <span class="task-name">AsyncWebServerTask</span>
-                <span class="task-prio">Prio 1</span>
-                <div class="task-bar-bg"><div class="task-bar-fill cyan" style="width: 14%;"></div></div>
-                <span class="task-pct">14%</span>
-              </div>
-              <div class="rtos-task-row">
-                <span class="task-name">Wi-Fi TCP/IP Stack</span>
-                <span class="task-prio">Prio 18</span>
-                <div class="task-bar-bg"><div class="task-bar-fill cyan" style="width: 8%;"></div></div>
-                <span class="task-pct">8%</span>
-              </div>
-              <div class="rtos-task-row">
-                <span class="task-name">IDLE0 Task</span>
-                <span class="task-prio">Prio 0</span>
-                <div class="task-bar-bg"><div class="task-bar-fill muted" style="width: 78%;"></div></div>
-                <span class="task-pct">78%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="rtos-core-card">
-            <div class="rtos-core-header">
-              <div class="core-badge blue">ESP32 Core 1 (Deterministic Locomotion)</div>
-              <span class="core-load" id="core1-load">42% CPU</span>
-            </div>
-            <div class="rtos-task-list">
-              <div class="rtos-task-row">
-                <span class="task-name">vTaskLocomotion50Hz</span>
-                <span class="task-prio">Prio 5 (Pinned)</span>
-                <div class="task-bar-bg"><div class="task-bar-fill blue" style="width: 28%;"></div></div>
-                <span class="task-pct">28% (20ms Period)</span>
-              </div>
-              <div class="rtos-task-row">
-                <span class="task-name">vTaskSensorRead</span>
-                <span class="task-prio">Prio 3</span>
-                <div class="task-bar-bg"><div class="task-bar-fill blue" style="width: 11%;"></div></div>
-                <span class="task-pct">11% (100Hz IMU)</span>
-              </div>
-              <div class="rtos-task-row">
-                <span class="task-name">IDLE1 Task</span>
-                <span class="task-prio">Prio 0</span>
-                <div class="task-bar-bg"><div class="task-bar-fill muted" style="width: 61%;"></div></div>
-                <span class="task-pct">61%</span>
-              </div>
-            </div>
+          <h3>LinkedIn Profile</h3>
+          <p class="contact-handle">linkedin.com/in/alwin-t-r-</p>
+          <p class="contact-desc">Connect for professional networking, engineering opportunities, and technical collaborations.</p>
+          <div class="contact-btn-group">
+            <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener" class="btn btn-outline-blue btn-sm">
+              <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
+            </a>
           </div>
         </div>
 
-        <div class="rtos-summary-bar">
-          <div class="rtos-sum-item">
-            <i class="fa-solid fa-clock text-cyan"></i>
-            <span><strong>Tick Rate:</strong> 1000Hz (1ms tick period)</span>
+        <!-- GitHub Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrap purple">
+            <i class="fa-brands fa-github"></i>
           </div>
-          <div class="rtos-sum-item">
-            <i class="fa-solid fa-lock text-blue"></i>
-            <span><strong>Synchronization:</strong> Binary Semaphores & Mutex Queues</span>
-          </div>
-          <div class="rtos-sum-item">
-            <i class="fa-solid fa-shield-halved text-indigo"></i>
-            <span><strong>Timing Guarantees:</strong> Zero Locomotion Jitter (&lt;±8µs)</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 2: FEATURED FLAGSHIP PROJECTS SHOWCASE
-       ========================================================================= -->
-  <section class="section" id="projects">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-microchip"></i> CURATED SHOWCASE</div>
-      <h2 class="section-title">Flagship Engineering Projects</h2>
-      <p class="section-subtitle">Physical embedded systems, multi-axis robotics, and real-time firmware architectures with complete schematics, BOMs, and pinouts.</p>
-    </div>
-
-    <!-- Category Filters & Search -->
-    <div class="controls-wrapper" data-reveal="fade-up">
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all"><i class="fa-solid fa-border-all"></i> All Projects <span class="filter-count">8</span></button>
-        <button class="filter-btn" data-filter="robotics"><i class="fa-solid fa-robot"></i> Robotics & Kinematics <span class="filter-count">2</span></button>
-        <button class="filter-btn" data-filter="firmware"><i class="fa-solid fa-microchip"></i> Embedded Firmware <span class="filter-count">2</span></button>
-        <button class="filter-btn" data-filter="sensors"><i class="fa-solid fa-satellite-dish"></i> Radar & Sensing <span class="filter-count">2</span></button>
-        <button class="filter-btn" data-filter="automation"><i class="fa-solid fa-gears"></i> Industrial Automation <span class="filter-count">2</span></button>
-      </div>
-      <div class="search-box">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="project-search" placeholder="Search by MCU, sensor, protocol, or title...">
-      </div>
-    </div>
-
-    <!-- Active Count Counter -->
-    <div class="project-count-bar" data-reveal="fade-up">
-      <span>Showing <strong id="project-count">8</strong> Curated Engineering Projects</span>
-    </div>
-
-    <!-- Project Cards Grid -->
-    <div class="projects-grid" id="projects-grid">
-
-      <!-- Project 1: ESP32 6-DOF Bipedal Walking Robot -->
-      <div class="project-card" data-category="robotics" data-project="biped" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon cyan"><i class="fa-solid fa-robot"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-cyan">ESP32 / FreeRTOS</span>
-            <span class="badge badge-cat">Robotics</span>
+          <h3>GitHub Workspace</h3>
+          <p class="contact-handle">github.com/ALWINTR</p>
+          <p class="contact-desc">Explore public engineering repositories with circuit schematics, BOMs, and firmware source code.</p>
+          <div class="contact-btn-group">
+            <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-outline-white btn-sm">
+              <i class="fa-brands fa-github"></i> View GitHub
+            </a>
           </div>
         </div>
-        <h3 class="card-title">ESP32 6-DOF Bipedal Walking Robot with FreeRTOS Kinematics</h3>
-        <p class="card-desc">
-          Humanoid bipedal robot featuring dual-core ESP32 thread isolation, closed-form 2D Inverse Kinematics, quintic zero-jerk swing trajectories, 400kHz I2C PCA9685 PWM, and asynchronous Web Studio telemetry.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Locomotion:</strong> 50Hz Real-Time Locomotion Task (Core 1) • Quintic Zero-Jerk Easing</div>
-          <div class="spec-item"><strong>Actuation:</strong> PCA9685 16-Ch 12-bit PWM • 400kHz Fast-Mode I2C • 6x Metal Servos</div>
-          <div class="spec-item"><strong>Telemetry:</strong> Asynchronous Web Studio on Core 0 • Zero-Jitter Servo Loop</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/ESP32-6-DOF-Bipedal-Walking-Robot-with-FreeRTOS-Kinematics/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="biped" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
 
-      <!-- Project 2: 24GHz mmWave Human Presence Radar -->
-      <div class="project-card" data-category="sensors" data-project="radar-ld2410c" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon cyan"><i class="fa-solid fa-satellite-dish"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-cyan">24GHz FMCW / ESP32</span>
-            <span class="badge badge-cat">Radar Sensing</span>
+        <!-- Resume Download Card -->
+        <div class="contact-card">
+          <div class="contact-icon-wrap amber">
+            <i class="fa-solid fa-file-pdf"></i>
           </div>
-        </div>
-        <h3 class="card-title">24GHz mmWave Human Presence and Micro Motion Radar Monitor</h3>
-        <p class="card-desc">
-          Millimeter-wave radar monitoring station utilizing Hi-Link HLK-LD2410C FMCW radar to detect microscopic chest movements (breathing, sedentary presence) across 8 spatial gates up to 6 meters.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Sensor:</strong> HLK-LD2410C 24GHz FMCW Millimeter-Wave Radar (8 Range Gates)</div>
-          <div class="spec-item"><strong>Telemetry:</strong> Hardware UART (115200 baud) Non-Blocking Frame Extraction</div>
-          <div class="spec-item"><strong>Reliability:</strong> 99.2% Sub-Millimeter Micro-Motion & Static Respiration Tracking</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/24GHz-mmWave-Human-Presence-and-Micro-Motion-Radar-Monitor/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="radar-ld2410c" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 3: Autonomous Reconnaissance Rover -->
-      <div class="project-card" data-category="robotics" data-project="rover" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon cyan"><i class="fa-solid fa-shield-halved"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-cyan">ESP32 / Dual-Core</span>
-            <span class="badge badge-cat">Robotics</span>
-          </div>
-        </div>
-        <h3 class="card-title">Autonomous Reconnaissance Rover with Gas and Metal Detection</h3>
-        <p class="card-desc">
-          Long-range tele-operated reconnaissance vehicle featuring real-time wireless video transmission over UDP, hazardous combustible gas leak detection, and inductive metal proximity sensing.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>MCU Architecture:</strong> ESP32 Dual-Core (Wi-Fi UDP Stream) & Arduino Uno (Control)</div>
-          <div class="spec-item"><strong>Sensors:</strong> MQ-2 Combustible Gas ADC & Inductive Proximity Interrupt</div>
-          <div class="spec-item"><strong>Actuation:</strong> Dual L298N H-Bridge • 4WD Geared Chassis with Auto-Braking</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/Autonomous-Reconnaissance-Rover-with-Gas-and-Metal-Detection/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="rover" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 4: RFID Secure Access Control (PIC16F877A) -->
-      <div class="project-card" data-category="firmware" data-project="rfid" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon blue"><i class="fa-solid fa-id-card"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-blue">PIC16F877A / SPI</span>
-            <span class="badge badge-cat">Embedded Firmware</span>
-          </div>
-        </div>
-        <h3 class="card-title">RFID Secure Access Control and Authentication System (PIC16F877A)</h3>
-        <p class="card-desc">
-          Bare-metal security firmware implemented on a resource-constrained Microchip PIC16F877A, interfacing a 13.56MHz MFRC522 RFID reader over high-speed SPI with on-chip EEPROM whitelist validation.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Architecture:</strong> Microchip PIC16F877A • Bare-Metal C / XC8 Compiler</div>
-          <div class="spec-item"><strong>Interface:</strong> Hardware SPI (MFRC522) • 4-Bit Parallel 16x2 HD44780 LCD</div>
-          <div class="spec-item"><strong>Security:</strong> Non-Volatile EEPROM Whitelist • Anti-Collision UID Checking</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/RFID-Secure-Access-Control-and-Authentication-System-PIC16F877A/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="rfid" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 5: Automated Multi-Material Waste Classification -->
-      <div class="project-card" data-category="automation" data-project="waste-carousel" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon blue"><i class="fa-solid fa-recycle"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-blue">Arduino / Stepper</span>
-            <span class="badge badge-cat">Industrial Automation</span>
-          </div>
-        </div>
-        <h3 class="card-title">Automated Multi Material Waste Classification System</h3>
-        <p class="card-desc">
-          Closed-loop industrial waste classification station utilizing precision NEMA 17 stepper carousel indexing, inductive metal detection, infrared drop verification, and high-speed servo diversion flaps.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Actuation:</strong> NEMA 17 Stepper + A4988 (1/16 Microstepping Interpolation)</div>
-          <div class="spec-item"><strong>Sensors:</strong> Inductive Proximity & TCRT5000 Infrared Drop Detection</div>
-          <div class="spec-item"><strong>Sorting:</strong> High-Speed SG90 Metal-Gear Servo Flap Diversion</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/Automated-Multi-Material-Waste-Classification-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="waste-carousel" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 6: Real-Time Seismic Vibration Monitor -->
-      <div class="project-card" data-category="sensors" data-project="seismic" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon indigo"><i class="fa-solid fa-wave-square"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-indigo">ADXL335 / IMU</span>
-            <span class="badge badge-cat">Sensing & Telemetry</span>
-          </div>
-        </div>
-        <h3 class="card-title">Real Time Seismic Vibration and Earthquake Early Warning System</h3>
-        <p class="card-desc">
-          High-frequency 3D vector acceleration delta calculation with dynamic baseline calibration, emergency acoustic buzzer actuation, and live I2C OLED seismic waveform visualizer.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Sensor:</strong> ADXL335 3-Axis Analog Accelerometer (±3g Dynamic Range)</div>
-          <div class="spec-item"><strong>Algorithm:</strong> 3D Vector Magnitude Delta RMS Baseline Filtering</div>
-          <div class="spec-item"><strong>Display:</strong> 0.96" SSD1306 Fast I2C OLED Seismic Waveform Stream</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/Real-Time-Seismic-Vibration-and-Earthquake-Early-Warning-System/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="seismic" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 7: Precision Stepper Motor Angle Controller -->
-      <div class="project-card" data-category="automation" data-project="stepper-controller" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon indigo"><i class="fa-solid fa-arrows-spin"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-indigo">A4988 / Microstepping</span>
-            <span class="badge badge-cat">Motion Control</span>
-          </div>
-        </div>
-        <h3 class="card-title">Precision Stepper Motor Angle Controller with Microstepping</h3>
-        <p class="card-desc">
-          High-precision stepper motor positioning firmware implementing sub-degree angle mapping, linear frequency acceleration ramps, and serial CLI angle commands with 1/16 microstepping.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Actuation:</strong> NEMA 17 Stepper (1.8° step) + A4988 Driver Carrier</div>
-          <div class="spec-item"><strong>Accuracy:</strong> Sub-degree 0.1125° Positioning Resolution with 1/16 Step</div>
-          <div class="spec-item"><strong>Motion:</strong> Trapezoidal Acceleration Ramps & Anti-Resonance Timing</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Precision-Stepper-Motor-Angle-Controller-with-Microstepping" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/Precision-Stepper-Motor-Angle-Controller-with-Microstepping/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="stepper-controller" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- Project 8: Dynamic Angular Velocity Servo Controller -->
-      <div class="project-card" data-category="firmware" data-project="servo-easing" data-tilt data-reveal="zoom-in">
-        <div class="card-header">
-          <div class="card-icon cyan"><i class="fa-solid fa-sliders"></i></div>
-          <div class="card-badges">
-            <span class="badge badge-cyan">Cubic Easing / PWM</span>
-            <span class="badge badge-cat">Motion Control</span>
-          </div>
-        </div>
-        <h3 class="card-title">Dynamic Angular Velocity Servo Controller with Smooth Easing</h3>
-        <p class="card-desc">
-          Non-blocking hardware timer servo velocity controller implementing cubic S-curve acceleration easing to eliminate sudden mechanical torque spikes and gear backlash in robotic joints.
-        </p>
-        <div class="card-specs">
-          <div class="spec-item"><strong>Algorithm:</strong> Cubic Polynomial S-Curve Velocity Easing (Jerk Reduction)</div>
-          <div class="spec-item"><strong>PWM:</strong> Non-Blocking Hardware Timer Interrupt Pulse Generation</div>
-          <div class="spec-item"><strong>Protection:</strong> Backlash Prevention & Mechanical Shock Elimination</div>
-        </div>
-        <div class="card-footer">
-          <a href="https://github.com/ALWINTR/Dynamic-Angular-Velocity-Servo-Controller-with-Smooth-Easing" target="_blank" rel="noopener" class="card-link btn-glow" title="View Repository on GitHub">
-            <i class="fa-brands fa-github"></i> <span>Repo</span>
-          </a>
-          <a href="https://github.com/ALWINTR/Dynamic-Angular-Velocity-Servo-Controller-with-Smooth-Easing/blob/main/README.md" target="_blank" rel="noopener" class="card-link secondary" title="Technical Architecture and BOM">
-            <i class="fa-solid fa-book-open"></i> <span>Guide</span>
-          </a>
-          <button class="card-link btn-specs open-specs-btn" data-project="servo-easing" title="Open Circuit Architecture, BOM & Pinouts">
-            <i class="fa-solid fa-microchip"></i> <span>Specs</span>
-          </button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 3: TECHNICAL COMPETENCY MATRIX
-       ========================================================================= -->
-  <section class="section" id="tech-stack">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-code"></i> SKILLS MATRIX</div>
-      <h2 class="section-title">Technical Arsenal & Toolchains</h2>
-      <p class="section-subtitle">Comprehensive stack covering microcontrollers, microkernel firmware, kinematic modeling, and EDA suites.</p>
-    </div>
-
-    <div class="matrix-grid">
-      <!-- Matrix 1 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-microchip text-cyan"></i>
-          <h3>Microcontrollers & Architectures</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">ESP32 (Xtensa Dual-Core)</span>
-          <span class="tech-tag">STM32 (ARM Cortex-M)</span>
-          <span class="tech-tag">PIC16F877A (Microchip)</span>
-          <span class="tech-tag">ATmega328P / AVR</span>
-          <span class="tech-tag">Raspberry Pi 4</span>
-          <span class="tech-tag">PCA9685 PWM Driver</span>
-        </div>
-      </div>
-
-      <!-- Matrix 2 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-laptop-code text-blue"></i>
-          <h3>Firmware & RTOS</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">FreeRTOS (Queues, Mutexes)</span>
-          <span class="tech-tag">Bare-Metal C</span>
-          <span class="tech-tag">Modern C++ (C++17)</span>
-          <span class="tech-tag">PIC Assembly / XC8</span>
-          <span class="tech-tag">Python 3 / NumPy</span>
-          <span class="tech-tag">Hardware Interrupts (ISR)</span>
-        </div>
-      </div>
-
-      <!-- Matrix 3 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-robot text-indigo"></i>
-          <h3>Robotics & Kinematics</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">ROS 2 (Humble)</span>
-          <span class="tech-tag">Nav2 Navigation Stack</span>
-          <span class="tech-tag">2D SLAM (Cartographer/AMCL)</span>
-          <span class="tech-tag">Inverse & Forward Kinematics</span>
-          <span class="tech-tag">Gazebo Dynamic Simulation</span>
-          <span class="tech-tag">LiDAR & Odometry Fusion</span>
-        </div>
-      </div>
-
-      <!-- Matrix 4 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-network-wired text-cyan"></i>
-          <h3>Hardware Protocols & Busses</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">CAN Bus</span>
-          <span class="tech-tag">UART Serial Telemetry</span>
-          <span class="tech-tag">I2C (Fast Mode 400kHz)</span>
-          <span class="tech-tag">SPI (High-Speed Bus)</span>
-          <span class="tech-tag">16-Bit Hardware PWM</span>
-          <span class="tech-tag">ADC / DAC Conversion</span>
-        </div>
-      </div>
-
-      <!-- Matrix 5 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-satellite-dish text-blue"></i>
-          <h3>Radar, Sensing & Wireless</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">24GHz mmWave FMCW Radar</span>
-          <span class="tech-tag">ESP-NOW (&lt;10ms Latency)</span>
-          <span class="tech-tag">MQTT IoT Messaging</span>
-          <span class="tech-tag">Wi-Fi 802.11 UDP/TCP</span>
-          <span class="tech-tag">Bluetooth Low Energy (BLE)</span>
-          <span class="tech-tag">ADXL335 3D IMU Sensing</span>
-        </div>
-      </div>
-
-      <!-- Matrix 6 -->
-      <div class="matrix-card" data-tilt data-reveal="zoom-in">
-        <div class="matrix-head">
-          <i class="fa-solid fa-screwdriver-wrench text-indigo"></i>
-          <h3>Toolchains & Engineering Suites</h3>
-        </div>
-        <div class="tech-tags">
-          <span class="tech-tag">STM32CubeIDE</span>
-          <span class="tech-tag">PlatformIO Embedded IDE</span>
-          <span class="tech-tag">MPLAB X / XC8</span>
-          <span class="tech-tag">Proteus VSM Circuit Suite</span>
-          <span class="tech-tag">Git & GitHub CLI</span>
-          <span class="tech-tag">Ubuntu Linux</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 4: CAREER EXPERIENCE & EDUCATION
-       ========================================================================= -->
-  <section class="section" id="experience">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-briefcase"></i> CAREER & BACKGROUND</div>
-      <h2 class="section-title">Engineering Experience & Education</h2>
-      <p class="section-subtitle">Industry track record building firmware, autonomous mobile robots, and embedded sensor systems.</p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-line"></div>
-
-      <!-- Experience 1 -->
-      <div class="timeline-item left" data-reveal="fade-right">
-        <div class="timeline-dot"><i class="fa-solid fa-microchip"></i></div>
-        <div class="timeline-content" data-tilt>
-          <span class="timeline-date">May 2026 – Present • Kochi, India</span>
-          <h3>Embedded Systems & Robotics Engineer</h3>
-          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem;">Mepits Infotech Pvt. Ltd.</h4>
-          <p>Architecting and deploying embedded firmware across STM32 and ESP32 microcontrollers. Designing modular device drivers with FreeRTOS task synchronization and conducting hardware-in-the-loop (HIL) testing.</p>
-          <div class="timeline-tags">
-            <span>STM32 ARM</span>
-            <span>ESP32 Dual-Core</span>
-            <span>FreeRTOS</span>
-            <span>HIL Testing</span>
+          <h3>Curriculum Vitae</h3>
+          <p class="contact-handle">ALWIN_TR_RESUME.pdf</p>
+          <p class="contact-desc">Download complete 1-page engineering resume detailing industrial experience, technical skills, and projects.</p>
+          <div class="contact-btn-group">
+            <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-outline-amber btn-sm">
+              <i class="fa-solid fa-arrow-down"></i> View / Download PDF
+            </a>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- Experience 2 -->
-      <div class="timeline-item right" data-reveal="fade-left">
-        <div class="timeline-dot"><i class="fa-solid fa-robot"></i></div>
-        <div class="timeline-content" data-tilt>
-          <span class="timeline-date">Aug 2025 – Apr 2026 • Kochi, India</span>
-          <h3>Robotics Trainee</h3>
-          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem;">Evolve Robotics</h4>
-          <p>Architected custom ROS 2 (Humble) nodes for differential-drive mobile robots, integrating Nav2 stacks for autonomous navigation and 2D SLAM LiDAR-odometry sensor fusion. Managed deterministic motor PWM control.</p>
-          <div class="timeline-tags">
-            <span>ROS 2 Humble</span>
-            <span>Nav2 Stack</span>
-            <span>2D SLAM</span>
-            <span>Sensor Fusion</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Education -->
-      <div class="timeline-item left" data-reveal="fade-right">
-        <div class="timeline-dot"><i class="fa-solid fa-graduation-cap"></i></div>
-        <div class="timeline-content" data-tilt>
-          <span class="timeline-date">2021 – 2025</span>
-          <h3>B.E. in Robotics and Automation</h3>
-          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem;">Dhanalakshmi Srinivasan Engineering College</h4>
-          <p>Comprehensive coursework in kinematics, microprocessors, PLC automation, industrial robotics, sensor fusion, and embedded control systems.</p>
-          <div class="timeline-tags">
-            <span>Robotics & Automation</span>
-            <span>Kinematics</span>
-            <span>Embedded Systems</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Internships -->
-      <div class="timeline-item right" data-reveal="fade-left">
-        <div class="timeline-dot"><i class="fa-solid fa-laptop-code"></i></div>
-        <div class="timeline-content" data-tilt>
-          <span class="timeline-date">2023 • Kochi & Thiruvananthapuram</span>
-          <h3>Industrial Embedded & IoT Internships</h3>
-          <h4 style="color: var(--primary); font-size: 0.95rem; margin-bottom: 0.5rem;">Keltron & Aester India Pvt. Ltd.</h4>
-          <p>Engineered embedded C/C++ firmware on AVR and PIC microcontrollers, prototyped MQTT IoT sensor nodes, and validated circuit designs using Proteus.</p>
-          <div class="timeline-tags">
-            <span>PIC16F877A</span>
-            <span>MQTT Protocol</span>
-            <span>Hardware Bring-up</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       SECTION 5: DIRECT CONTACT HUB
-       ========================================================================= -->
-  <section class="section" id="contact">
-    <div class="section-header" data-reveal="fade-up">
-      <div class="section-tag"><i class="fa-solid fa-paper-plane"></i> DIRECT INQUIRIES</div>
-      <h2 class="section-title">Get In Touch</h2>
-      <p class="section-subtitle">Open for discussions on embedded firmware, robotics engineering, hardware validation, and technical collaborations.</p>
-    </div>
-
-    <div class="contact-grid" data-reveal="fade-up">
-      <!-- Email Card -->
-      <div class="contact-card" data-tilt>
-        <div class="contact-icon cyan">
-          <i class="fa-solid fa-envelope"></i>
-        </div>
-        <h3>Direct Email</h3>
-        <p class="contact-val">alwintr2003@gmail.com</p>
-        <p class="contact-note">Fastest response for engineering opportunities, technical questions, and firmware collaboration.</p>
-        <div class="contact-actions">
-          <a href="mailto:alwintr2003@gmail.com" class="btn btn-primary btn-sm">
-            <i class="fa-solid fa-paper-plane"></i> Send Email
-          </a>
-          <button class="btn btn-secondary btn-sm copy-btn" data-copy="alwintr2003@gmail.com">
-            <i class="fa-regular fa-copy"></i> <span>Copy Email</span>
-          </button>
-        </div>
-      </div>
-
-      <!-- LinkedIn Card (Fixed link) -->
-      <div class="contact-card" data-tilt>
-        <div class="contact-icon blue">
-          <i class="fa-brands fa-linkedin"></i>
-        </div>
-        <h3>LinkedIn Profile</h3>
-        <p class="contact-val">linkedin.com/in/alwin-t-r-</p>
-        <p class="contact-note">Connect for professional networking, industry insights, and career discussions.</p>
-        <div class="contact-actions">
-          <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener" class="btn btn-linkedin btn-sm">
-            <i class="fa-brands fa-linkedin"></i> Connect on LinkedIn
-          </a>
-        </div>
-      </div>
-
-      <!-- GitHub Profile Card -->
-      <div class="contact-card" data-tilt>
-        <div class="contact-icon indigo">
-          <i class="fa-brands fa-github"></i>
-        </div>
-        <h3>GitHub Workspace</h3>
-        <p class="contact-val">github.com/ALWINTR</p>
-        <p class="contact-note">Explore public engineering repositories with circuit schematics, BOMs, and firmware source code.</p>
-        <div class="contact-actions">
-          <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="btn btn-github btn-sm">
-            <i class="fa-brands fa-github"></i> View GitHub
-          </a>
-        </div>
-      </div>
-
-      <!-- Resume Download Card -->
-      <div class="contact-card" data-tilt>
-        <div class="contact-icon cyan">
-          <i class="fa-solid fa-file-pdf"></i>
-        </div>
-        <h3>Curriculum Vitae</h3>
-        <p class="contact-val">ALWIN_TR_RESUME.pdf</p>
-        <p class="contact-note">Download complete 1-page engineering resume detailing industrial experience, technical skills, and projects.</p>
-        <div class="contact-actions">
-          <a href="resume.pdf" target="_blank" rel="noopener" class="btn btn-resume btn-sm">
-            <i class="fa-solid fa-arrow-down"></i> View / Download PDF
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================================================================
-       INTERACTIVE QUICK-VIEW SPECS & ARCHITECTURE MODAL
-       ========================================================================= -->
-  <div class="modal-backdrop" id="specs-modal-backdrop" aria-hidden="true">
-    <div class="modal-container" id="specs-modal-container" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close Specs Modal">
+  <!-- Interactive Project Specs & Architecture Modal -->
+  <div class="modal-overlay" id="specs-modal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-project-title">
+      <button class="modal-close-trigger" id="modal-close" aria-label="Close dialog">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      
+
       <div class="modal-header">
-        <div class="modal-icon-wrap" id="modal-icon-wrap">
-          <i class="fa-solid fa-microchip" id="modal-icon"></i>
-        </div>
-        <div class="modal-title-group">
-          <div class="modal-badges" id="modal-badges"></div>
-          <h2 class="modal-title" id="modal-title">Project Title</h2>
-          <p class="modal-desc" id="modal-desc">Project Description</p>
-        </div>
+        <div class="modal-badge-row" id="modal-badges"></div>
+        <h2 class="modal-heading" id="modal-project-title">Project Title</h2>
+        <p class="modal-subheading" id="modal-project-desc">Project Overview</p>
       </div>
 
-      <div class="modal-body">
-        <!-- Architecture Diagram -->
-        <div class="modal-section">
-          <div class="modal-section-title">
+      <div class="modal-content-scroll">
+        <!-- Architecture Diagram Block -->
+        <div class="modal-section-block">
+          <div class="block-title">
             <i class="fa-solid fa-diagram-project text-cyan"></i>
-            <span>System Architecture & Signal Flow</span>
+            <span>System Architecture & Signal Interconnect</span>
           </div>
-          <div class="terminal-block">
+          <div class="code-terminal">
             <div class="terminal-bar">
-              <span class="terminal-dot red"></span>
-              <span class="terminal-dot yellow"></span>
-              <span class="terminal-dot green"></span>
-              <span class="terminal-title">architecture_block_diagram.txt</span>
+              <span class="term-dot red"></span>
+              <span class="term-dot yellow"></span>
+              <span class="term-dot green"></span>
+              <span class="terminal-filename">architecture_signal_flow.txt</span>
             </div>
-            <pre class="terminal-code" id="modal-diagram"></pre>
+            <pre class="terminal-body" id="modal-diagram-pre"></pre>
           </div>
         </div>
 
         <!-- Bill of Materials (BOM) Table -->
-        <div class="modal-section">
-          <div class="modal-section-title">
+        <div class="modal-section-block">
+          <div class="block-title">
             <i class="fa-solid fa-list-check text-blue"></i>
             <span>Hardware Bill of Materials (BOM)</span>
           </div>
-          <div class="table-responsive">
-            <table class="specs-table">
+          <div class="table-scroll-wrap">
+            <table class="data-table">
               <thead>
                 <tr>
-                  <th>Component Name</th>
+                  <th>Component</th>
                   <th>Operating Voltage</th>
-                  <th>Interface / Functionality</th>
+                  <th>Function / Interface</th>
                 </tr>
               </thead>
-              <tbody id="modal-bom-tbody"></tbody>
+              <tbody id="modal-bom-rows"></tbody>
             </table>
           </div>
         </div>
 
-        <!-- Circuit Pinout Interconnect Table -->
-        <div class="modal-section">
-          <div class="modal-section-title">
-            <i class="fa-solid fa-network-wired text-indigo"></i>
-            <span>Circuit Pinout & Microcontroller Interconnect</span>
+        <!-- Pinout Table -->
+        <div class="modal-section-block">
+          <div class="block-title">
+            <i class="fa-solid fa-network-wired text-purple"></i>
+            <span>Microcontroller Pinout & Hardware Bus Interconnect</span>
           </div>
-          <div class="table-responsive">
-            <table class="specs-table">
+          <div class="table-scroll-wrap">
+            <table class="data-table">
               <thead>
                 <tr>
                   <th>MCU Pin / Channel</th>
-                  <th>Peripheral Pin</th>
+                  <th>Target Peripheral</th>
                   <th>Signal Function / Bus</th>
                 </tr>
               </thead>
-              <tbody id="modal-pinout-tbody"></tbody>
+              <tbody id="modal-pinout-rows"></tbody>
             </table>
           </div>
         </div>
 
         <!-- Firmware Details -->
-        <div class="modal-section">
-          <div class="modal-section-title">
+        <div class="modal-section-block">
+          <div class="block-title">
             <i class="fa-solid fa-code text-cyan"></i>
             <span>Firmware Architecture & State Machines</span>
           </div>
-          <p class="modal-firmware-text" id="modal-firmware"></p>
+          <p class="firmware-desc-text" id="modal-firmware-text"></p>
         </div>
       </div>
 
       <div class="modal-footer">
-        <div class="clone-box">
+        <div class="clone-command-box">
           <span class="clone-label">Clone:</span>
-          <code class="clone-cmd" id="modal-clone-cmd">git clone ...</code>
-          <button class="btn btn-secondary btn-sm copy-btn" id="modal-copy-clone-btn" title="Copy git clone command">
+          <code class="clone-code" id="modal-clone-text">git clone ...</code>
+          <button class="copy-clone-btn" id="modal-copy-clone" title="Copy git clone command">
             <i class="fa-regular fa-copy"></i>
           </button>
         </div>
-        <div class="modal-action-btns">
-          <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="modal-repo-link">
+        <div class="modal-external-actions">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-primary btn-sm" id="modal-repo-btn">
             <i class="fa-brands fa-github"></i> Open Repository
           </a>
-          <a href="#" target="_blank" rel="noopener" class="btn btn-secondary" id="modal-readme-link">
-            <i class="fa-solid fa-book-open"></i> View Full README
+          <a href="#" target="_blank" rel="noopener" class="btn btn-secondary btn-sm" id="modal-readme-btn">
+            <i class="fa-solid fa-book-open"></i> Full README
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Pill -->
-  <div class="toast-notification" id="toast-notification">
-    <i class="fa-solid fa-check-circle text-cyan"></i>
-    <span id="toast-text">Copied to clipboard!</span>
+  <!-- Toast Notification -->
+  <div class="toast-popup" id="toast-popup">
+    <i class="fa-solid fa-circle-check text-cyan"></i>
+    <span id="toast-message">Copied to clipboard!</span>
   </div>
 
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-container">
-      <div class="footer-left">
-        <span class="logo-text">ALWIN <span class="highlight">T R</span></span>
+      <div class="footer-brand">
+        <span class="logo-text">ALWIN <span class="accent-text">T R</span></span>
         <p>Embedded Systems & Robotics Engineer • Real-Time Firmware & Autonomous Systems</p>
       </div>
-      <div class="footer-links">
-        <a href="#about" class="footer-btn"><i class="fa-solid fa-user"></i> About</a>
-        <a href="#projects" class="footer-btn"><i class="fa-solid fa-microchip"></i> Flagship Projects</a>
-        <a href="resume.pdf" target="_blank" rel="noopener" class="footer-btn"><i class="fa-solid fa-file-pdf"></i> Resume</a>
-        <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener" class="footer-btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener" class="footer-btn"><i class="fa-brands fa-github"></i> GitHub</a>
-        <a href="#about" class="footer-btn scroll-top-btn"><i class="fa-solid fa-arrow-up"></i> Top</a>
+      <div class="footer-nav">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://www.linkedin.com/in/alwin-t-r-" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ALWINTR" target="_blank" rel="noopener">GitHub</a>
+        <a href="#about" class="back-to-top"><i class="fa-solid fa-arrow-up"></i> Top</a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Alwin T R. Engineered with precision for robotics and embedded systems. Hosted on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
+    <div class="footer-copyright">
+      <p>&copy; 2026 Alwin T R. Engineered with precision for robotics and embedded systems. Deployed on <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.</p>
     </div>
   </footer>
 
